@@ -144,6 +144,12 @@ python scripts/evaluate_retrieval.py
 7. Add a FastAPI service and simple user interface.
 8. Add Italian-language queries, GDPR and NIS2.
 
-## License and attribution
+## License
 
-The application source code is released under the license included in this repository. Regulatory documents remain attributed to their official EUR-Lex sources.
+The source code in this repository is licensed under the Apache License 2.0.
+
+EU regulatory texts and metadata are not covered by the software license.
+They remain subject to the applicable EU and EUR-Lex reuse conditions.
+Sources are attributed in the corresponding data records.
+
+Third-party libraries and models remain subject to their respective licenses.
