@@ -2,6 +2,7 @@ import argparse
 import json
 from pathlib import Path
 from bm25s import BM25, tokenize
+from pprint import pprint
 
 INPUT_JSON = Path("data/processed/ai-act-articles.json")
 LANGUAGE = "en"
@@ -20,7 +21,10 @@ def create_corpus(json_file: Path):
     return data
 
 def create_bm25_index(documents, language: str):
-    texts = [document["text"] for document in documents]
+    texts = [
+        f"{document['article_title']} {document['text']}"
+        for document in documents
+    ]
     
     bm25 = BM25(corpus=documents)
 
@@ -35,15 +39,27 @@ def search(query: str, retriever: BM25, top_k: int, language: str):
 
     return results, scores
 
-def show_results(results, scores):
+def show_results(results, scores, text_length=250):
+    output = []
     for rank, (document, score) in enumerate(zip(results[0], scores[0]), start=1):
-        article = document.get("article_number", "Unknown")
-        title = document.get("article_title", "Untitled")
-        text = document["text"]
+        chunk_id = document.get("chunk_id", "Unknown")
+        article_number = document.get("article_number", "Unknown")
+        article_title = document.get("article_title", "Untitled")
+        text = document["text"][:text_length] + "..." if len(document["text"]) > text_length else document["text"]
 
-        print(f"\n{rank}. Article {article} — {title}")
-        print(f"   Score: {float(score):.4f}")
-        print(f"   {text[:400]}")
+        output.append({
+            "rank": rank,
+            "score": float(score),
+            "chunk_id": chunk_id,
+            "article": article_number,
+            "title": article_title,
+            "score": float(score),
+            "text": text
+        })
+
+    pprint(output)
+
+    return output
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
