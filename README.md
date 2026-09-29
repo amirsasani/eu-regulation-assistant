@@ -10,7 +10,7 @@ The project currently focuses on the **EU Artificial Intelligence Act** and uses
 
 - [x] Download and parse the EU AI Act
 - [x] Preserve article and paragraph metadata
-- [ ] Implement BM25 keyword retrieval
+- [x] Implement BM25 keyword retrieval
 - [ ] Create a labelled retrieval evaluation set
 - [ ] Add semantic vector search
 - [ ] Implement hybrid retrieval
