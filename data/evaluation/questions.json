@@ -1,0 +1,12 @@
+[
+{"id":"q001","question":"Which artificial intelligence practices are prohibited under the EU AI Act?","relevant_articles":["5"],"category":"direct","difficulty":"easy"},
+{"id":"q002","question":"How can I determine whether an AI system should be classified as high-risk?","relevant_articles":["6"],"category":"paraphrased","difficulty":"medium"},
+{"id":"q003","question":"What risk management obligations apply to high-risk AI systems?","relevant_articles":["9"],"category":"paraphrased","difficulty":"medium"},
+{"id":"q004","question":"What requirements apply to training, validation and testing data used by high-risk AI systems?","relevant_articles":["10"],"category":"direct","difficulty":"easy"},
+{"id":"q005","question":"Must high-risk AI systems automatically record events during their operation?","relevant_articles":["12"],"category":"paraphrased","difficulty":"medium"},
+{"id":"q006","question":"What information must providers give deployers so that high-risk AI systems can be used correctly?","relevant_articles":["13"],"category":"paraphrased","difficulty":"medium"},
+{"id":"q007","question":"How must human oversight be incorporated into a high-risk AI system?","relevant_articles":["14"],"category":"direct","difficulty":"easy"},
+{"id":"q008","question":"What must deployers do when monitoring a high-risk AI system and keeping its logs?","relevant_articles":["26"],"category":"multi_passage","difficulty":"hard"},
+{"id":"q009","question":"When must people be informed that content is artificially generated or manipulated, including deepfakes?","relevant_articles":["50"],"category":"paraphrased","difficulty":"medium"},
+{"id":"q010","question":"How is income from cryptocurrency taxed in Italy?","relevant_articles":[],"category":"unsupported","difficulty":"easy"}
+]
