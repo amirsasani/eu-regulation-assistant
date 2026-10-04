@@ -64,8 +64,6 @@ def search(query: str, retriever: BM25, top_k: int, language: str):
         raise ValueError("top_k must be at least 1.")
 
 
-    top_k = min(args.top_k, len(corpus))
-    
     tokens = tokenize([query], stopwords=language)
     results, scores = retriever.retrieve(tokens, k=top_k)
 
