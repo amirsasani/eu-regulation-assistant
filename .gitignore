@@ -267,3 +267,8 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/python,visualstudiocode,macos,linux,windows
+
+
+# Project specific
+data/indexes/semantic/embeddings.npy
+data/indexes/semantic/manifest.json

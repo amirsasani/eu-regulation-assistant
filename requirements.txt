@@ -2,3 +2,5 @@ requests
 beautifulsoup4
 lxml 
 bm25s
+sentence-transformers
+numpy
