@@ -12,14 +12,13 @@ The project currently focuses on the **EU Artificial Intelligence Act** and uses
 - [x] Preserve article and paragraph metadata
 - [x] Implement BM25 keyword retrieval
 - [x] Create a labelled retrieval evaluation set
-- [ ] Add semantic vector search
+- [x] Add semantic vector search
 - [ ] Implement hybrid retrieval
 - [ ] Add reranking
 - [ ] Generate answers with source citations
 - [ ] Expose the system through an API
 - [ ] Add Italian-language support
 
-Only completed features should be checked.
 
 ## Why this project?
 
