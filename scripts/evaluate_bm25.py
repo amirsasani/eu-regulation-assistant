@@ -3,15 +3,11 @@ import argparse
 from pprint import pprint
 from pathlib import Path
 from src.retrieval.bm25 import create_bm25_index, search
+import utils
 
-JSON_FILE = Path("data/processed/ai-act-articles.json")
-QUESTIONS_FILE = Path("data/evaluation/questions.json")
+JSON_FILE = utils.DATA_PROCESSED_PATH / "ai-act-articles.json"
+QUESTIONS_FILE = utils.DATA_EVAL_PATH / "questions.json"
 LANGUAGE = "en"
-
-def load_questions(json_file: Path):
-    with open(json_file, "r", encoding="utf-8") as f:
-        questions = json.load(f)
-    return questions
 
 def find_first_relevant_rank(retrieved_documents, relevant_articles: set[str]):
     for rank, document in enumerate(retrieved_documents, start=1):
@@ -109,11 +105,11 @@ if __name__ == "__main__":
     parser.add_argument("--top_k", type=int, default=5)
     args = parser.parse_args()
 
-    documents = json.load(open(args.json_file, "r", encoding="utf-8"))
+    documents = utils.load_json_file(args.json_file)
 
     top_k = min(args.top_k, len(documents))
 
-    questions = load_questions(args.questions_file)
+    questions = utils.load_json_file(args.questions_file)
     results = evaluate(questions, documents, top_k=top_k, language=args.language)
 
     pprint(results)

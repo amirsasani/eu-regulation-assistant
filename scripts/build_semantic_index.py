@@ -3,6 +3,7 @@ import hashlib
 import json
 from datetime import datetime, timezone
 from pathlib import Path
+import utils
 
 import numpy as np
 
@@ -12,17 +13,13 @@ from src.retrieval.semantic import (
     load_model,
 )
 
+DEFAULT_DOCUMENTS_PATH = (utils.DATA_PROCESSED_PATH / "ai-act-articles.json")
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-
-DEFAULT_DOCUMENTS_PATH = (PROJECT_ROOT / "data/processed/ai-act-articles.json")
-
-DEFAULT_OUTPUT_DIRECTORY = (PROJECT_ROOT / "data/indexes/semantic")
+DEFAULT_OUTPUT_DIRECTORY = (utils.DATA_INDEXES_PATH / "semantic")
 
 
 def load_documents(path: Path):
-    with path.open("r", encoding="utf-8") as file:
-        documents = json.load(file)
+    documents = utils.load_json_file(path)
 
     if not isinstance(documents, list):
         raise ValueError(
@@ -71,7 +68,7 @@ def build_index(documents_path: Path, output_directory: Path, model_name: str, b
         "document_count": len(documents),
         "embedding_dimension": int(embeddings.shape[1]),
         "embedding_dtype": str(embeddings.dtype),
-        "source_file": str(documents_path.relative_to(PROJECT_ROOT)),
+        "source_file": str(documents_path.relative_to(utils.PROJECT_ROOT)),
         "source_sha256": calculate_file_hash(documents_path),
         "created_at": datetime.now(timezone.utc).isoformat(),
     }

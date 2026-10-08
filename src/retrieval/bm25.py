@@ -3,8 +3,9 @@ import json
 from pathlib import Path
 from bm25s import BM25, tokenize
 from pprint import pprint
+import utils
 
-INPUT_JSON = Path("data/processed/ai-act-articles.json")
+INPUT_JSON = utils.DATA_PROCESSED_PATH / "ai-act-articles.json"
 LANGUAGE = "en"
 
 def create_corpus(json_file: Path):
@@ -15,8 +16,7 @@ def create_corpus(json_file: Path):
         "text",
     }
     
-    with open(json_file, "r", encoding="utf-8") as f:
-        data = json.load(f)
+    data = utils.load_json_file(json_file)
 
 
     if not isinstance(data, list):

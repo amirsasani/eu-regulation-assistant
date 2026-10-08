@@ -4,15 +4,15 @@ from datetime import datetime, timezone
 import json
 from pathlib import Path
 from hashlib import sha256
+import utils
 
 SOURCE_URL = (
     "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/"
     "?uri=OJ:L_202401689"
 )
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-SOURCE_PATH = PROJECT_ROOT / "data/raw/ai-act-raw.html"
-METADATA_PATH = PROJECT_ROOT / "data/raw/ai-act-metadata.json"
+SOURCE_PATH = utils.DATA_RAW_PATH / "ai-act-raw.html"
+METADATA_PATH = utils.DATA_RAW_PATH / "ai-act-metadata.json"
 
 def download_source_file():
     SOURCE_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -45,7 +45,7 @@ def generate_metadata(source_path: Path, response):
     metadata = {
         "source_url": SOURCE_URL,
         "downloaded_at": datetime.now(timezone.utc).isoformat(),
-        "path": str(source_path.relative_to(PROJECT_ROOT)),
+        "path": str(source_path.relative_to(utils.PROJECT_ROOT)),
         "size_bytes": source_path.stat().st_size,
         "sha256": calculate_sha256(source_path),
         "encoding": "utf-8",

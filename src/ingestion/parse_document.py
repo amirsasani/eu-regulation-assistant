@@ -2,6 +2,7 @@ import json
 import re
 from bs4 import BeautifulSoup
 from pathlib import Path
+import utils
 
 
 DOCUMENT_ID = "32024R1689"
@@ -15,8 +16,8 @@ SOURCE_URL = (
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
-SOURCE_PATH = PROJECT_ROOT / "data/raw/ai-act-raw.html"
-OUTPUT_PATH = PROJECT_ROOT / "data/processed/ai-act-articles.json"
+SOURCE_PATH = utils.DATA_RAW_PATH / "ai-act-raw.html"
+OUTPUT_PATH = utils.DATA_PROCESSED_PATH / "ai-act-articles.json"
 
 def clean_text(text: str) -> str:
     text = text.replace("\xa0", " ")
@@ -224,10 +225,7 @@ def parse_articles(source_path: Path):
                 "paragraph_number": paragraph_number,
                 "text": paragraph["text"],
                 "source_url": SOURCE_URL,
-                "chunk_id": (
-                    f"ai-act-en-article-{article_number}"
-                    f"-paragraph-{paragraph_number}"
-                ),
+                "chunk_id": f"ai-act-en-article-{article_number}-paragraph-{paragraph_number}",
             })
 
     return records
