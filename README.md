@@ -19,6 +19,21 @@ The project currently focuses on the **EU Artificial Intelligence Act** and uses
 - [ ] Expose the system through an API
 - [ ] Add Italian-language support
 
+## Retrieval results
+
+Preliminary evaluation on 9 answerable questions labelled with their
+relevant EU AI Act articles. Both methods used the same document chunks
+and retrieved five results per question.
+
+| Method | Recall@1 | Recall@5 | MRR | Avg. latency |
+|---|---:|---:|---:|---:|
+| BM25 | 0.556 | 0.778 | 0.648 | 0.351 ms |
+| Multilingual E5 | 0.667 | 1.000 | 0.815 | 30.063 ms |
+
+Semantic search uses `intfloat/multilingual-e5-base`. Semantic latency
+includes query embedding and vector comparison but excludes model loading.
+
+These results are preliminary because the evaluation set is small.
 
 ## Why this project?
 

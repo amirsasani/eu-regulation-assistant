@@ -4,6 +4,7 @@ from pprint import pprint
 from pathlib import Path
 from src.retrieval.bm25 import create_bm25_index, search
 import utils
+import time
 
 JSON_FILE = utils.DATA_PROCESSED_PATH / "ai-act-articles.json"
 QUESTIONS_FILE = utils.DATA_EVAL_PATH / "questions.json"
@@ -36,15 +37,21 @@ def evaluate(questions, documents, top_k: int, language: str):
     recall_at_1 = []
     recall_at_k = []
     failures = []
+    latencies_ms = []
     query_results = []
 
     for question in answerable_questions:
+        started_at = time.perf_counter()
+
         results, _ = search(
             query=question["question"],
             retriever=retriever,
             top_k=min(top_k, len(documents)),
             language=language,
         )
+
+        latency_ms = (time.perf_counter() - started_at) * 1000
+        latencies_ms.append(latency_ms)
 
         retrieved_documents = list(results[0])
         relevant_articles = {
@@ -59,14 +66,9 @@ def evaluate(questions, documents, top_k: int, language: str):
 
         recall_at_1.append(first_rank == 1)
         recall_at_k.append(first_rank is not None)
-        reciprocal_ranks.append(
-            1 / first_rank if first_rank else 0
-        )
+        reciprocal_ranks.append(1 / first_rank if first_rank else 0)
 
-        retrieved_articles = [
-            str(document["article_number"])
-            for document in retrieved_documents
-        ]
+        retrieved_articles = [str(document["article_number"]) for document in retrieved_documents]
 
         result = {
             "id": question["id"],
@@ -74,6 +76,7 @@ def evaluate(questions, documents, top_k: int, language: str):
             "expected_articles": sorted(relevant_articles),
             "retrieved_articles": retrieved_articles,
             "first_relevant_rank": first_rank,
+            "latency_ms": round(latency_ms, 3),
         }
 
         query_results.append(result)
@@ -86,12 +89,11 @@ def evaluate(questions, documents, top_k: int, language: str):
     return {
         "method": "BM25",
         "questions_evaluated": question_count,
+        "latency_ms": round(sum(latencies_ms) / question_count, 3),
         "top_k": top_k,
-        "recall_at_1": sum(recall_at_1) / question_count,
-        f"recall_at_{top_k}": (
-            sum(recall_at_k) / question_count
-        ),
-        "mrr": sum(reciprocal_ranks) / question_count,
+        "recall_at_1": round(sum(recall_at_1) / question_count, 3),
+        f"recall_at_{top_k}": round(sum(recall_at_k) / question_count, 3),
+        "mrr": round(sum(reciprocal_ranks) / question_count, 3),
         "failures": failures,
         "query_results": query_results,
     }

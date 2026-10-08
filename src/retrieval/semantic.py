@@ -5,9 +5,7 @@ from sentence_transformers import SentenceTransformer
 DEFAULT_MODEL = "intfloat/multilingual-e5-base"
 
 
-def load_model(
-    model_name: str = DEFAULT_MODEL,
-) -> SentenceTransformer:
+def load_model(model_name: str = DEFAULT_MODEL) -> SentenceTransformer:
     return SentenceTransformer(model_name)
 
 
@@ -19,11 +17,7 @@ def build_passage_text(document: dict) -> str:
     )
 
 
-def create_document_embeddings(
-    documents: list[dict],
-    model: SentenceTransformer,
-    batch_size: int = 32,
-) -> np.ndarray:
+def create_document_embeddings(documents: list[dict], model: SentenceTransformer, batch_size: int = 32) -> np.ndarray:
     passages = [
         build_passage_text(document)
         for document in documents
@@ -48,3 +42,52 @@ def create_document_embeddings(
         )
 
     return embeddings
+
+def create_query_embedding(query: str, model: SentenceTransformer) -> np.ndarray:
+    if not query.strip():
+        raise ValueError("Query cannot be empty.")
+
+    return model.encode(
+        f"query: {query}",
+        normalize_embeddings=True,
+        convert_to_numpy=True,
+    )
+
+
+def search(
+        query: str, 
+        model: SentenceTransformer, 
+        documents: list[dict], 
+        document_embeddings: np.ndarray, 
+        top_k: int = 5
+    ) -> list[dict]:
+
+    if len(documents) != len(document_embeddings):
+        raise ValueError("Document and embedding counts do not match.")
+
+    if top_k < 1:
+        raise ValueError("top_k must be at least 1.")
+
+    top_k = min(top_k, len(documents))
+
+    query_embedding = create_query_embedding(query, model)
+
+    scores = document_embeddings @ query_embedding
+
+    top_indices = np.argsort(-scores)[:top_k]
+
+    results = []
+
+    for rank, index in enumerate(top_indices, start=1):
+        document = documents[int(index)]
+
+        results.append({
+            "rank": rank,
+            "score": float(scores[index]),
+            "chunk_id": document["chunk_id"],
+            "article_number": str(document["article_number"]),
+            "article_title": document["article_title"],
+            "text": document["text"],
+        })
+
+    return results
