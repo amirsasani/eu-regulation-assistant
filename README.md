@@ -29,6 +29,7 @@ and retrieved five results per question.
 |---|---:|---:|---:|---:|
 | BM25 | 0.556 | 0.778 | 0.667 | 0.313 ms |
 | Multilingual E5 | 0.889 | 1.000 | 0.944 | 15.114 ms |
+| Hybrid | 0.778 | 1.000 | 0.889 | 88.215 ms |
 
 Semantic search uses `intfloat/multilingual-e5-base`. Semantic latency
 includes query embedding and vector comparison but excludes model loading.
