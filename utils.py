@@ -17,6 +17,9 @@ SRC_PATH = PROJECT_ROOT / "src"
 SRC_INJEST_PATH = SRC_PATH / "injestion"
 SRC_RETRIEVAL_PATH = SRC_PATH / "retrieval"
 
+
+DEFAULT_SEMANTIC_MODEL_NAME = "intfloat/multilingual-e5-base"
+
 def load_json_file(file_path: Path, permission: str = "r", encoding: str = "utf-8"):
     with open(file_path, permission, encoding=encoding) as f:
         return json.load(f)

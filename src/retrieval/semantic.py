@@ -1,8 +1,10 @@
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
+import utils
 
-DEFAULT_MODEL = "intfloat/multilingual-e5-base"
+
+DEFAULT_MODEL = utils.DEFAULT_SEMANTIC_MODEL_NAME
 
 
 def load_model(model_name: str = DEFAULT_MODEL) -> SentenceTransformer:

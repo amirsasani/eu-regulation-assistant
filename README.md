@@ -13,7 +13,7 @@ The project currently focuses on the **EU Artificial Intelligence Act** and uses
 - [x] Implement BM25 keyword retrieval
 - [x] Create a labelled retrieval evaluation set
 - [x] Add semantic vector search
-- [ ] Implement hybrid retrieval
+- [x] Implement hybrid retrieval
 - [ ] Add reranking
 - [ ] Generate answers with source citations
 - [ ] Expose the system through an API
