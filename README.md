@@ -27,8 +27,8 @@ and retrieved five results per question.
 
 | Method | Recall@1 | Recall@5 | MRR | Avg. latency |
 |---|---:|---:|---:|---:|
-| BM25 | 0.556 | 0.778 | 0.648 | 0.351 ms |
-| Multilingual E5 | 0.667 | 1.000 | 0.815 | 30.063 ms |
+| BM25 | 0.556 | 0.778 | 0.667 | 0.313 ms |
+| Multilingual E5 | 0.889 | 1.000 | 0.944 | 15.114 ms |
 
 Semantic search uses `intfloat/multilingual-e5-base`. Semantic latency
 includes query embedding and vector comparison but excludes model loading.

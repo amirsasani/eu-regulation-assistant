@@ -4,3 +4,5 @@ lxml
 bm25s
 sentence-transformers
 numpy
+psycopg[binary]
+pgvector

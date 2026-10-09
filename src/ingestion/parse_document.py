@@ -23,59 +23,48 @@ def clean_text(text: str) -> str:
     text = text.replace("\xa0", " ")
     return re.sub(r"\s+", " ", text).strip()
 
-def extract_content_blocks__p(article):
-    blocks = []
-    
-    for element in article.find_all("p"):
+def extract_content_blocks(article_container):
+    """
+    Extract paragraphs and table rows in document order.
 
-        # Avoid duplicate text from elements inside tables
+    Paragraphs inside tables are skipped because their containing
+    table row is processed separately.
+    """
+    blocks = []
+
+    for element in article_container.find_all(["p", "table"]):
         if element.name == "p":
+            # Table text is processed through its rows.
             if element.find_parent("table"):
                 continue
 
             classes = element.get("class", [])
 
-            # Skip article number/title
-            if "oj-ti-art" in classes or "oj-sti-art" in classes:
+            # Skip article number and article title.
+            if ("oj-ti-art" in classes or "oj-sti-art" in classes):
                 continue
 
             text = clean_text(element.get_text(" ", strip=True))
 
             if text:
                 blocks.append(text)
-    
-        return blocks
 
-def extract_content_blocks__table(article):
-    blocks = []
+        elif element.name == "table":
+            # Process only outermost tables.
+            if element.find_parent("table"):
+                continue
 
-    for element in article.find_all("table"):
-        # Avoid nested table duplication
-        if element.find_parent("table"):
-            continue
+            for row in element.find_all("tr"):
+                cells = [
+                    clean_text(cell.get_text(" ", strip=True))
+                    for cell in row.find_all(["td", "th"], recursive=False)
+                ]
 
-        rows = []
+                text = clean_text(" ".join(cell for cell in cells if cell))
 
-        for row in element.find_all("tr"):
-            cells = [
-                clean_text(cell.get_text(" ", strip=True))
-                for cell in row.find_all(["td", "th"], recursive=False)
-            ]
+                if text:
+                    blocks.append(text)
 
-            cells = [cell for cell in cells if cell]
-
-            if cells:
-                rows.append(" ".join(cells))
-
-        if rows:
-            blocks.append(" ".join(rows))
-
-    return blocks
-
-def extract_content_blocks(article):
-    blocks = []
-    blocks.extend(extract_content_blocks__p(article))
-    blocks.extend(extract_content_blocks__table(article))
     return blocks
 
 def split_paragraphs(blocks):
@@ -132,88 +121,84 @@ def split_paragraphs(blocks):
     return paragraphs
 
 
+def validate_records(records: list[dict]) -> None:
+    if not records:
+        raise ValueError("Parser produced no article records.")
+
+    chunk_ids = set()
+    article_numbers = set()
+
+    for position, record in enumerate(records):
+        text = record["text"].strip()
+
+        if not text:
+            raise ValueError(f"Record {position} has empty text.")
+
+        chunk_id = record["chunk_id"]
+
+        if chunk_id in chunk_ids:
+            raise ValueError(f"Duplicate chunk ID: {chunk_id}")
+
+        chunk_ids.add(chunk_id)
+        article_numbers.add(record["article_number"])
+
+    expected_articles = {str(number) for number in range(1, 114)}
+
+    missing_articles = (expected_articles - article_numbers)
+
+    if missing_articles:
+        raise ValueError(f"Missing articles: {sorted(missing_articles, key=int)}")
+
+    print(f"Validated {len(records)} unique chunks across {len(article_numbers)} articles.")
+
 def parse_articles(source_path: Path):
     html = source_path.read_text(encoding="utf-8")
     soup = BeautifulSoup(html, "html.parser")
 
     records = []
 
-    article_pattern = re.compile(
-        r"Article\s+(\d+[A-Za-z]?)",
-        re.IGNORECASE
-    )
+    article_pattern = re.compile(r"Article\s+(\d+[A-Za-z]?)", re.IGNORECASE)
 
     article_headers = soup.find_all("p", class_="oj-ti-art")
 
     print(f"Found {len(article_headers)} article headers")
 
     for article_header in article_headers:
-        header_text = clean_text(
-            article_header.get_text(" ", strip=True)
-        )
+        header_text = clean_text(article_header.get_text(" ", strip=True))
 
-        match = article_pattern.search(header_text)
+        match = article_pattern.fullmatch(header_text)
 
         if not match:
             continue
 
         article_number = match.group(1)
 
-        # More tolerant than find_next_sibling()
-        title_element = article_header.find_next(
-            "p",
-            class_="oj-sti-art"
+        # Locate the container belonging only to this article.
+        article_container = article_header.find_parent(
+            "div",
+            id=re.compile(rf"^art_{re.escape(article_number)}$", re.IGNORECASE),
         )
+
+        if article_container is None:
+            raise ValueError(f"Could not locate container for Article {article_number}.")
+
+        title_element = article_container.find("p", class_="oj-sti-art")
 
         if title_element is None:
-            continue
+            raise ValueError(f"Article {article_number} has no title.")
 
-        article_title = clean_text(
-            title_element.get_text(" ", strip=True)
-        )
+        article_title = clean_text(title_element.get_text(" ", strip=True))
 
-        blocks = []
-
-        # Walk forward until the next article header
-        for element in title_element.find_all_next(["p", "tr"]):
-
-            # Stop when next Article starts
-            if (
-                element.name == "p"
-                and "oj-ti-art" in element.get("class", [])
-            ):
-                break
-
-            if element.name == "p":
-                classes = element.get("class", [])
-
-                if "oj-sti-art" in classes:
-                    continue
-
-                text = clean_text(
-                    element.get_text(" ", strip=True)
-                )
-
-                if text:
-                    blocks.append(text)
-
-            elif element.name == "tr":
-                cells = [
-                    clean_text(td.get_text(" ", strip=True))
-                    for td in element.find_all(["td", "th"])
-                ]
-
-                text = clean_text(" ".join(
-                    cell for cell in cells if cell
-                ))
-
-                if text:
-                    blocks.append(text)
+        blocks = extract_content_blocks(article_container)
 
         paragraphs = split_paragraphs(blocks)
 
         for paragraph in paragraphs:
             paragraph_number = paragraph["number"]
+            text = clean_text(paragraph["text"])
+
+            if not text:
+                continue
 
             records.append({
                 "document_id": DOCUMENT_ID,
@@ -223,10 +208,16 @@ def parse_articles(source_path: Path):
                 "article_number": article_number,
                 "article_title": article_title,
                 "paragraph_number": paragraph_number,
-                "text": paragraph["text"],
+                "text": text,
                 "source_url": SOURCE_URL,
-                "chunk_id": f"ai-act-en-article-{article_number}-paragraph-{paragraph_number}",
+                "chunk_id": (
+                    f"ai-act-{LANGUAGE}"
+                    f"-article-{article_number}"
+                    f"-paragraph-{paragraph_number}"
+                ),
             })
+
+    validate_records(records)
 
     return records
 

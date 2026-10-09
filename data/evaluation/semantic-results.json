@@ -2,10 +2,10 @@
   "method": "semantic",
   "questions_evaluated": 9,
   "top_k": 5,
-  "recall_at_1": 0.6666666666666666,
+  "recall_at_1": 0.8888888888888888,
   "recall_at_5": 1.0,
-  "mrr": 0.8148148148148148,
-  "average_latency_ms": 30.06274533173483,
+  "mrr": 0.9444444444444444,
+  "average_latency_ms": 15.1135693330515,
   "failures": [],
   "query_results": [
     {
@@ -15,28 +15,28 @@
         "5"
       ],
       "retrieved_articles": [
+        "5",
         "74",
+        "5",
         "50",
-        "5",
-        "5",
-        "2"
+        "5"
       ],
       "retrieved_chunks": [
-        "ai-act-en-article-74-paragraph-1",
-        "ai-act-en-article-50-paragraph-3",
         "ai-act-en-article-5-paragraph-8",
-        "ai-act-en-article-5-paragraph-6",
-        "ai-act-en-article-2-paragraph-3"
+        "ai-act-en-article-74-paragraph-1",
+        "ai-act-en-article-5-paragraph-1",
+        "ai-act-en-article-50-paragraph-3",
+        "ai-act-en-article-5-paragraph-6"
       ],
       "scores": [
-        0.853271,
+        0.867152,
+        0.855443,
+        0.8513,
         0.851162,
-        0.850835,
-        0.850765,
-        0.848252
+        0.850765
       ],
-      "first_relevant_rank": 3,
-      "latency_ms": 16.454
+      "first_relevant_rank": 1,
+      "latency_ms": 14.964
     },
     {
       "id": "q002",
@@ -47,26 +47,26 @@
       "retrieved_articles": [
         "6",
         "6",
-        "80",
         "6",
-        "9"
+        "80",
+        "6"
       ],
       "retrieved_chunks": [
         "ai-act-en-article-6-paragraph-2",
+        "ai-act-en-article-6-paragraph-1",
         "ai-act-en-article-6-paragraph-4",
         "ai-act-en-article-80-paragraph-1",
-        "ai-act-en-article-6-paragraph-5",
-        "ai-act-en-article-9-paragraph-6"
+        "ai-act-en-article-6-paragraph-5"
       ],
       "scores": [
         0.895828,
+        0.895768,
         0.895509,
         0.888335,
-        0.887953,
-        0.886815
+        0.887953
       ],
       "first_relevant_rank": 1,
-      "latency_ms": 97.36
+      "latency_ms": 17.677
     },
     {
       "id": "q003",
@@ -75,28 +75,28 @@
         "9"
       ],
       "retrieved_articles": [
+        "9",
+        "9",
         "26",
         "9",
-        "8",
-        "9",
-        "26"
+        "8"
       ],
       "retrieved_chunks": [
+        "ai-act-en-article-9-paragraph-5",
+        "ai-act-en-article-9-paragraph-2",
         "ai-act-en-article-26-paragraph-1",
         "ai-act-en-article-9-paragraph-10",
-        "ai-act-en-article-8-paragraph-1",
-        "ai-act-en-article-9-paragraph-6",
-        "ai-act-en-article-26-paragraph-8"
+        "ai-act-en-article-8-paragraph-1"
       ],
       "scores": [
+        0.887269,
+        0.887166,
         0.887056,
         0.885987,
-        0.885208,
-        0.881868,
-        0.881317
+        0.885208
       ],
-      "first_relevant_rank": 2,
-      "latency_ms": 69.732
+      "first_relevant_rank": 1,
+      "latency_ms": 17.424
     },
     {
       "id": "q004",
@@ -109,24 +109,24 @@
         "10",
         "15",
         "42",
-        "17"
+        "9"
       ],
       "retrieved_chunks": [
         "ai-act-en-article-10-paragraph-1",
         "ai-act-en-article-10-paragraph-3",
         "ai-act-en-article-15-paragraph-5",
         "ai-act-en-article-42-paragraph-1",
-        "ai-act-en-article-17-paragraph-1"
+        "ai-act-en-article-9-paragraph-6"
       ],
       "scores": [
         0.889029,
         0.882723,
-        0.878519,
+        0.881988,
         0.877578,
-        0.874289
+        0.874121
       ],
       "first_relevant_rank": 1,
-      "latency_ms": 15.328
+      "latency_ms": 18.654
     },
     {
       "id": "q005",
@@ -138,25 +138,25 @@
         "12",
         "12",
         "26",
-        "19",
-        "73"
+        "12",
+        "19"
       ],
       "retrieved_chunks": [
         "ai-act-en-article-12-paragraph-1",
         "ai-act-en-article-12-paragraph-2",
         "ai-act-en-article-26-paragraph-6",
-        "ai-act-en-article-19-paragraph-1",
-        "ai-act-en-article-73-paragraph-10"
+        "ai-act-en-article-12-paragraph-3",
+        "ai-act-en-article-19-paragraph-1"
       ],
       "scores": [
         0.908421,
-        0.878373,
+        0.877588,
         0.864631,
-        0.861548,
-        0.858929
+        0.863076,
+        0.861548
       ],
       "first_relevant_rank": 1,
-      "latency_ms": 14.762
+      "latency_ms": 13.269
     },
     {
       "id": "q006",
@@ -186,7 +186,7 @@
         0.88695
       ],
       "first_relevant_rank": 2,
-      "latency_ms": 15.086
+      "latency_ms": 14.191
     },
     {
       "id": "q007",
@@ -204,19 +204,19 @@
       "retrieved_chunks": [
         "ai-act-en-article-14-paragraph-1",
         "ai-act-en-article-14-paragraph-3",
-        "ai-act-en-article-14-paragraph-2",
         "ai-act-en-article-14-paragraph-4",
+        "ai-act-en-article-14-paragraph-2",
         "ai-act-en-article-14-paragraph-5"
       ],
       "scores": [
         0.915332,
-        0.90292,
+        0.908271,
+        0.896368,
         0.896139,
-        0.893262,
         0.881629
       ],
       "first_relevant_rank": 1,
-      "latency_ms": 13.798
+      "latency_ms": 13.325
     },
     {
       "id": "q008",
@@ -246,7 +246,7 @@
         0.864891
       ],
       "first_relevant_rank": 1,
-      "latency_ms": 13.634
+      "latency_ms": 13.106
     },
     {
       "id": "q009",
@@ -259,24 +259,24 @@
         "50",
         "61",
         "60",
-        "52"
+        "61"
       ],
       "retrieved_chunks": [
         "ai-act-en-article-50-paragraph-4",
         "ai-act-en-article-50-paragraph-2",
         "ai-act-en-article-61-paragraph-2",
         "ai-act-en-article-60-paragraph-5",
-        "ai-act-en-article-52-paragraph-1"
+        "ai-act-en-article-61-paragraph-1"
       ],
       "scores": [
         0.855342,
         0.826005,
         0.815511,
         0.811423,
-        0.810299
+        0.811159
       ],
       "first_relevant_rank": 1,
-      "latency_ms": 14.411
+      "latency_ms": 13.411
     }
   ],
   "model": "intfloat/multilingual-e5-base",
