@@ -20,6 +20,8 @@ SRC_RETRIEVAL_PATH = SRC_PATH / "retrieval"
 
 DEFAULT_SEMANTIC_MODEL_NAME = "intfloat/multilingual-e5-base"
 
+DEFAULT_OPENROUTER_MODEL = "openrouter/free"
+
 def load_json_file(file_path: Path, permission: str = "r", encoding: str = "utf-8"):
     with open(file_path, permission, encoding=encoding) as f:
         return json.load(f)
