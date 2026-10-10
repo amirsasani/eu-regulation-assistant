@@ -1,0 +1,65 @@
+[
+  {
+    "id": "g001",
+    "question": "What risk management obligations apply to high-risk AI systems?",
+    "answerable": true,
+    "expected_articles": ["9"],
+    "expected_points": [
+      {
+        "point": "A risk management system must be established, implemented, documented and maintained.",
+        "chunk_id": "ai-act-en-article-9-paragraph-1"
+      },
+      {
+        "point": "Risk management is a continuous lifecycle process requiring regular review and updating.",
+        "chunk_id": "ai-act-en-article-9-paragraph-2"
+      },
+      {
+        "point": "The system must identify, evaluate and mitigate reasonably foreseeable risks.",
+        "chunk_id": "ai-act-en-article-9-paragraph-2"
+      },
+      {
+        "point": "High-risk systems must be tested to identify suitable risk-management measures.",
+        "chunk_id": "ai-act-en-article-9-paragraph-6"
+      }
+    ]
+  },
+  {
+    "id": "g002",
+    "question": "Must high-risk AI systems automatically record events during operation?",
+    "answerable": true,
+    "expected_articles": ["12"],
+    "expected_points": [
+      {
+        "point": "High-risk systems must technically allow automatic event logging throughout their lifetime.",
+        "chunk_id": "ai-act-en-article-12-paragraph-1"
+      },
+      {
+        "point": "Logging must support traceability, post-market monitoring and operational monitoring.",
+        "chunk_id": "ai-act-en-article-12-paragraph-2"
+      }
+    ]
+  },
+  {
+    "id": "g003",
+    "question": "What transparency obligations apply to AI-generated content and deepfakes?",
+    "answerable": true,
+    "expected_articles": ["50"],
+    "expected_points": [
+      {
+        "point": "Providers must mark synthetic outputs in a machine-readable and detectable format.",
+        "chunk_id": "ai-act-en-article-50-paragraph-2"
+      },
+      {
+        "point": "Deployers must disclose when image, audio or video content constitutes a deepfake.",
+        "chunk_id": "ai-act-en-article-50-paragraph-4"
+      }
+    ]
+  },
+  {
+    "id": "g004",
+    "question": "Which encryption algorithm must every high-risk AI system use?",
+    "answerable": false,
+    "expected_articles": [],
+    "expected_points": []
+  }
+]
