@@ -21,7 +21,7 @@ The project currently focuses on the **EU Artificial Intelligence Act** and uses
 - [x] Store embeddings in PostgreSQL with pgvector
 - [x] Implement hybrid retrieval with Reciprocal Rank Fusion
 - [x] Evaluate BM25, semantic, and hybrid retrieval
-- [ ] Add reranking and evaluate its impact
+- [x] Add reranking and evaluate its impact
 
 ### RAG application
 
@@ -44,10 +44,14 @@ and retrieved five results per question.
 | BM25 | 0.556 | 0.778 | 0.667 | 0.313 ms |
 | Multilingual E5 | 0.889 | 1.000 | 0.944 | 15.114 ms |
 | Hybrid RRF | 0.778 | 1.000 | 0.889 | 88.215 ms |
-| Hybrid RRF + reranker | 1.000 | 1.000 | 1.000 | 3,794.862 ms |
+| Hybrid RRF + BGE reranker | 1.000 | 1.000 | 1.000 | 1,488.462 ms |
 
 Semantic search uses `intfloat/multilingual-e5-base`. Semantic latency
 includes query embedding and vector comparison but excludes model loading.
+
+Reranking uses `BAAI/bge-reranker-v2-m3` over the top 10 hybrid
+candidates. Model-loading time is excluded; the first query includes
+inference warm-up.
 
 These results are preliminary because the evaluation set is small.
 
