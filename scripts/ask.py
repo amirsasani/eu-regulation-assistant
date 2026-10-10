@@ -9,6 +9,8 @@ from src.generation.client import generate_answer
 from src.generation.prompt import build_messages
 from src.retrieval.bm25 import create_bm25_index
 
+from src.retrieval.reranker import create_reranker
+
 
 DOCUMENTS_FILE = (utils.DATA_PROCESSED_PATH / "ai-act-articles.json")
 
@@ -17,7 +19,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--question", required=True)
     parser.add_argument("--top_k", type=int, default=5)
-    parser.add_argument("--candidate_k", type=int, default=20)
+    parser.add_argument("--candidate_k", type=int, default=10)
     parser.add_argument("--language", default="en")
     parser.add_argument("--llm_model", default=utils.DEFAULT_OPENROUTER_MODEL)
     args = parser.parse_args()
@@ -27,6 +29,8 @@ def main():
     bm25_retriever = create_bm25_index(documents, args.language)
     embedding_model = SentenceTransformer(MODEL_NAME)
 
+    reranker_model = create_reranker()
+
     sources = search_hybrid(
         query=args.question,
         bm25_retriever=bm25_retriever,
@@ -34,6 +38,7 @@ def main():
         top_k=args.top_k,
         candidate_k=args.candidate_k,
         language=args.language,
+        reranker_model=reranker_model,
     )
 
     messages = build_messages(question=args.question, documents=sources)
