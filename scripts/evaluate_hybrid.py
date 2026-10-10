@@ -115,7 +115,7 @@ def main():
     parser.add_argument("--output_file", type=Path, default=None)
     parser.add_argument("--language", default=LANGUAGE)
     parser.add_argument("--top_k", type=int, default=5)
-    parser.add_argument("--candidate_k", type=int, default=20)
+    parser.add_argument("--candidate_k", type=int, default=10)
     parser.add_argument("--rerank", action="store_true")
     args = parser.parse_args()
 
