@@ -1,8 +1,10 @@
 import argparse
 
-from sentence_transformers import SentenceTransformer
-
 import utils
+
+from sentence_transformers import SentenceTransformer, CrossEncoder
+
+from src.retrieval.reranker import create_reranker, rerank
 
 from src.database.vector_repository import search_similar
 from src.retrieval.bm25 import create_bm25_index, search as bm25_search
@@ -24,6 +26,7 @@ def search_hybrid(
     top_k: int,
     candidate_k: int,
     language: str,
+    reranker_model: CrossEncoder | None,
 ):
     bm25_results, _ = bm25_search(
         query=query,
@@ -36,9 +39,19 @@ def search_hybrid(
     query_embedding = create_query_embedding(query, model)
     semantic_documents = search_similar(query_embedding=query_embedding, top_k=candidate_k)
 
-    return reciprocal_rank_fusion(
+    fused_candidates = reciprocal_rank_fusion(
         bm25_documents=bm25_documents,
         semantic_documents=semantic_documents,
+        top_k=candidate_k,
+    )
+
+    if reranker_model is None:
+        return fused_candidates[:top_k]
+
+    return rerank(
+        query=query,
+        documents=fused_candidates,
+        reranker=reranker_model,
         top_k=top_k,
     )
 
@@ -47,6 +60,10 @@ def show_results(results: list[dict]):
     for rank, result in enumerate(results, start=1):
         print(f"\n{rank}. Article {result['article_number']} — {result['article_title']}")
         print(f"RRF score: {result['rrf_score']:.6f}")
+
+        if "reranker_score" in result:
+            print(f"Reranker score: {result['reranker_score']:.6f}")
+
         print(f"Retrieved by: {', '.join(result['retrieved_by'])}")
         print(f"Chunk: {result['chunk_id']}")
         print(result["text"][:400])
@@ -64,6 +81,8 @@ def main():
     bm25_retriever = create_bm25_index(documents, args.language)
     model = SentenceTransformer(MODEL_NAME)
 
+    reranker_model = create_reranker()
+
     results = search_hybrid(
         query=args.query,
         bm25_retriever=bm25_retriever,
@@ -71,6 +90,7 @@ def main():
         top_k=args.top_k,
         candidate_k=args.candidate_k,
         language=args.language,
+        reranker_model=reranker_model,
     )
     show_results(results)
 

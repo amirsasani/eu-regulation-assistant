@@ -1,0 +1,220 @@
+{
+    "method": "Hybrid RRF + reranker",
+    "questions_evaluated": 9,
+    "top_k": 5,
+    "candidate_k": 20,
+    "recall_at_1": 1.0,
+    "recall_at_5": 1.0,
+    "mrr": 1.0,
+    "average_latency_ms": 3794.862,
+    "failures": [],
+    "query_results": [
+        {
+            "id": "q001",
+            "question": "Which artificial intelligence practices are prohibited under the EU AI Act?",
+            "expected_articles": [
+                "5"
+            ],
+            "retrieved_articles": [
+                "5",
+                "5",
+                "5",
+                "1",
+                "5"
+            ],
+            "retrieved_chunks": [
+                "ai-act-en-article-5-paragraph-1",
+                "ai-act-en-article-5-paragraph-4",
+                "ai-act-en-article-5-paragraph-6",
+                "ai-act-en-article-1-paragraph-2",
+                "ai-act-en-article-5-paragraph-8"
+            ],
+            "first_relevant_rank": 1,
+            "latency_ms": 6828.671
+        },
+        {
+            "id": "q002",
+            "question": "How can I determine whether an AI system should be classified as high-risk?",
+            "expected_articles": [
+                "6"
+            ],
+            "retrieved_articles": [
+                "6",
+                "6",
+                "80",
+                "80",
+                "6"
+            ],
+            "retrieved_chunks": [
+                "ai-act-en-article-6-paragraph-1",
+                "ai-act-en-article-6-paragraph-3",
+                "ai-act-en-article-80-paragraph-1",
+                "ai-act-en-article-80-paragraph-2",
+                "ai-act-en-article-6-paragraph-4"
+            ],
+            "first_relevant_rank": 1,
+            "latency_ms": 1571.334
+        },
+        {
+            "id": "q003",
+            "question": "What risk management obligations apply to high-risk AI systems?",
+            "expected_articles": [
+                "9"
+            ],
+            "retrieved_articles": [
+                "9",
+                "16",
+                "9",
+                "9",
+                "9"
+            ],
+            "retrieved_chunks": [
+                "ai-act-en-article-9-paragraph-10",
+                "ai-act-en-article-16-paragraph-1",
+                "ai-act-en-article-9-paragraph-1",
+                "ai-act-en-article-9-paragraph-2",
+                "ai-act-en-article-9-paragraph-5"
+            ],
+            "first_relevant_rank": 1,
+            "latency_ms": 2097.829
+        },
+        {
+            "id": "q004",
+            "question": "What requirements apply to training, validation and testing data used by high-risk AI systems?",
+            "expected_articles": [
+                "10"
+            ],
+            "retrieved_articles": [
+                "10",
+                "10",
+                "10",
+                "42",
+                "74"
+            ],
+            "retrieved_chunks": [
+                "ai-act-en-article-10-paragraph-3",
+                "ai-act-en-article-10-paragraph-1",
+                "ai-act-en-article-10-paragraph-2",
+                "ai-act-en-article-42-paragraph-1",
+                "ai-act-en-article-74-paragraph-12"
+            ],
+            "first_relevant_rank": 1,
+            "latency_ms": 3530.148
+        },
+        {
+            "id": "q005",
+            "question": "Must high-risk AI systems automatically record events during their operation?",
+            "expected_articles": [
+                "12"
+            ],
+            "retrieved_articles": [
+                "12",
+                "12",
+                "19",
+                "26",
+                "12"
+            ],
+            "retrieved_chunks": [
+                "ai-act-en-article-12-paragraph-1",
+                "ai-act-en-article-12-paragraph-2",
+                "ai-act-en-article-19-paragraph-1",
+                "ai-act-en-article-26-paragraph-6",
+                "ai-act-en-article-12-paragraph-3"
+            ],
+            "first_relevant_rank": 1,
+            "latency_ms": 2063.756
+        },
+        {
+            "id": "q006",
+            "question": "What information must providers give deployers so that high-risk AI systems can be used correctly?",
+            "expected_articles": [
+                "13"
+            ],
+            "retrieved_articles": [
+                "13",
+                "26",
+                "13",
+                "26",
+                "13"
+            ],
+            "retrieved_chunks": [
+                "ai-act-en-article-13-paragraph-2",
+                "ai-act-en-article-26-paragraph-5",
+                "ai-act-en-article-13-paragraph-3",
+                "ai-act-en-article-26-paragraph-7",
+                "ai-act-en-article-13-paragraph-1"
+            ],
+            "first_relevant_rank": 1,
+            "latency_ms": 3734.35
+        },
+        {
+            "id": "q007",
+            "question": "How must human oversight be incorporated into a high-risk AI system?",
+            "expected_articles": [
+                "14"
+            ],
+            "retrieved_articles": [
+                "14",
+                "14",
+                "14",
+                "14",
+                "27"
+            ],
+            "retrieved_chunks": [
+                "ai-act-en-article-14-paragraph-4",
+                "ai-act-en-article-14-paragraph-2",
+                "ai-act-en-article-14-paragraph-3",
+                "ai-act-en-article-14-paragraph-1",
+                "ai-act-en-article-27-paragraph-1"
+            ],
+            "first_relevant_rank": 1,
+            "latency_ms": 3694.121
+        },
+        {
+            "id": "q008",
+            "question": "What must deployers do when monitoring a high-risk AI system and keeping its logs?",
+            "expected_articles": [
+                "26"
+            ],
+            "retrieved_articles": [
+                "26",
+                "26",
+                "26",
+                "19",
+                "26"
+            ],
+            "retrieved_chunks": [
+                "ai-act-en-article-26-paragraph-6",
+                "ai-act-en-article-26-paragraph-5",
+                "ai-act-en-article-26-paragraph-12",
+                "ai-act-en-article-19-paragraph-1",
+                "ai-act-en-article-26-paragraph-8"
+            ],
+            "first_relevant_rank": 1,
+            "latency_ms": 3803.041
+        },
+        {
+            "id": "q009",
+            "question": "When must people be informed that content is artificially generated or manipulated, including deepfakes?",
+            "expected_articles": [
+                "50"
+            ],
+            "retrieved_articles": [
+                "50",
+                "50",
+                "50",
+                "5",
+                "50"
+            ],
+            "retrieved_chunks": [
+                "ai-act-en-article-50-paragraph-4",
+                "ai-act-en-article-50-paragraph-2",
+                "ai-act-en-article-50-paragraph-7",
+                "ai-act-en-article-5-paragraph-1",
+                "ai-act-en-article-50-paragraph-1"
+            ],
+            "first_relevant_rank": 1,
+            "latency_ms": 6830.511
+        }
+    ]
+}

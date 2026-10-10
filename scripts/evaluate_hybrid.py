@@ -4,9 +4,12 @@ import time
 from pathlib import Path
 from pprint import pprint
 
-from sentence_transformers import SentenceTransformer
-
 import utils
+
+from sentence_transformers import SentenceTransformer, CrossEncoder
+
+from src.retrieval.reranker import create_reranker
+
 from scripts.search_hybrid import search_hybrid, MODEL_NAME
 from src.retrieval.bm25 import create_bm25_index
 
@@ -33,6 +36,7 @@ def evaluate(
     top_k: int,
     candidate_k: int,
     language: str,
+    reranker_model: CrossEncoder | None,
 ) -> dict:
     answerable_questions = [question for question in questions if question["relevant_articles"]]
 
@@ -56,6 +60,7 @@ def evaluate(
             top_k=top_k,
             candidate_k=candidate_k,
             language=language,
+            reranker_model=reranker_model,
         )
 
         latency_ms = (time.perf_counter() - started_at) * 1000
@@ -90,7 +95,7 @@ def evaluate(
     question_count = len(answerable_questions)
 
     return {
-        "method": "Hybrid BM25 + semantic RRF",
+        "method": ("Hybrid RRF + reranker" if reranker_model else "Hybrid RRF"),
         "questions_evaluated": question_count,
         "top_k": top_k,
         "candidate_k": candidate_k,
@@ -111,6 +116,7 @@ def main():
     parser.add_argument("--language", default=LANGUAGE)
     parser.add_argument("--top_k", type=int, default=5)
     parser.add_argument("--candidate_k", type=int, default=20)
+    parser.add_argument("--rerank", action="store_true")
     args = parser.parse_args()
 
     documents = utils.load_json_file(args.documents_file)
@@ -119,6 +125,8 @@ def main():
     bm25_retriever = create_bm25_index(documents, args.language)
     model = SentenceTransformer(MODEL_NAME)
 
+    reranker_model = (create_reranker() if args.rerank else None)
+
     results = evaluate(
         questions=questions,
         bm25_retriever=bm25_retriever,
@@ -126,6 +134,7 @@ def main():
         top_k=args.top_k,
         candidate_k=min(args.candidate_k, len(documents)),
         language=args.language,
+        reranker_model=reranker_model,
     )
 
     pprint(results)
