@@ -8,15 +8,29 @@ The project currently focuses on the **EU Artificial Intelligence Act** and uses
 
 ## Current status
 
+### Data ingestion
+
 - [x] Download and parse the EU AI Act
 - [x] Preserve article and paragraph metadata
+
+### Retrieval
+
 - [x] Implement BM25 keyword retrieval
 - [x] Create a labelled retrieval evaluation set
 - [x] Add semantic vector search
-- [x] Implement hybrid retrieval
-- [ ] Add reranking
-- [ ] Generate answers with source citations
+- [x] Store embeddings in PostgreSQL with pgvector
+- [x] Implement hybrid retrieval with Reciprocal Rank Fusion
+- [x] Evaluate BM25, semantic, and hybrid retrieval
+- [ ] Add reranking and evaluate its impact
+
+### RAG application
+
+- [x] Generate grounded answers with article and paragraph citations
+- [ ] Evaluate answer grounding and citation correctness
 - [ ] Expose the system through an API
+
+### Expansion
+
 - [ ] Add Italian-language support
 
 ## Retrieval results
