@@ -1,7 +1,9 @@
 import os
-
 import requests
+import utils
+from dotenv import load_dotenv
 
+load_dotenv(utils.PROJECT_ROOT / ".env")
 
 OPENROUTER_URL = ("https://openrouter.ai/api/v1/chat/completions")
 
