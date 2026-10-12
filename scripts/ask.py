@@ -21,7 +21,7 @@ def main():
     parser.add_argument("--top_k", type=int, default=5)
     parser.add_argument("--candidate_k", type=int, default=10)
     parser.add_argument("--language", default="en")
-    parser.add_argument("--llm_model", default=utils.DEFAULT_OPENROUTER_MODEL)
+    parser.add_argument("--llm_model", default=utils.DEFAULT_OLLAMA_MODEL)
     args = parser.parse_args()
 
     documents = utils.load_json_file(DOCUMENTS_FILE)

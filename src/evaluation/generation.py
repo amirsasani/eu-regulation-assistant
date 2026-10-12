@@ -1,7 +1,11 @@
 import re
 
 
-CITATION_PATTERN = re.compile(r"\[Article\s+(\d+),\s*paragraph\s+(\d+)\]", re.IGNORECASE)
+CITATION_PATTERN = re.compile(
+    r"[\[(]?\s*Article\s+(\d+)\s*,\s*"
+    r"paragraph\s+(\d+)\s*[\])]?",
+    re.IGNORECASE,
+)
 
 REFUSAL_PHRASES = (
     "not enough information",

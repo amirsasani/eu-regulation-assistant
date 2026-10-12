@@ -1,7 +1,12 @@
+import os
 import json
 from pathlib import Path
 
+from dotenv import load_dotenv
+
 PROJECT_ROOT = Path(__file__).parent
+
+load_dotenv(PROJECT_ROOT / ".env")
 
 DATA_PATH = PROJECT_ROOT / "data"
 
@@ -22,7 +27,8 @@ DEFAULT_SEMANTIC_MODEL_NAME = "intfloat/multilingual-e5-base"
 
 DEFAULT_RERANKER_MODEL = "BAAI/bge-reranker-v2-m3"
 
-DEFAULT_OPENROUTER_MODEL = "openrouter/free"
+DEFAULT_OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen3.5:4b")
+DEFAULT_OLLAMA_JUDGE_MODEL = os.getenv("OLLAMA_JUDGE_MODEL", "gemma3:4b")
 
 def load_json_file(file_path: Path, permission: str = "r", encoding: str = "utf-8"):
     with open(file_path, permission, encoding=encoding) as f:

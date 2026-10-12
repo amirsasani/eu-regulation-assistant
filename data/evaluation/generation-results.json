@@ -1,0 +1,367 @@
+{
+    "method": "Hybrid RRF + reranker + LLM",
+    "questions_evaluated": 4,
+    "citation_precision": 1.0,
+    "valid_citation_rate": 1.0,
+    "expected_source_recall": 0.889,
+    "refusal_accuracy": 1.0,
+    "average_retrieval_ms": 2843.769,
+    "average_generation_ms": 11255.577,
+    "average_total_latency_ms": 14099.346,
+    "query_results": [
+        {
+            "id": "g001",
+            "question": "What risk management obligations apply to high-risk AI systems?",
+            "answerable": true,
+            "answer": "Based on the supplied legal excerpts, the following risk management obligations apply to providers of high-risk AI systems:\n\n*   **Establishment and Maintenance:** A risk management system must be established, implemented, documented, and maintained for high-risk AI systems [Article 9, paragraph 1].\n*   **Process Requirements:** The risk management system is defined as a continuous iterative process covering the entire lifecycle of the system, requiring regular systematic review and updating. It must include specific steps such as identifying and analyzing risks (including those from misuse), estimating and evaluating risks, evaluating other risks based on post-market monitoring data, and adopting appropriate risk management measures [Article 9, paragraph 2].\n*   **Residual Risk Assessment:** The risk management measures adopted must ensure that the relevant residual risk associated with each hazard and the overall residual risk of the system are judged to be acceptable. When identifying these measures, providers must prioritize eliminating or reducing risks through adequate design and development where technically feasible, implement mitigation measures for risks that cannot be eliminated, and provide required information and training [Article 9, paragraph 5].\n\n*Note: While Article 16 lists general obligations for providers (such as having a quality management system compliant with Article 17), the specific content regarding the steps and criteria of the risk management system itself is detailed in Article 9.*",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "A risk management system must be established, implemented, documented and maintained.",
+                    "Risk management is a continuous lifecycle process requiring regular review and updating.",
+                    "The system must identify, evaluate and mitigate reasonably foreseeable risks.",
+                    "High-risk systems must be tested to identify suitable risk-management measures."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately reflects the requirements outlined in Article 9 of the EU AI Act, supported by multiple citations. The points covered are directly derived from the provided excerpts.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-en-article-9-paragraph-10",
+                    "article_number": "9",
+                    "paragraph_number": "10",
+                    "reranker_score": 0.9887634515762329
+                },
+                {
+                    "chunk_id": "ai-act-en-article-16-paragraph-1",
+                    "article_number": "16",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9870196580886841
+                },
+                {
+                    "chunk_id": "ai-act-en-article-9-paragraph-1",
+                    "article_number": "9",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9864044189453125
+                },
+                {
+                    "chunk_id": "ai-act-en-article-9-paragraph-2",
+                    "article_number": "9",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.9855651259422302
+                },
+                {
+                    "chunk_id": "ai-act-en-article-9-paragraph-5",
+                    "article_number": "9",
+                    "paragraph_number": "5",
+                    "reranker_score": 0.9853712320327759
+                }
+            ],
+            "retrieval_ms": 2547.396,
+            "generation_ms": 13806.173,
+            "total_latency_ms": 16353.569,
+            "citations": [
+                {
+                    "article": "9",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "9",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "9",
+                    "paragraph": "5"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "9",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "9",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "9",
+                    "paragraph": "5"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 0.667,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g002",
+            "question": "Must high-risk AI systems automatically record events during operation?",
+            "answerable": true,
+            "answer": "Yes, high-risk AI systems must technically allow for the automatic recording of events (logs) over the lifetime of the system [Article 12, paragraph 1]. Additionally, logging capabilities must enable the recording of specific events relevant to identifying risks, facilitating post-market monitoring, and monitoring operations [Article 12, paragraph 2].",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "High-risk systems must technically allow automatic event logging throughout their lifetime.",
+                    "Logging must support traceability, post-market monitoring and operational monitoring."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately reflects the requirements outlined in Article 12 of the EU AI Act, supported by citations to relevant paragraphs. It covers all expected points and provides sufficient evidence from the source excerpts.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-en-article-12-paragraph-1",
+                    "article_number": "12",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9980438947677612
+                },
+                {
+                    "chunk_id": "ai-act-en-article-12-paragraph-2",
+                    "article_number": "12",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.9895435571670532
+                },
+                {
+                    "chunk_id": "ai-act-en-article-26-paragraph-6",
+                    "article_number": "26",
+                    "paragraph_number": "6",
+                    "reranker_score": 0.9766721725463867
+                },
+                {
+                    "chunk_id": "ai-act-en-article-19-paragraph-1",
+                    "article_number": "19",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9762436747550964
+                },
+                {
+                    "chunk_id": "ai-act-en-article-12-paragraph-3",
+                    "article_number": "12",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.8983009457588196
+                }
+            ],
+            "retrieval_ms": 2864.133,
+            "generation_ms": 6312.948,
+            "total_latency_ms": 9177.081,
+            "citations": [
+                {
+                    "article": "12",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "12",
+                    "paragraph": "2"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "12",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "12",
+                    "paragraph": "2"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 1.0,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g003",
+            "question": "What transparency obligations apply to AI-generated content and deepfakes?",
+            "answerable": true,
+            "answer": "Based on the supplied legal excerpts, the following transparency obligations apply to AI-generated content and deepfakes:\n\n**1. Disclosure of Artificial Generation or Manipulation**\nDeployers of AI systems that generate or manipulate image, audio, video, or text content must disclose that the content has been artificially generated or manipulated. This applies specifically to:\n*   **Deep fakes:** Image, audio, or video content constituting a deep fake [Article 50, paragraph 4].\n*   **Public interest text:** Text published with the purpose of informing the public on matters of public interest [Article 50, paragraph 4].\n\n**2. Marking Outputs in Machine-Readable Format**\nProviders of AI systems (including general-purpose AI) generating synthetic audio, image, video, or text content must ensure that the outputs are marked in a machine-readable format and detectable as artificially generated or manipulated [Article 50, paragraph 2].\n\n**3. Limitations on Obligations**\nThese obligations do not apply in specific circumstances:\n*   **Criminal Justice:** The disclosure obligation for deepfakes does not apply where the use is authorized by law to detect, prevent, investigate, or prosecute criminal offences [Article 50, paragraph 4]. Similarly, the marking obligation for providers does not apply where systems are authorized for such purposes [Article 50, paragraph 2].\n*   **Artistic Works:** For deepfakes forming part of an evidently artistic, creative, satirical, fictional, or analogous work, the obligation is limited to disclosing the existence of the content in a manner that does not hamper the display or enjoyment of the work [Article 50, paragraph 4].\n*   **Public Interest Text:** The disclosure obligation for text published on matters of public interest does not apply where the content has undergone human review/editorial control and a natural or legal person holds editorial responsibility [Article 5",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "Providers must mark synthetic outputs in a machine-readable and detectable format.",
+                    "Deployers must disclose when image, audio or video content constitutes a deepfake."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately summarizes the transparency obligations outlined in Article 50 of the EU AI Act, supported by direct citations from the provided excerpts. It clearly identifies the key requirements regarding machine-readable marking and disclosure of deepfakes, and correctly notes the exceptions for criminal justice, artistic works, and public interest text scenarios.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-en-article-50-paragraph-4",
+                    "article_number": "50",
+                    "paragraph_number": "4",
+                    "reranker_score": 0.9983994364738464
+                },
+                {
+                    "chunk_id": "ai-act-en-article-50-paragraph-2",
+                    "article_number": "50",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.9475948214530945
+                },
+                {
+                    "chunk_id": "ai-act-en-article-50-paragraph-7",
+                    "article_number": "50",
+                    "paragraph_number": "7",
+                    "reranker_score": 0.8750383853912354
+                },
+                {
+                    "chunk_id": "ai-act-en-article-50-paragraph-1",
+                    "article_number": "50",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.7554550170898438
+                },
+                {
+                    "chunk_id": "ai-act-en-article-50-paragraph-3",
+                    "article_number": "50",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.5635568499565125
+                }
+            ],
+            "retrieval_ms": 2495.387,
+            "generation_ms": 15120.572,
+            "total_latency_ms": 17615.96,
+            "citations": [
+                {
+                    "article": "50",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "50",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "50",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "50",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "50",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "50",
+                    "paragraph": "4"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "50",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "50",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "50",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "50",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "50",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "50",
+                    "paragraph": "4"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 1.0,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g004",
+            "question": "Which encryption algorithm must every high-risk AI system use?",
+            "answerable": false,
+            "answer": "Based on the supplied legal excerpts, there is no information specifying which encryption algorithm every high-risk AI system must use.\n\nThe provided text mentions \"cybersecurity\" as a general requirement for high-risk AI systems [Article 15, paragraph 1] and lists cybersecurity metrics as part of the information that must be included in instructions for use [Article 13, paragraph 3]. However, none of the excerpts define specific encryption algorithms or mandate particular cryptographic standards.\n\nTherefore, the supplied excerpts do not contain enough information to answer this question.",
+            "model": "qwen3.5:4b",
+            "judge": null,
+            "sources": [
+                {
+                    "chunk_id": "ai-act-en-article-13-paragraph-3",
+                    "article_number": "13",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.16551905870437622
+                },
+                {
+                    "chunk_id": "ai-act-en-article-15-paragraph-1",
+                    "article_number": "15",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.053036123514175415
+                },
+                {
+                    "chunk_id": "ai-act-en-article-27-paragraph-1",
+                    "article_number": "27",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.039902277290821075
+                },
+                {
+                    "chunk_id": "ai-act-en-article-15-paragraph-4",
+                    "article_number": "15",
+                    "paragraph_number": "4",
+                    "reranker_score": 0.03152511641383171
+                },
+                {
+                    "chunk_id": "ai-act-en-article-31-paragraph-4",
+                    "article_number": "31",
+                    "paragraph_number": "4",
+                    "reranker_score": 0.030800016596913338
+                }
+            ],
+            "retrieval_ms": 3468.159,
+            "generation_ms": 9782.616,
+            "total_latency_ms": 13250.775,
+            "citations": [
+                {
+                    "article": "15",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "13",
+                    "paragraph": "3"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "15",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "13",
+                    "paragraph": "3"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 1.0,
+            "refused": true,
+            "refusal_correct": true
+        }
+    ],
+    "average_groundedness": 2.0,
+    "average_point_coverage": 2.0,
+    "average_citation_support": 2.0
+}

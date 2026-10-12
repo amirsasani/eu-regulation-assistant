@@ -1,19 +1,23 @@
 import argparse
 import json
 import time
+import os
 from pathlib import Path
 from pprint import pprint
+from dotenv import load_dotenv
 
 from sentence_transformers import SentenceTransformer
 
 import utils
 from scripts.search_hybrid import MODEL_NAME, search_hybrid
 from src.evaluation.generation import evaluate_answer
+from src.evaluation.judge import judge_answer
 from src.generation.client import generate_answer
 from src.generation.prompt import build_messages
 from src.retrieval.bm25 import create_bm25_index
 from src.retrieval.reranker import create_reranker
 
+load_dotenv(utils.PROJECT_ROOT / ".env")
 
 DOCUMENTS_FILE = (utils.DATA_PROCESSED_PATH / "ai-act-articles.json")
 QUESTIONS_FILE = (utils.DATA_EVAL_PATH / "generation_questions.json")
@@ -36,6 +40,7 @@ def evaluate(
     top_k: int,
     candidate_k: int,
     llm_model: str | None,
+    judge_model: str | None,
 ) -> dict:
     query_results = []
 
@@ -68,12 +73,24 @@ def evaluate(
             evaluation_item=item,
         )
 
+        judge_result = None
+
+        if item["answerable"]:
+            judge_result = judge_answer(
+                question=item["question"],
+                answer=generation["answer"],
+                expected_points=item["expected_points"],
+                sources=sources,
+                model=judge_model,
+            )
+
         query_results.append({
             "id": item["id"],
             "question": item["question"],
             "answerable": item["answerable"],
             "answer": generation["answer"],
             "model": generation["model"],
+            "judge": judge_result,
             "sources": [
                 {
                     "chunk_id": source["chunk_id"],
@@ -94,6 +111,8 @@ def evaluate(
         for result in query_results
         if result["answerable"]
     ]
+
+    judged_results = [result["judge"] for result in query_results if result["judge"]]
 
     return {
         "method": "Hybrid RRF + reranker + LLM",
@@ -118,6 +137,9 @@ def evaluate(
         "average_generation_ms": average(query_results, "generation_ms"),
         "average_total_latency_ms": average(query_results, "total_latency_ms"),
         "query_results": query_results,
+        "average_groundedness": average(judged_results, "groundedness"),
+        "average_point_coverage": average(judged_results, "point_coverage"),
+        "average_citation_support": average(judged_results, "citation_support"),
     }
 
 
@@ -130,7 +152,14 @@ def main():
     parser.add_argument("--top_k", type=int, default=5)
     parser.add_argument("--candidate_k", type=int, default=10)
     parser.add_argument("--llm_model", default=None)
+    parser.add_argument("--judge_model", default=None)
     args = parser.parse_args()
+
+
+    judge_model = (args.judge_model or os.getenv("OLLAMA_JUDGE_MODEL"))
+
+    if not judge_model:
+        raise ValueError("OLLAMA_JUDGE_MODEL is not configured.")
 
     documents = utils.load_json_file(args.documents_file)
     questions = utils.load_json_file(args.questions_file)
@@ -148,6 +177,7 @@ def main():
         top_k=args.top_k,
         candidate_k=args.candidate_k,
         llm_model=args.llm_model,
+        judge_model=judge_model,
     )
 
     pprint({key: value for key, value in results.items() if key != "query_results"})
