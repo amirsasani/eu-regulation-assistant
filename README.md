@@ -20,6 +20,7 @@ The project currently focuses on the **EU Artificial Intelligence Act** and uses
 - Evaluates retrieval, grounding and citation correctness
 - Exposes the complete RAG pipeline through FastAPI
 - Reports application and dependency readiness
+- Supports containerized API deployment
 
 ## Architecture
 
@@ -67,6 +68,8 @@ flowchart LR
 - [x] Generate grounded answers with article and paragraph citations
 - [x] Evaluate answer grounding and citation correctness
 - [x] Expose the system through an API
+- [x] Add API endpoint tests
+- [x] Containerize the FastAPI application
 
 ### Expansion
 
@@ -184,10 +187,15 @@ eu-regulation-assistant/
 │   ├── ingestion/
 │   ├── retrieval/
 │   └── services/
+├── tests/
+│   └── test_api.py
+├── .dockerignore
 ├── .env.example
+├── Dockerfile
 ├── docker-compose.yml
 ├── LICENSE
 ├── README.md
+├── requirements-dev.txt
 ├── requirements.txt
 └── utils.py
 ```
@@ -213,6 +221,12 @@ Install the Python dependencies:
 python -m pip install -r requirements.txt
 ```
 
+Install the development dependencies when running tests:
+
+```bash
+python -m pip install -r requirements-dev.txt
+```
+
 Create the environment configuration:
 
 ```bash
@@ -226,6 +240,7 @@ DATABASE_URL=postgresql://postgres:postgres@localhost:5432/eu_regulations
 OLLAMA_BASE_URL=http://localhost:11434
 OLLAMA_MODEL=qwen3.5:4b
 OLLAMA_JUDGE_MODEL=gemma3:4b
+OLLAMA_DOCKER_BASE_URL=http://host.docker.internal:11434
 ```
 
 Do not commit the `.env` file.
@@ -235,7 +250,7 @@ Do not commit the `.env` file.
 Start PostgreSQL with pgvector:
 
 ```bash
-docker compose up -d
+docker compose up -d postgres
 ```
 
 Initialize the database extension and table:
@@ -425,6 +440,73 @@ Example response:
 }
 ```
 
+## API tests
+
+The API tests use mocked RAG and dependency services, so they do not load local ML models or require PostgreSQL and Ollama to be running.
+
+Run the tests with:
+
+```bash
+python -m pytest
+```
+
+The tests cover:
+
+- Application health
+- PostgreSQL and Ollama readiness
+- Dependency failure responses
+- Successful question answering
+- Request validation
+
+## Containerized API
+
+The API and PostgreSQL can run through Docker Compose. Ollama remains on the host so it can use the locally installed model without duplicating it inside a container.
+
+Make Ollama reachable from Docker:
+
+```bash
+OLLAMA_HOST=0.0.0.0:11434 ollama serve
+```
+
+Build the application image:
+
+```bash
+docker compose build api
+```
+
+Initialize PostgreSQL, generate the semantic index and load the chunks:
+
+```bash
+docker compose run --rm indexer
+```
+
+Start the API and PostgreSQL:
+
+```bash
+docker compose up -d api
+```
+
+Check container status and application readiness:
+
+```bash
+docker compose ps
+curl http://127.0.0.1:8000/ready
+```
+
+Follow the API logs:
+
+```bash
+docker compose logs -f api
+```
+
+Stop the containers:
+
+```bash
+docker compose down
+```
+
+The image installs the CPU-only PyTorch build. The first build and startup can take several minutes because PyTorch and the sentence-transformer models must be downloaded. Hugging Face model files are retained in the `model_cache` Docker volume.
+
 ## Evaluation
 
 The retrieval evaluation uses manually labelled questions mapped to their relevant AI Act articles.
@@ -459,15 +541,15 @@ data/evaluation/generation-results.json
 - Local-model latency depends on the available hardware.
 - Document amendments and consolidated versions are not synchronized automatically.
 - The project exposes an HTTP API but does not yet include a graphical user interface.
+- Containerized API mode still requires Ollama to run on the host.
 
 ## Roadmap
 
-1. Add API tests and containerized deployment.
-2. Expand the retrieval and generation evaluation sets.
-3. Add Italian-language queries and answers.
-4. Add GDPR and NIS2 as additional data sources.
-5. Detect and process updated consolidated regulations automatically.
-6. Add a simple web interface.
+1. Expand the retrieval and generation evaluation sets.
+2. Add Italian-language queries and answers.
+3. Add GDPR and NIS2 as additional data sources.
+4. Detect and process updated consolidated regulations automatically.
+5. Add a simple web interface.
 
 ## License
 

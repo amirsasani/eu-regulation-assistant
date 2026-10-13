@@ -1,0 +1,17 @@
+.git
+.gitignore
+.env
+.venv
+.pytest_cache
+__pycache__
+*.py[cod]
+*.log
+.DS_Store
+
+data/raw
+data/indexes
+data/evaluation
+
+requirements-dev.txt
+tests
+duplicate_chunks.txt
