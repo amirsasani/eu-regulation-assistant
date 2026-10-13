@@ -17,6 +17,7 @@ The project currently focuses on the **EU Artificial Intelligence Act** and uses
 - Combines keyword and semantic search using Reciprocal Rank Fusion
 - Reranks candidates with a cross-encoder
 - Generates grounded answers using local Ollama models
+- Accepts English and Italian questions and answers in the selected language
 - Adds article and paragraph citations
 - Refuses questions that cannot be answered from the retrieved sources
 - Evaluates retrieval, grounding and citation correctness
@@ -78,7 +79,10 @@ flowchart LR
 
 ### Expansion
 
-- [ ] Add Italian-language support
+- [x] Accept Italian questions and generate Italian answers
+- [x] Add Italian API, service and prompt tests
+- [ ] Create an Italian-language evaluation set
+- [ ] Index the official Italian text of the EU AI Act
 - [ ] Add GDPR and NIS2 documents
 
 ## Why this project?
@@ -353,6 +357,18 @@ python -m scripts.ask \
 
 The command retrieves relevant passages, reranks them and generates an answer containing article and paragraph citations.
 
+Ask in Italian while retrieving from the English source text:
+
+```bash
+python -m scripts.ask \
+  --question "Quali obblighi di gestione del rischio si applicano ai sistemi di IA ad alto rischio?" \
+  --language it \
+  --top_k 5 \
+  --candidate_k 10
+```
+
+The multilingual embedding model supports cross-language retrieval. The current corpus remains English, and Ollama generates the final answer in Italian.
+
 ## API
 
 The FastAPI application loads the BM25 index, embedding model and reranker once during startup so they can be reused across requests.
@@ -421,7 +437,8 @@ curl -X POST http://127.0.0.1:8000/ask \
   -d '{
     "question": "What risk management obligations apply to high-risk AI systems?",
     "top_k": 5,
-    "candidate_k": 10
+    "candidate_k": 10,
+    "language": "en"
   }'
 ```
 
@@ -445,6 +462,23 @@ Example response:
 }
 ```
 
+### Ask in Italian
+
+Set `language` to `it` to use an Italian query and request an Italian answer:
+
+```bash
+curl -X POST http://127.0.0.1:8000/ask \
+  -H "Content-Type: application/json" \
+  -d '{
+    "question": "Quali obblighi di gestione del rischio si applicano ai sistemi di IA ad alto rischio?",
+    "top_k": 5,
+    "candidate_k": 10,
+    "language": "it"
+  }'
+```
+
+Supported values are `en` and `it`. English is used when `language` is omitted, and unsupported values return HTTP `422`. Citations keep their original article and paragraph format.
+
 ## API tests
 
 The API tests use mocked RAG and dependency services, so they do not load local ML models or require PostgreSQL and Ollama to be running.
@@ -461,6 +495,8 @@ The tests cover:
 - PostgreSQL and Ollama readiness
 - Dependency failure responses
 - Successful question answering
+- English and Italian language propagation
+- Rejection of unsupported languages
 - Request validation
 
 ## Containerized API
@@ -551,7 +587,9 @@ data/evaluation/generation-results.json
 
 ## Limitations
 
-- Only the English EU AI Act is currently indexed.
+- Only the English EU AI Act is currently indexed. Italian questions use cross-language semantic retrieval over English excerpts.
+- Italian BM25 matching is limited until the official Italian text is indexed.
+- Italian retrieval and generation metrics have not yet been measured on a labelled evaluation set.
 - The generation evaluation contains 20 manually labelled questions and has not been reviewed by a legal expert.
 - The answer-quality judge is a local language model rather than a legal expert.
 - Local-model latency depends on the available hardware.
@@ -561,10 +599,11 @@ data/evaluation/generation-results.json
 
 ## Roadmap
 
-1. Add Italian-language queries and answers.
-2. Add GDPR and NIS2 as additional data sources.
-3. Detect and process updated consolidated regulations automatically.
-4. Add a simple web interface.
+1. Create an Italian evaluation set and compare English and Italian retrieval quality.
+2. Index the official Italian text of the EU AI Act.
+3. Add GDPR and NIS2 as additional data sources.
+4. Detect and process updated consolidated regulations automatically.
+5. Add a simple web interface.
 
 ## License
 
