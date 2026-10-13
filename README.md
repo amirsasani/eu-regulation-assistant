@@ -1,5 +1,7 @@
 # EU Regulation Intelligence Assistant
 
+[![CI](https://github.com/amirsasani/eu-regulation-assistant/actions/workflows/ci.yml/badge.svg)](https://github.com/amirsasani/eu-regulation-assistant/actions/workflows/ci.yml)
+
 A retrieval-augmented generation (RAG) system for answering questions about European Union regulations with article and paragraph citations.
 
 The project currently focuses on the **EU Artificial Intelligence Act** and uses the official text published by [EUR-Lex](https://eur-lex.europa.eu/).
@@ -21,6 +23,7 @@ The project currently focuses on the **EU Artificial Intelligence Act** and uses
 - Exposes the complete RAG pipeline through FastAPI
 - Reports application and dependency readiness
 - Supports containerized API deployment
+- Runs automated tests with GitHub Actions
 
 ## Architecture
 
@@ -71,6 +74,7 @@ flowchart LR
 - [x] Expose the system through an API
 - [x] Add API endpoint tests
 - [x] Containerize the FastAPI application
+- [x] Run tests automatically with GitHub Actions
 
 ### Expansion
 
@@ -508,6 +512,17 @@ docker compose down
 
 The image installs the CPU-only PyTorch build. The first build and startup can take several minutes because PyTorch and the sentence-transformer models must be downloaded. Hugging Face model files are retained in the `model_cache` Docker volume.
 
+## Continuous integration
+
+GitHub Actions runs on every push and pull request. The workflow:
+
+- installs the CPU-only Python dependencies;
+- checks that the Python source compiles;
+- validates the Docker Compose configuration;
+- runs the API, evaluator and dataset-integrity tests.
+
+The tests use fakes for PostgreSQL, Ollama and the RAG service, so CI does not require external services or model downloads.
+
 ## Evaluation
 
 The retrieval evaluation uses manually labelled questions mapped to their relevant AI Act articles.
@@ -546,11 +561,10 @@ data/evaluation/generation-results.json
 
 ## Roadmap
 
-1. Add continuous integration with GitHub Actions.
-2. Add Italian-language queries and answers.
-3. Add GDPR and NIS2 as additional data sources.
-4. Detect and process updated consolidated regulations automatically.
-5. Add a simple web interface.
+1. Add Italian-language queries and answers.
+2. Add GDPR and NIS2 as additional data sources.
+3. Detect and process updated consolidated regulations automatically.
+4. Add a simple web interface.
 
 ## License
 
