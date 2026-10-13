@@ -1,3 +1,5 @@
+import utils
+
 SYSTEM_PROMPT = """
 You are an assistant for the EU AI Act.
 
@@ -32,12 +34,14 @@ Text:
     return "\n\n".join(sections)
 
 
-def build_messages(question: str, documents: list[dict]) -> list[dict]:
+def build_messages(question: str, documents: list[dict], language: str = "en") -> list[dict]:
     if not question.strip():
         raise ValueError("Question cannot be empty.")
 
     if not documents:
         raise ValueError("No retrieved documents supplied.")
+
+    language_name = utils.SUPPORTED_LANGUAGES[language]
 
     context = build_context(documents)
 
@@ -51,6 +55,8 @@ QUESTION
 {question}
 
 Provide a concise answer with article and paragraph citations.
+
+Answer in {language_name}. Keep article and paragraph citations in their original format.
 """.strip()
 
     return [

@@ -5,9 +5,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DOCUMENTS_FILE = PROJECT_ROOT / "data/processed/ai-act-articles.json"
 RETRIEVAL_QUESTIONS_FILE = PROJECT_ROOT / "data/evaluation/questions.json"
-GENERATION_QUESTIONS_FILE = (
-    PROJECT_ROOT / "data/evaluation/generation_questions.json"
-)
+GENERATION_QUESTIONS_FILE = (PROJECT_ROOT / "data/evaluation/generation_questions.json")
 
 
 def load_json(path: Path):

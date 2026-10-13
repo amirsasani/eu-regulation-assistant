@@ -8,8 +8,10 @@ api_module = importlib.import_module("src.api.app")
 
 
 class FakeRagService:
+    last_language = None
+
     def __init__(self):
-        pass
+        type(self).last_language = None
 
     def ask(
         self,
@@ -17,7 +19,10 @@ class FakeRagService:
         top_k: int = 5,
         candidate_k: int = 10,
         llm_model: str | None = None,
+        language: str = "en",
     ):
+        type(self).last_language = language
+
         if candidate_k < top_k:
             raise ValueError(
                 "candidate_k must be greater than or equal to top_k."
@@ -198,6 +203,31 @@ def test_ask_rejects_empty_question(client):
             "question": "",
             "top_k": 5,
             "candidate_k": 10,
+        },
+    )
+
+    assert response.status_code == 422
+
+
+def test_ask_passes_italian_language_to_service(client):
+    response = client.post(
+        "/ask",
+        json={
+            "question": "Quali obblighi di gestione del rischio si applicano?",
+            "language": "it",
+        },
+    )
+
+    assert response.status_code == 200
+    assert FakeRagService.last_language == "it"
+
+
+def test_ask_rejects_unsupported_language(client):
+    response = client.post(
+        "/ask",
+        json={
+            "question": "Quels sont les risques?",
+            "language": "fr",
         },
     )
 

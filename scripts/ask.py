@@ -12,13 +12,14 @@ def main():
     parser.add_argument("--llm_model", default=None)
     args = parser.parse_args()
 
-    service = RagService(language=args.language)
+    service = RagService()
 
     generation, sources = service.ask(
         question=args.question,
         top_k=args.top_k,
         candidate_k=args.candidate_k,
         llm_model=args.llm_model,
+        language=args.language,
     )
 
     print("\nANSWER\n")

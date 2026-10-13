@@ -30,6 +30,11 @@ DEFAULT_RERANKER_MODEL = "BAAI/bge-reranker-v2-m3"
 DEFAULT_OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen3.5:4b")
 DEFAULT_OLLAMA_JUDGE_MODEL = os.getenv("OLLAMA_JUDGE_MODEL", "gemma3:4b")
 
+SUPPORTED_LANGUAGES = {
+    "en": "English",
+    "it": "Italian",
+}
+
 def load_json_file(file_path: Path, permission: str = "r", encoding: str = "utf-8"):
     with open(file_path, permission, encoding=encoding) as f:
         return json.load(f)

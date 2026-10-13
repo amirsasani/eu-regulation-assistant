@@ -6,6 +6,7 @@ class AskRequest(BaseModel):
     question: str = Field(min_length=1)
     top_k: int = Field(default=5, ge=1, le=20)
     candidate_k: int = Field(default=10, ge=1, le=50)
+    language: Literal["en", "it"] = "en"
 
 
 class SourceResponse(BaseModel):

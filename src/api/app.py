@@ -107,7 +107,12 @@ def ask_question(payload: AskRequest, request: Request):
     service: RagService = request.app.state.rag_service
 
     try:
-        generation, sources = service.ask(question=payload.question, top_k=payload.top_k, candidate_k=payload.candidate_k)
+        generation, sources = service.ask(
+            question=payload.question,
+            top_k=payload.top_k,
+            candidate_k=payload.candidate_k,
+            language=payload.language
+        )
     except ValueError as error:
         raise HTTPException(status_code=422, detail=str(error)) from error
     except Exception as error:

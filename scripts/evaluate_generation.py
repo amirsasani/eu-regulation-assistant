@@ -59,7 +59,7 @@ def evaluate(
 
         retrieval_ms = (time.perf_counter() - retrieval_started) * 1000
 
-        messages = build_messages(question=item["question"], documents=sources)
+        messages = build_messages(question=item["question"], documents=sources, language=language)
 
         generation_started = time.perf_counter()
 
