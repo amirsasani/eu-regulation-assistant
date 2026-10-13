@@ -1,38 +1,66 @@
-import sys
-import io
-from fastapi import FastAPI
-from src.services.rag_service import ask as rag_ask
+from contextlib import asynccontextmanager
+
+from fastapi import FastAPI, HTTPException, Request
+
+from src.services.rag_service import RagService
+
+from src.api.schemas import (
+    AskRequest,
+    AskResponse,
+    HealthResponse,
+    SourceResponse,
+)
+
+import logging
+
+logger = logging.getLogger(__name__)
 
 
-app = FastAPI()
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    app.state.rag_service = RagService()
+    yield
 
 
-@app.get("/health")
-async def health():
-    ollama_connection = rag_ask(
-        question="What is the AI Act?",
-        top_k=1,
-        candidate_k=1,
-        language="en",
-        llm_model="default"
-    )
+app = FastAPI(
+    title="EU Regulation Intelligence Assistant",
+    version="0.1.0",
+    lifespan=lifespan,
+)
 
-    if ollama_connection:
-        return {"status": "ok"}
-    else:
-        return {"status": "error", "message": "Failed to connect to Ollama."}
 
-@app.post("/ask")
-async def ask_question(question: str, top_k: int = 5, candidate_k: int = 10, language: str = "en", llm_model: str = "default"):
-    generation, sources = rag_ask(
-        question=question,
-        top_k=top_k,
-        candidate_k=candidate_k,
-        language=language,
-        llm_model=llm_model
-    )
+@app.get("/health", response_model=HealthResponse)
+def health():
+    return HealthResponse(status="ok")
 
-    return {
-        "answer": generation['answer'],
-        "sources": sources
-    }
+
+@app.post("/ask", response_model=AskResponse)
+def ask_question(payload: AskRequest, request: Request):
+    service: RagService = request.app.state.rag_service
+
+    try:
+        generation, sources = service.ask(question=payload.question, top_k=payload.top_k, candidate_k=payload.candidate_k)
+    except ValueError as error:
+        raise HTTPException(status_code=422, detail=str(error)) from error
+    except Exception as error:
+        raise HTTPException(status_code=503, detail=str(error)) from error
+        # raise HTTPException(status_code=503, detail="The RAG service is currently unavailable.") from error
+
+    response_sources = [
+        SourceResponse(
+            chunk_id=source["chunk_id"],
+            article_number=str(source["article_number"]),
+            article_title=source.get("article_title"),
+            paragraph_number=source.get("paragraph_number"),
+            text=source["text"],
+            source_url=source.get("source_url"),
+            reranker_score=(
+                float(source["reranker_score"])
+                if source.get("reranker_score") is not None
+                else None
+            ),
+        )
+        for source in sources
+    ]
+
+    return AskResponse(answer=generation["answer"], model=generation["model"], sources=response_sources)
