@@ -81,7 +81,7 @@ flowchart LR
 
 - [x] Accept Italian questions and generate Italian answers
 - [x] Add Italian API, service and prompt tests
-- [ ] Create an Italian-language evaluation set
+- [x] Create an Italian-language evaluation set
 - [ ] Index the official Italian text of the EU AI Act
 - [ ] Add GDPR and NIS2 documents
 
@@ -97,9 +97,11 @@ The system is designed around three requirements:
 
 ## Retrieval results
 
-The retrieval evaluation contains 42 manually labelled questions: 38 answerable questions mapped to relevant EU AI Act articles and four unsupported questions reserved for refusal testing.
+The retrieval evaluation contains paired English and Italian datasets. Each has 42 manually labelled questions: 38 answerable questions mapped to relevant EU AI Act articles and four unsupported questions reserved for refusal testing.
 
-All retrieval configurations used the same document chunks and returned five results per answerable question. The reranker processed the top 10 hybrid candidates.
+All retrieval configurations used the same English document chunks and returned five results per answerable question. The reranker processed the top 10 hybrid candidates.
+
+### English questions
 
 | Method | Recall@1 | Recall@5 | MRR | Average latency |
 |---|---:|---:|---:|---:|
@@ -108,11 +110,22 @@ All retrieval configurations used the same document chunks and returned five res
 | Hybrid RRF | 0.737 | 0.947 | 0.831 | 63.928 ms |
 | Hybrid RRF + BGE reranker | 0.947 | 0.947 | 0.947 | 7,199.120 ms |
 
+### Italian questions over the English corpus
+
+| Method | Recall@1 | Recall@5 | MRR | Average latency |
+|---|---:|---:|---:|---:|
+| BM25 | 0.053 | 0.105 | 0.079 | 0.194 ms |
+| Multilingual E5 | 0.737 | 0.868 | 0.792 | 23.482 ms |
+| Hybrid RRF | 0.079 | 0.816 | 0.423 | 45.269 ms |
+| Hybrid RRF + BGE reranker | 0.816 | 0.868 | 0.842 | 860.502 ms |
+
 Semantic search uses `intfloat/multilingual-e5-base`. Its latency includes query embedding and vector comparison but excludes model loading.
 
 Reranking uses `BAAI/bge-reranker-v2-m3` over the top 10 hybrid candidates. Model-loading time is excluded, while the first query includes inference warm-up.
 
-These results remain preliminary because the dataset is manually constructed and covers a single regulation.
+The Italian benchmark measures cross-language retrieval because the indexed regulation is currently English. Multilingual semantic search transfers well, while BM25 has little shared vocabulary. Plain RRF inherits weak Italian BM25 rankings; the multilingual reranker recovers most of the semantic candidate quality.
+
+These results remain preliminary because the datasets are manually constructed, the Italian questions have not been reviewed by a legal translator and the corpus covers a single regulation.
 
 ## Generation evaluation
 
@@ -563,12 +576,22 @@ The tests use fakes for PostgreSQL, Ollama and the RAG service, so CI does not r
 
 The retrieval evaluation uses manually labelled questions mapped to their relevant AI Act articles.
 
-Run all retrieval evaluations:
+Run the English retrieval evaluations:
 
 ```bash
 python -m scripts.evaluate_bm25
 python -m scripts.evaluate_semantic
+python -m scripts.evaluate_hybrid --candidate_k 10
 python -m scripts.evaluate_hybrid --rerank --candidate_k 10
+```
+
+Run the paired Italian evaluation over the English corpus:
+
+```bash
+python -m scripts.evaluate_bm25 --questions_file data/evaluation/questions-it.json --language it --output_file data/evaluation/bm25-results-it.json
+python -m scripts.evaluate_semantic --questions data/evaluation/questions-it.json --output data/evaluation/semantic-results-it.json
+python -m scripts.evaluate_hybrid --questions_file data/evaluation/questions-it.json --language it --candidate_k 10 --output_file data/evaluation/hybrid-results-it.json
+python -m scripts.evaluate_hybrid --questions_file data/evaluation/questions-it.json --language it --candidate_k 10 --rerank --output_file data/evaluation/hybrid-reranked-results-it.json
 ```
 
 Run the generation evaluation:
@@ -589,7 +612,7 @@ data/evaluation/generation-results.json
 
 - Only the English EU AI Act is currently indexed. Italian questions use cross-language semantic retrieval over English excerpts.
 - Italian BM25 matching is limited until the official Italian text is indexed.
-- Italian retrieval and generation metrics have not yet been measured on a labelled evaluation set.
+- Italian answer-generation quality has not yet been measured on a labelled generation dataset.
 - The generation evaluation contains 20 manually labelled questions and has not been reviewed by a legal expert.
 - The answer-quality judge is a local language model rather than a legal expert.
 - Local-model latency depends on the available hardware.
@@ -599,11 +622,12 @@ data/evaluation/generation-results.json
 
 ## Roadmap
 
-1. Create an Italian evaluation set and compare English and Italian retrieval quality.
-2. Index the official Italian text of the EU AI Act.
-3. Add GDPR and NIS2 as additional data sources.
-4. Detect and process updated consolidated regulations automatically.
-5. Add a simple web interface.
+1. Index the official Italian text of the EU AI Act.
+2. Compare cross-language retrieval with retrieval over the Italian corpus.
+3. Add an Italian generation evaluation set.
+4. Add GDPR and NIS2 as additional data sources.
+5. Detect and process updated consolidated regulations automatically.
+6. Add a simple web interface.
 
 ## License
 

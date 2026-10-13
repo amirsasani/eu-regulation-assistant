@@ -1,0 +1,1305 @@
+{
+  "method": "semantic",
+  "questions_evaluated": 38,
+  "top_k": 5,
+  "recall_at_1": 0.7368421052631579,
+  "recall_at_5": 0.868421052631579,
+  "mrr": 0.7916666666666666,
+  "average_latency_ms": 23.482072342200187,
+  "failures": [
+    {
+      "id": "q004",
+      "question": "Quali requisiti si applicano ai dati di addestramento, validazione e prova utilizzati dai sistemi di IA ad alto rischio?",
+      "expected_articles": [
+        "10"
+      ],
+      "retrieved_articles": [
+        "42",
+        "16",
+        "26",
+        "13",
+        "43"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-42-paragraph-1",
+        "ai-act-en-article-16-paragraph-1",
+        "ai-act-en-article-26-paragraph-8",
+        "ai-act-en-article-13-paragraph-3",
+        "ai-act-en-article-43-paragraph-1"
+      ],
+      "scores": [
+        0.828115,
+        0.824421,
+        0.824131,
+        0.823807,
+        0.82373
+      ],
+      "first_relevant_rank": null,
+      "latency_ms": 18.593
+    },
+    {
+      "id": "q016",
+      "question": "Quali sono i principali obblighi di un fornitore di un sistema di IA ad alto rischio?",
+      "expected_articles": [
+        "16"
+      ],
+      "retrieved_articles": [
+        "24",
+        "24",
+        "24",
+        "24",
+        "24"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-24-paragraph-3",
+        "ai-act-en-article-24-paragraph-5",
+        "ai-act-en-article-24-paragraph-2",
+        "ai-act-en-article-24-paragraph-6",
+        "ai-act-en-article-24-paragraph-4"
+      ],
+      "scores": [
+        0.844894,
+        0.842697,
+        0.840402,
+        0.836902,
+        0.835469
+      ],
+      "first_relevant_rank": null,
+      "latency_ms": 13.915
+    },
+    {
+      "id": "q026",
+      "question": "Chi deve registrare i sistemi di IA ad alto rischio e il loro utilizzo nella banca dati dell'UE?",
+      "expected_articles": [
+        "49"
+      ],
+      "retrieved_articles": [
+        "71",
+        "71",
+        "71",
+        "26",
+        "80"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-71-paragraph-1",
+        "ai-act-en-article-71-paragraph-2",
+        "ai-act-en-article-71-paragraph-5",
+        "ai-act-en-article-26-paragraph-8",
+        "ai-act-en-article-80-paragraph-8"
+      ],
+      "scores": [
+        0.839361,
+        0.836574,
+        0.836245,
+        0.835948,
+        0.833675
+      ],
+      "first_relevant_rank": null,
+      "latency_ms": 14.2
+    },
+    {
+      "id": "q037",
+      "question": "Qual \u00e8 la data generale di applicazione del regolamento sull'intelligenza artificiale e quando iniziano ad applicarsi i capi I e II, le norme sull'IA per finalit\u00e0 generali e l'articolo 6, paragrafo 1?",
+      "expected_articles": [
+        "113"
+      ],
+      "retrieved_articles": [
+        "111",
+        "109",
+        "108",
+        "111",
+        "53"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-111-paragraph-1",
+        "ai-act-en-article-109-paragraph-1",
+        "ai-act-en-article-108-paragraph-1",
+        "ai-act-en-article-111-paragraph-2",
+        "ai-act-en-article-53-paragraph-1"
+      ],
+      "scores": [
+        0.838465,
+        0.836536,
+        0.836058,
+        0.834381,
+        0.833202
+      ],
+      "first_relevant_rank": null,
+      "latency_ms": 17.1
+    },
+    {
+      "id": "q038",
+      "question": "Come definisce il regolamento sull'intelligenza artificiale un sistema di IA?",
+      "expected_articles": [
+        "3"
+      ],
+      "retrieved_articles": [
+        "105",
+        "111",
+        "109",
+        "104",
+        "75"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-105-paragraph-1",
+        "ai-act-en-article-111-paragraph-1",
+        "ai-act-en-article-109-paragraph-1",
+        "ai-act-en-article-104-paragraph-1",
+        "ai-act-en-article-75-paragraph-1"
+      ],
+      "scores": [
+        0.825483,
+        0.822322,
+        0.821023,
+        0.820565,
+        0.819593
+      ],
+      "first_relevant_rank": null,
+      "latency_ms": 14.858
+    }
+  ],
+  "query_results": [
+    {
+      "id": "q001",
+      "question": "Quali pratiche di intelligenza artificiale sono vietate dal regolamento UE sull'intelligenza artificiale?",
+      "expected_articles": [
+        "5"
+      ],
+      "retrieved_articles": [
+        "105",
+        "2",
+        "5",
+        "5",
+        "74"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-105-paragraph-1",
+        "ai-act-en-article-2-paragraph-3",
+        "ai-act-en-article-5-paragraph-8",
+        "ai-act-en-article-5-paragraph-1",
+        "ai-act-en-article-74-paragraph-1"
+      ],
+      "scores": [
+        0.821833,
+        0.821499,
+        0.818823,
+        0.818668,
+        0.818458
+      ],
+      "first_relevant_rank": 3,
+      "latency_ms": 17.263
+    },
+    {
+      "id": "q002",
+      "question": "Come si pu\u00f2 determinare se un sistema di IA debba essere classificato ad alto rischio?",
+      "expected_articles": [
+        "6"
+      ],
+      "retrieved_articles": [
+        "6",
+        "80",
+        "80",
+        "6",
+        "80"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-6-paragraph-4",
+        "ai-act-en-article-80-paragraph-1",
+        "ai-act-en-article-80-paragraph-2",
+        "ai-act-en-article-6-paragraph-1",
+        "ai-act-en-article-80-paragraph-7"
+      ],
+      "scores": [
+        0.848975,
+        0.846053,
+        0.84469,
+        0.84015,
+        0.836055
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 17.745
+    },
+    {
+      "id": "q003",
+      "question": "Quali obblighi di gestione del rischio si applicano ai sistemi di IA ad alto rischio?",
+      "expected_articles": [
+        "9"
+      ],
+      "retrieved_articles": [
+        "9",
+        "80",
+        "9",
+        "9",
+        "16"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-9-paragraph-10",
+        "ai-act-en-article-80-paragraph-2",
+        "ai-act-en-article-9-paragraph-2",
+        "ai-act-en-article-9-paragraph-1",
+        "ai-act-en-article-16-paragraph-1"
+      ],
+      "scores": [
+        0.839702,
+        0.839294,
+        0.836236,
+        0.836114,
+        0.835018
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 15.973
+    },
+    {
+      "id": "q004",
+      "question": "Quali requisiti si applicano ai dati di addestramento, validazione e prova utilizzati dai sistemi di IA ad alto rischio?",
+      "expected_articles": [
+        "10"
+      ],
+      "retrieved_articles": [
+        "42",
+        "16",
+        "26",
+        "13",
+        "43"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-42-paragraph-1",
+        "ai-act-en-article-16-paragraph-1",
+        "ai-act-en-article-26-paragraph-8",
+        "ai-act-en-article-13-paragraph-3",
+        "ai-act-en-article-43-paragraph-1"
+      ],
+      "scores": [
+        0.828115,
+        0.824421,
+        0.824131,
+        0.823807,
+        0.82373
+      ],
+      "first_relevant_rank": null,
+      "latency_ms": 18.593
+    },
+    {
+      "id": "q005",
+      "question": "I sistemi di IA ad alto rischio devono registrare automaticamente gli eventi durante il loro funzionamento?",
+      "expected_articles": [
+        "12"
+      ],
+      "retrieved_articles": [
+        "12",
+        "73",
+        "12",
+        "73",
+        "73"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-12-paragraph-1",
+        "ai-act-en-article-73-paragraph-10",
+        "ai-act-en-article-12-paragraph-2",
+        "ai-act-en-article-73-paragraph-1",
+        "ai-act-en-article-73-paragraph-9"
+      ],
+      "scores": [
+        0.842662,
+        0.826865,
+        0.825441,
+        0.822005,
+        0.821396
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 14.411
+    },
+    {
+      "id": "q006",
+      "question": "Quali informazioni devono fornire i fornitori ai deployer affinch\u00e9 i sistemi di IA ad alto rischio siano utilizzati correttamente?",
+      "expected_articles": [
+        "13"
+      ],
+      "retrieved_articles": [
+        "13",
+        "13",
+        "26",
+        "26",
+        "26"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-13-paragraph-1",
+        "ai-act-en-article-13-paragraph-2",
+        "ai-act-en-article-26-paragraph-7",
+        "ai-act-en-article-26-paragraph-5",
+        "ai-act-en-article-26-paragraph-9"
+      ],
+      "scores": [
+        0.853302,
+        0.851267,
+        0.850617,
+        0.849871,
+        0.849392
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 14.681
+    },
+    {
+      "id": "q007",
+      "question": "In che modo deve essere integrata la sorveglianza umana in un sistema di IA ad alto rischio?",
+      "expected_articles": [
+        "14"
+      ],
+      "retrieved_articles": [
+        "80",
+        "82",
+        "80",
+        "14",
+        "74"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-80-paragraph-2",
+        "ai-act-en-article-82-paragraph-1",
+        "ai-act-en-article-80-paragraph-1",
+        "ai-act-en-article-14-paragraph-4",
+        "ai-act-en-article-74-paragraph-13"
+      ],
+      "scores": [
+        0.822322,
+        0.821842,
+        0.816753,
+        0.816167,
+        0.81586
+      ],
+      "first_relevant_rank": 4,
+      "latency_ms": 14.659
+    },
+    {
+      "id": "q008",
+      "question": "Cosa devono fare i deployer per monitorare un sistema di IA ad alto rischio e conservarne i log?",
+      "expected_articles": [
+        "26"
+      ],
+      "retrieved_articles": [
+        "26",
+        "26",
+        "72",
+        "26",
+        "26"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-26-paragraph-6",
+        "ai-act-en-article-26-paragraph-5",
+        "ai-act-en-article-72-paragraph-2",
+        "ai-act-en-article-26-paragraph-12",
+        "ai-act-en-article-26-paragraph-1"
+      ],
+      "scores": [
+        0.84874,
+        0.84158,
+        0.827443,
+        0.822426,
+        0.821741
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 14.096
+    },
+    {
+      "id": "q009",
+      "question": "Quando le persone devono essere informate che un contenuto \u00e8 stato generato o manipolato artificialmente, compresi i deepfake?",
+      "expected_articles": [
+        "50"
+      ],
+      "retrieved_articles": [
+        "50",
+        "50",
+        "50",
+        "14",
+        "50"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-50-paragraph-4",
+        "ai-act-en-article-50-paragraph-2",
+        "ai-act-en-article-50-paragraph-3",
+        "ai-act-en-article-14-paragraph-4",
+        "ai-act-en-article-50-paragraph-7"
+      ],
+      "scores": [
+        0.838947,
+        0.810558,
+        0.801221,
+        0.791848,
+        0.791338
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 270.437
+    },
+    {
+      "id": "q011",
+      "question": "Il regolamento sull'intelligenza artificiale si applica a un fornitore con sede fuori dall'UE quando l'output del suo sistema di IA \u00e8 utilizzato nell'Unione?",
+      "expected_articles": [
+        "2"
+      ],
+      "retrieved_articles": [
+        "2",
+        "2",
+        "74",
+        "74",
+        "81"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-2-paragraph-1",
+        "ai-act-en-article-2-paragraph-3",
+        "ai-act-en-article-74-paragraph-8",
+        "ai-act-en-article-74-paragraph-2",
+        "ai-act-en-article-81-paragraph-2"
+      ],
+      "scores": [
+        0.81993,
+        0.815119,
+        0.814015,
+        0.810208,
+        0.809559
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 74.131
+    },
+    {
+      "id": "q012",
+      "question": "Cosa devono fare i fornitori e i deployer per garantire che il loro personale possieda un livello sufficiente di alfabetizzazione in materia di IA?",
+      "expected_articles": [
+        "4"
+      ],
+      "retrieved_articles": [
+        "4",
+        "13",
+        "26",
+        "26",
+        "26"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-4-paragraph-1",
+        "ai-act-en-article-13-paragraph-1",
+        "ai-act-en-article-26-paragraph-7",
+        "ai-act-en-article-26-paragraph-2",
+        "ai-act-en-article-26-paragraph-12"
+      ],
+      "scores": [
+        0.839297,
+        0.816504,
+        0.815875,
+        0.814309,
+        0.812166
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 15.781
+    },
+    {
+      "id": "q013",
+      "question": "Quando pu\u00f2 un sistema di IA elencato nell'allegato III evitare di essere classificato ad alto rischio?",
+      "expected_articles": [
+        "6"
+      ],
+      "retrieved_articles": [
+        "6",
+        "80",
+        "6",
+        "80",
+        "80"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-6-paragraph-4",
+        "ai-act-en-article-80-paragraph-1",
+        "ai-act-en-article-6-paragraph-3",
+        "ai-act-en-article-80-paragraph-2",
+        "ai-act-en-article-80-paragraph-7"
+      ],
+      "scores": [
+        0.850942,
+        0.85012,
+        0.848112,
+        0.846791,
+        0.844384
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 14.423
+    },
+    {
+      "id": "q014",
+      "question": "Quale documentazione tecnica deve essere predisposta per un sistema di IA ad alto rischio prima della sua immissione sul mercato?",
+      "expected_articles": [
+        "11"
+      ],
+      "retrieved_articles": [
+        "6",
+        "11",
+        "11",
+        "23",
+        "16"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-6-paragraph-4",
+        "ai-act-en-article-11-paragraph-1",
+        "ai-act-en-article-11-paragraph-2",
+        "ai-act-en-article-23-paragraph-1",
+        "ai-act-en-article-16-paragraph-1"
+      ],
+      "scores": [
+        0.836729,
+        0.836543,
+        0.83301,
+        0.83076,
+        0.83007
+      ],
+      "first_relevant_rank": 2,
+      "latency_ms": 14.981
+    },
+    {
+      "id": "q015",
+      "question": "Quali requisiti di accuratezza, robustezza e cibersicurezza si applicano ai sistemi di IA ad alto rischio?",
+      "expected_articles": [
+        "15"
+      ],
+      "retrieved_articles": [
+        "15",
+        "15",
+        "15",
+        "15",
+        "42"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-15-paragraph-1",
+        "ai-act-en-article-15-paragraph-4",
+        "ai-act-en-article-15-paragraph-3",
+        "ai-act-en-article-15-paragraph-5",
+        "ai-act-en-article-42-paragraph-2"
+      ],
+      "scores": [
+        0.858299,
+        0.857318,
+        0.85135,
+        0.851225,
+        0.843289
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 14.306
+    },
+    {
+      "id": "q016",
+      "question": "Quali sono i principali obblighi di un fornitore di un sistema di IA ad alto rischio?",
+      "expected_articles": [
+        "16"
+      ],
+      "retrieved_articles": [
+        "24",
+        "24",
+        "24",
+        "24",
+        "24"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-24-paragraph-3",
+        "ai-act-en-article-24-paragraph-5",
+        "ai-act-en-article-24-paragraph-2",
+        "ai-act-en-article-24-paragraph-6",
+        "ai-act-en-article-24-paragraph-4"
+      ],
+      "scores": [
+        0.844894,
+        0.842697,
+        0.840402,
+        0.836902,
+        0.835469
+      ],
+      "first_relevant_rank": null,
+      "latency_ms": 13.915
+    },
+    {
+      "id": "q017",
+      "question": "Cosa deve includere un fornitore nel proprio sistema di gestione della qualit\u00e0?",
+      "expected_articles": [
+        "17"
+      ],
+      "retrieved_articles": [
+        "17",
+        "17",
+        "17",
+        "17",
+        "16"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-17-paragraph-2",
+        "ai-act-en-article-17-paragraph-4",
+        "ai-act-en-article-17-paragraph-3",
+        "ai-act-en-article-17-paragraph-1",
+        "ai-act-en-article-16-paragraph-1"
+      ],
+      "scores": [
+        0.817556,
+        0.814509,
+        0.812533,
+        0.793493,
+        0.791062
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 14.866
+    },
+    {
+      "id": "q018",
+      "question": "Per quanto tempo i fornitori devono conservare la documentazione relativa ai sistemi di IA ad alto rischio?",
+      "expected_articles": [
+        "18"
+      ],
+      "retrieved_articles": [
+        "18",
+        "23",
+        "26",
+        "19",
+        "47"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-18-paragraph-1",
+        "ai-act-en-article-23-paragraph-5",
+        "ai-act-en-article-26-paragraph-6",
+        "ai-act-en-article-19-paragraph-1",
+        "ai-act-en-article-47-paragraph-1"
+      ],
+      "scores": [
+        0.861347,
+        0.852463,
+        0.845117,
+        0.837012,
+        0.834651
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 14.383
+    },
+    {
+      "id": "q019",
+      "question": "Quali obblighi ha il rappresentante autorizzato di un fornitore con sede fuori dall'UE?",
+      "expected_articles": [
+        "22"
+      ],
+      "retrieved_articles": [
+        "99",
+        "22",
+        "24",
+        "22",
+        "24"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-99-paragraph-4",
+        "ai-act-en-article-22-paragraph-3",
+        "ai-act-en-article-24-paragraph-4",
+        "ai-act-en-article-22-paragraph-1",
+        "ai-act-en-article-24-paragraph-1"
+      ],
+      "scores": [
+        0.795575,
+        0.793813,
+        0.79032,
+        0.789718,
+        0.788908
+      ],
+      "first_relevant_rank": 2,
+      "latency_ms": 14.392
+    },
+    {
+      "id": "q020",
+      "question": "Cosa deve verificare un importatore prima di immettere un sistema di IA ad alto rischio sul mercato dell'UE?",
+      "expected_articles": [
+        "23"
+      ],
+      "retrieved_articles": [
+        "23",
+        "23",
+        "24",
+        "23",
+        "80"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-23-paragraph-1",
+        "ai-act-en-article-23-paragraph-2",
+        "ai-act-en-article-24-paragraph-1",
+        "ai-act-en-article-23-paragraph-5",
+        "ai-act-en-article-80-paragraph-8"
+      ],
+      "scores": [
+        0.852414,
+        0.845621,
+        0.831919,
+        0.828091,
+        0.823217
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 13.877
+    },
+    {
+      "id": "q021",
+      "question": "Quali controlli deve effettuare un distributore prima di mettere a disposizione un sistema di IA ad alto rischio?",
+      "expected_articles": [
+        "24"
+      ],
+      "retrieved_articles": [
+        "24",
+        "24",
+        "24",
+        "24",
+        "24"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-24-paragraph-4",
+        "ai-act-en-article-24-paragraph-2",
+        "ai-act-en-article-24-paragraph-1",
+        "ai-act-en-article-24-paragraph-3",
+        "ai-act-en-article-24-paragraph-5"
+      ],
+      "scores": [
+        0.836354,
+        0.8353,
+        0.832982,
+        0.830283,
+        0.829762
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 14.193
+    },
+    {
+      "id": "q022",
+      "question": "Quando un distributore, importatore, deployer o altro terzo \u00e8 considerato il fornitore di un sistema di IA ad alto rischio?",
+      "expected_articles": [
+        "25"
+      ],
+      "retrieved_articles": [
+        "25",
+        "24",
+        "24",
+        "24",
+        "24"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-25-paragraph-1",
+        "ai-act-en-article-24-paragraph-2",
+        "ai-act-en-article-24-paragraph-4",
+        "ai-act-en-article-24-paragraph-5",
+        "ai-act-en-article-24-paragraph-3"
+      ],
+      "scores": [
+        0.841732,
+        0.835835,
+        0.830892,
+        0.829297,
+        0.829017
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 14.715
+    },
+    {
+      "id": "q023",
+      "question": "Quali responsabilit\u00e0 hanno i deployer riguardo ai dati di input, alla sorveglianza umana e al monitoraggio operativo?",
+      "expected_articles": [
+        "26"
+      ],
+      "retrieved_articles": [
+        "26",
+        "26",
+        "26",
+        "26",
+        "26"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-26-paragraph-2",
+        "ai-act-en-article-26-paragraph-5",
+        "ai-act-en-article-26-paragraph-4",
+        "ai-act-en-article-26-paragraph-3",
+        "ai-act-en-article-26-paragraph-6"
+      ],
+      "scores": [
+        0.836433,
+        0.829762,
+        0.828203,
+        0.820513,
+        0.814512
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 14.858
+    },
+    {
+      "id": "q024",
+      "question": "Chi deve effettuare una valutazione d'impatto sui diritti fondamentali prima di utilizzare un sistema di IA ad alto rischio?",
+      "expected_articles": [
+        "27"
+      ],
+      "retrieved_articles": [
+        "27",
+        "27",
+        "27",
+        "27",
+        "27"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-27-paragraph-2",
+        "ai-act-en-article-27-paragraph-1",
+        "ai-act-en-article-27-paragraph-5",
+        "ai-act-en-article-27-paragraph-4",
+        "ai-act-en-article-27-paragraph-3"
+      ],
+      "scores": [
+        0.850909,
+        0.840503,
+        0.836869,
+        0.832649,
+        0.824585
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 14.74
+    },
+    {
+      "id": "q025",
+      "question": "Quando un sistema di IA ad alto rischio modificato in modo sostanziale deve essere sottoposto a una nuova valutazione della conformit\u00e0?",
+      "expected_articles": [
+        "43"
+      ],
+      "retrieved_articles": [
+        "43",
+        "43",
+        "80",
+        "52",
+        "43"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-43-paragraph-4",
+        "ai-act-en-article-43-paragraph-1",
+        "ai-act-en-article-80-paragraph-2",
+        "ai-act-en-article-52-paragraph-5",
+        "ai-act-en-article-43-paragraph-3"
+      ],
+      "scores": [
+        0.857458,
+        0.820375,
+        0.81557,
+        0.814508,
+        0.812701
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 15.93
+    },
+    {
+      "id": "q026",
+      "question": "Chi deve registrare i sistemi di IA ad alto rischio e il loro utilizzo nella banca dati dell'UE?",
+      "expected_articles": [
+        "49"
+      ],
+      "retrieved_articles": [
+        "71",
+        "71",
+        "71",
+        "26",
+        "80"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-71-paragraph-1",
+        "ai-act-en-article-71-paragraph-2",
+        "ai-act-en-article-71-paragraph-5",
+        "ai-act-en-article-26-paragraph-8",
+        "ai-act-en-article-80-paragraph-8"
+      ],
+      "scores": [
+        0.839361,
+        0.836574,
+        0.836245,
+        0.835948,
+        0.833675
+      ],
+      "first_relevant_rank": null,
+      "latency_ms": 14.2
+    },
+    {
+      "id": "q027",
+      "question": "Un chatbot deve informare una persona che sta interagendo con un sistema di IA?",
+      "expected_articles": [
+        "50"
+      ],
+      "retrieved_articles": [
+        "50",
+        "61",
+        "26",
+        "50",
+        "75"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-50-paragraph-1",
+        "ai-act-en-article-61-paragraph-1",
+        "ai-act-en-article-26-paragraph-7",
+        "ai-act-en-article-50-paragraph-3",
+        "ai-act-en-article-75-paragraph-3"
+      ],
+      "scores": [
+        0.80601,
+        0.799876,
+        0.796823,
+        0.796005,
+        0.795658
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 14.54
+    },
+    {
+      "id": "q028",
+      "question": "Quando un modello di IA per finalit\u00e0 generali \u00e8 classificato come modello con rischio sistemico?",
+      "expected_articles": [
+        "51"
+      ],
+      "retrieved_articles": [
+        "51",
+        "52",
+        "52",
+        "55",
+        "55"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-51-paragraph-1",
+        "ai-act-en-article-52-paragraph-5",
+        "ai-act-en-article-52-paragraph-2",
+        "ai-act-en-article-55-paragraph-2",
+        "ai-act-en-article-55-paragraph-1"
+      ],
+      "scores": [
+        0.858198,
+        0.841742,
+        0.8362,
+        0.831033,
+        0.829589
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 15.368
+    },
+    {
+      "id": "q029",
+      "question": "Quali obblighi relativi alla documentazione, al diritto d'autore e ai contenuti di addestramento si applicano ai fornitori di modelli di IA per finalit\u00e0 generali?",
+      "expected_articles": [
+        "53"
+      ],
+      "retrieved_articles": [
+        "53",
+        "53",
+        "91",
+        "53",
+        "53"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-53-paragraph-1",
+        "ai-act-en-article-53-paragraph-4",
+        "ai-act-en-article-91-paragraph-5",
+        "ai-act-en-article-53-paragraph-2",
+        "ai-act-en-article-53-paragraph-5"
+      ],
+      "scores": [
+        0.848609,
+        0.827497,
+        0.827009,
+        0.825393,
+        0.824798
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 15.038
+    },
+    {
+      "id": "q030",
+      "question": "Quali obblighi aggiuntivi si applicano ai fornitori di modelli di IA per finalit\u00e0 generali con rischio sistemico?",
+      "expected_articles": [
+        "55"
+      ],
+      "retrieved_articles": [
+        "55",
+        "55",
+        "55",
+        "52",
+        "53"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-55-paragraph-2",
+        "ai-act-en-article-55-paragraph-1",
+        "ai-act-en-article-55-paragraph-3",
+        "ai-act-en-article-52-paragraph-5",
+        "ai-act-en-article-53-paragraph-2"
+      ],
+      "scores": [
+        0.852714,
+        0.849361,
+        0.840923,
+        0.831344,
+        0.828379
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 15.45
+    },
+    {
+      "id": "q031",
+      "question": "In che modo i fornitori devono monitorare un sistema di IA ad alto rischio dopo la sua immissione sul mercato?",
+      "expected_articles": [
+        "72"
+      ],
+      "retrieved_articles": [
+        "23",
+        "72",
+        "72",
+        "72",
+        "80"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-23-paragraph-2",
+        "ai-act-en-article-72-paragraph-1",
+        "ai-act-en-article-72-paragraph-2",
+        "ai-act-en-article-72-paragraph-4",
+        "ai-act-en-article-80-paragraph-2"
+      ],
+      "scores": [
+        0.843607,
+        0.841317,
+        0.840665,
+        0.839442,
+        0.838235
+      ],
+      "first_relevant_rank": 2,
+      "latency_ms": 15.098
+    },
+    {
+      "id": "q032",
+      "question": "Quali sono i termini per segnalare incidenti gravi che coinvolgono sistemi di IA ad alto rischio?",
+      "expected_articles": [
+        "73"
+      ],
+      "retrieved_articles": [
+        "73",
+        "73",
+        "73",
+        "73",
+        "73"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-73-paragraph-9",
+        "ai-act-en-article-73-paragraph-10",
+        "ai-act-en-article-73-paragraph-1",
+        "ai-act-en-article-73-paragraph-2",
+        "ai-act-en-article-73-paragraph-4"
+      ],
+      "scores": [
+        0.843529,
+        0.839946,
+        0.838738,
+        0.831192,
+        0.831179
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 15.788
+    },
+    {
+      "id": "q033",
+      "question": "Quando un'autorit\u00e0 di vigilanza del mercato pu\u00f2 richiedere l'accesso al codice sorgente di un sistema di IA ad alto rischio?",
+      "expected_articles": [
+        "74"
+      ],
+      "retrieved_articles": [
+        "74",
+        "75",
+        "80",
+        "80",
+        "46"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-74-paragraph-13",
+        "ai-act-en-article-75-paragraph-3",
+        "ai-act-en-article-80-paragraph-2",
+        "ai-act-en-article-80-paragraph-1",
+        "ai-act-en-article-46-paragraph-3"
+      ],
+      "scores": [
+        0.853356,
+        0.83154,
+        0.825473,
+        0.822487,
+        0.821724
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 15.477
+    },
+    {
+      "id": "q034",
+      "question": "Una persona o un'impresa pu\u00f2 presentare un reclamo a un'autorit\u00e0 di vigilanza del mercato per una violazione del regolamento sull'intelligenza artificiale?",
+      "expected_articles": [
+        "85"
+      ],
+      "retrieved_articles": [
+        "85",
+        "74",
+        "88",
+        "89",
+        "75"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-85-paragraph-1",
+        "ai-act-en-article-74-paragraph-2",
+        "ai-act-en-article-88-paragraph-2",
+        "ai-act-en-article-89-paragraph-2",
+        "ai-act-en-article-75-paragraph-3"
+      ],
+      "scores": [
+        0.836552,
+        0.82811,
+        0.820771,
+        0.820477,
+        0.820399
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 16.974
+    },
+    {
+      "id": "q035",
+      "question": "Quando una persona interessata ha diritto a una spiegazione di una decisione assistita dall'IA?",
+      "expected_articles": [
+        "86"
+      ],
+      "retrieved_articles": [
+        "86",
+        "86",
+        "91",
+        "92",
+        "86"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-86-paragraph-1",
+        "ai-act-en-article-86-paragraph-2",
+        "ai-act-en-article-91-paragraph-5",
+        "ai-act-en-article-92-paragraph-5",
+        "ai-act-en-article-86-paragraph-3"
+      ],
+      "scores": [
+        0.838316,
+        0.817304,
+        0.816378,
+        0.809546,
+        0.807444
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 16.089
+    },
+    {
+      "id": "q036",
+      "question": "Quali sono le sanzioni pecuniarie massime per le pratiche di IA vietate e per le altre violazioni commesse dagli operatori?",
+      "expected_articles": [
+        "99"
+      ],
+      "retrieved_articles": [
+        "99",
+        "100",
+        "100",
+        "99",
+        "101"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-99-paragraph-3",
+        "ai-act-en-article-100-paragraph-2",
+        "ai-act-en-article-100-paragraph-3",
+        "ai-act-en-article-99-paragraph-4",
+        "ai-act-en-article-101-paragraph-1"
+      ],
+      "scores": [
+        0.828317,
+        0.825298,
+        0.815799,
+        0.799736,
+        0.795762
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 15.487
+    },
+    {
+      "id": "q037",
+      "question": "Qual \u00e8 la data generale di applicazione del regolamento sull'intelligenza artificiale e quando iniziano ad applicarsi i capi I e II, le norme sull'IA per finalit\u00e0 generali e l'articolo 6, paragrafo 1?",
+      "expected_articles": [
+        "113"
+      ],
+      "retrieved_articles": [
+        "111",
+        "109",
+        "108",
+        "111",
+        "53"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-111-paragraph-1",
+        "ai-act-en-article-109-paragraph-1",
+        "ai-act-en-article-108-paragraph-1",
+        "ai-act-en-article-111-paragraph-2",
+        "ai-act-en-article-53-paragraph-1"
+      ],
+      "scores": [
+        0.838465,
+        0.836536,
+        0.836058,
+        0.834381,
+        0.833202
+      ],
+      "first_relevant_rank": null,
+      "latency_ms": 17.1
+    },
+    {
+      "id": "q038",
+      "question": "Come definisce il regolamento sull'intelligenza artificiale un sistema di IA?",
+      "expected_articles": [
+        "3"
+      ],
+      "retrieved_articles": [
+        "105",
+        "111",
+        "109",
+        "104",
+        "75"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-105-paragraph-1",
+        "ai-act-en-article-111-paragraph-1",
+        "ai-act-en-article-109-paragraph-1",
+        "ai-act-en-article-104-paragraph-1",
+        "ai-act-en-article-75-paragraph-1"
+      ],
+      "scores": [
+        0.825483,
+        0.822322,
+        0.821023,
+        0.820565,
+        0.819593
+      ],
+      "first_relevant_rank": null,
+      "latency_ms": 14.858
+    },
+    {
+      "id": "q039",
+      "question": "Per quanto tempo un deployer deve conservare i log generati da un sistema di IA ad alto rischio?",
+      "expected_articles": [
+        "26"
+      ],
+      "retrieved_articles": [
+        "26",
+        "19",
+        "26",
+        "23",
+        "73"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-26-paragraph-6",
+        "ai-act-en-article-19-paragraph-1",
+        "ai-act-en-article-26-paragraph-5",
+        "ai-act-en-article-23-paragraph-5",
+        "ai-act-en-article-73-paragraph-4"
+      ],
+      "scores": [
+        0.877478,
+        0.84848,
+        0.828575,
+        0.825938,
+        0.823698
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 13.503
+    }
+  ],
+  "model": "intfloat/multilingual-e5-base",
+  "embedding_dimension": 768
+}
