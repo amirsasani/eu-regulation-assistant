@@ -11,11 +11,6 @@ from src.api.schemas import (
     SourceResponse,
 )
 
-import logging
-
-logger = logging.getLogger(__name__)
-
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     app.state.rag_service = RagService()
@@ -43,8 +38,7 @@ def ask_question(payload: AskRequest, request: Request):
     except ValueError as error:
         raise HTTPException(status_code=422, detail=str(error)) from error
     except Exception as error:
-        raise HTTPException(status_code=503, detail=str(error)) from error
-        # raise HTTPException(status_code=503, detail="The RAG service is currently unavailable.") from error
+        raise HTTPException(status_code=503, detail="The RAG service is currently unavailable.") from error
 
     response_sources = [
         SourceResponse(

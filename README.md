@@ -63,7 +63,7 @@ flowchart LR
 
 - [x] Generate grounded answers with article and paragraph citations
 - [x] Evaluate answer grounding and citation correctness
-- [ ] Expose the system through an API
+- [x] Expose the system through an API
 
 ### Expansion
 
