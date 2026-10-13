@@ -1,3 +1,4 @@
+from typing import Literal
 from pydantic import BaseModel, Field
 
 
@@ -25,3 +26,22 @@ class AskResponse(BaseModel):
 
 class HealthResponse(BaseModel):
     status: str
+
+class PostgresReadiness(BaseModel):
+    status: Literal["ok", "unavailable"]
+    chunks: int | None = None
+
+
+class OllamaReadiness(BaseModel):
+    status: Literal["ok", "unavailable"]
+    models: list[str] = Field(default_factory=list)
+
+
+class ReadinessServices(BaseModel):
+    postgres: PostgresReadiness
+    ollama: OllamaReadiness
+
+
+class ReadinessResponse(BaseModel):
+    status: Literal["ok", "unavailable"]
+    services: ReadinessServices
