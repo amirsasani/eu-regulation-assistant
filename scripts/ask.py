@@ -1,19 +1,10 @@
 import argparse
-
-from sentence_transformers import SentenceTransformer
-
 import utils
-
-from scripts.search_hybrid import search_hybrid, MODEL_NAME
-from src.generation.client import generate_answer
-from src.generation.prompt import build_messages
-from src.retrieval.bm25 import create_bm25_index
-
-from src.retrieval.reranker import create_reranker
+from src.services.rag_service import ask as rag_ask
 
 
 DOCUMENTS_FILE = (utils.DATA_PROCESSED_PATH / "ai-act-articles.json")
-
+    
 
 def main():
     parser = argparse.ArgumentParser()
@@ -24,27 +15,14 @@ def main():
     parser.add_argument("--llm_model", default=utils.DEFAULT_OLLAMA_MODEL)
     args = parser.parse_args()
 
-    documents = utils.load_json_file(DOCUMENTS_FILE)
-
-    bm25_retriever = create_bm25_index(documents, args.language)
-    embedding_model = SentenceTransformer(MODEL_NAME)
-
-    reranker_model = create_reranker()
-
-    sources = search_hybrid(
-        query=args.question,
-        bm25_retriever=bm25_retriever,
-        model=embedding_model,
+    generation, sources = rag_ask(
+        question=args.question,
         top_k=args.top_k,
         candidate_k=args.candidate_k,
         language=args.language,
-        reranker_model=reranker_model,
+        llm_model=args.llm_model
     )
-
-    messages = build_messages(question=args.question, documents=sources)
-
-    generation = generate_answer(messages=messages, model=args.llm_model)
-
+    
     print("\nANSWER\n")
     print(generation["answer"])
 

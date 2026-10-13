@@ -7,3 +7,5 @@ numpy
 psycopg[binary]
 pgvector
 python-dotenv
+fastapi
+uvicorn[standard]
