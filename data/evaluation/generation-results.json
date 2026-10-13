@@ -1,13 +1,13 @@
 {
     "method": "Hybrid RRF + reranker + LLM",
-    "questions_evaluated": 4,
+    "questions_evaluated": 20,
     "citation_precision": 1.0,
     "valid_citation_rate": 1.0,
-    "expected_source_recall": 0.889,
-    "refusal_accuracy": 1.0,
-    "average_retrieval_ms": 2843.769,
-    "average_generation_ms": 11255.577,
-    "average_total_latency_ms": 14099.346,
+    "expected_source_recall": 0.767,
+    "refusal_accuracy": 0.95,
+    "average_retrieval_ms": 3966.561,
+    "average_generation_ms": 12890.616,
+    "average_total_latency_ms": 16857.177,
     "query_results": [
         {
             "id": "g001",
@@ -22,11 +22,11 @@
                 "covered_points": [
                     "A risk management system must be established, implemented, documented and maintained.",
                     "Risk management is a continuous lifecycle process requiring regular review and updating.",
-                    "The system must identify, evaluate and mitigate reasonably foreseeable risks.",
+                    "The process must identify, evaluate and address known and reasonably foreseeable risks.",
                     "High-risk systems must be tested to identify suitable risk-management measures."
                 ],
                 "unsupported_claims": [],
-                "reason": "The answer accurately reflects the requirements outlined in Article 9 of the EU AI Act, supported by multiple citations. The points covered are directly derived from the provided excerpts.",
+                "reason": "The answer accurately reflects the risk management obligations outlined in Article 9 of the EU AI Act, supported by multiple citations. It covers all the expected points and provides a comprehensive overview of the process.",
                 "judge_model": "gemma3:4b"
             },
             "sources": [
@@ -61,9 +61,9 @@
                     "reranker_score": 0.9853712320327759
                 }
             ],
-            "retrieval_ms": 2547.396,
-            "generation_ms": 13806.173,
-            "total_latency_ms": 16353.569,
+            "retrieval_ms": 1695.475,
+            "generation_ms": 13119.357,
+            "total_latency_ms": 14814.833,
             "citations": [
                 {
                     "article": "9",
@@ -149,9 +149,9 @@
                     "reranker_score": 0.8983009457588196
                 }
             ],
-            "retrieval_ms": 2864.133,
-            "generation_ms": 6312.948,
-            "total_latency_ms": 9177.081,
+            "retrieval_ms": 2784.364,
+            "generation_ms": 6794.124,
+            "total_latency_ms": 9578.488,
             "citations": [
                 {
                     "article": "12",
@@ -229,9 +229,9 @@
                     "reranker_score": 0.5635568499565125
                 }
             ],
-            "retrieval_ms": 2495.387,
-            "generation_ms": 15120.572,
-            "total_latency_ms": 17615.96,
+            "retrieval_ms": 2369.423,
+            "generation_ms": 15638.49,
+            "total_latency_ms": 18007.912,
             "citations": [
                 {
                     "article": "50",
@@ -330,9 +330,9 @@
                     "reranker_score": 0.030800016596913338
                 }
             ],
-            "retrieval_ms": 3468.159,
-            "generation_ms": 9782.616,
-            "total_latency_ms": 13250.775,
+            "retrieval_ms": 3563.31,
+            "generation_ms": 9929.26,
+            "total_latency_ms": 13492.571,
             "citations": [
                 {
                     "article": "15",
@@ -359,9 +359,1748 @@
             "expected_source_recall": 1.0,
             "refused": true,
             "refusal_correct": true
+        },
+        {
+            "id": "g005",
+            "question": "Does the AI Act apply to companies outside the EU?",
+            "answerable": true,
+            "answer": "Yes, the AI Act applies to certain companies outside the EU under specific conditions defined in **Article 2, paragraph 1**.\n\nThe regulation applies to:\n*   Providers placing on the market or putting into service AI systems or general-purpose AI models in the Union, even if they are not established within the Union (a third country) [Article 2, paragraph 1(a)].\n*   Deployers of AI systems located in a third country where the output produced by the AI system is used in the Union [Article 2, paragraph 1(c)].\n*   Providers and deployers of AI systems located in a third country where the output is used in the Union [Article 2, paragraph 1(c)].\n\nHowever, the Act does not apply to companies outside the EU if their activities are exclusively for military, defence, or national security purposes, regardless of whether the systems are placed on the market in the Union or used there [Article 2, paragraph 3].",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "The Act applies to providers placing AI systems or general-purpose AI models on the EU market regardless of where the provider is established.",
+                    "It also applies to third-country providers and deployers when the AI system's output is used in the Union."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately reflects the provisions of Article 2 of the AI Act, specifically outlining the conditions under which the Act applies to companies outside the EU. The citations directly support these claims.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-en-article-2-paragraph-3",
+                    "article_number": "2",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.903254508972168
+                },
+                {
+                    "chunk_id": "ai-act-en-article-2-paragraph-1",
+                    "article_number": "2",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.6423825621604919
+                },
+                {
+                    "chunk_id": "ai-act-en-article-74-paragraph-1",
+                    "article_number": "74",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.060457732528448105
+                },
+                {
+                    "chunk_id": "ai-act-en-article-5-paragraph-8",
+                    "article_number": "5",
+                    "paragraph_number": "8",
+                    "reranker_score": 0.045264046639204025
+                },
+                {
+                    "chunk_id": "ai-act-en-article-91-paragraph-5",
+                    "article_number": "91",
+                    "paragraph_number": "5",
+                    "reranker_score": 0.025280408561229706
+                }
+            ],
+            "retrieval_ms": 2554.687,
+            "generation_ms": 7783.209,
+            "total_latency_ms": 10337.896,
+            "citations": [
+                {
+                    "article": "2",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "2",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "2",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "2",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "2",
+                    "paragraph": "3"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "2",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "2",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "2",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "2",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "2",
+                    "paragraph": "3"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 1.0,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g006",
+            "question": "How does the AI Act determine whether an AI system is high-risk?",
+            "answerable": true,
+            "answer": "Based on the provided legal excerpts, the EU AI Act determines that an AI system is considered **high-risk** when it fulfills specific conditions regarding its intended use and regulatory status under Union harmonisation legislation.\n\nAccording to **Article 6, paragraph 1**, an AI system shall be considered high-risk if **both** of the following conditions are met:\n1.  The AI system is intended to be used as a safety component of a product, or the AI system itself is a product, covered by Union harmonisation legislation listed in Annex I; and\n2.  The product (either the one containing the safety component or the AI system itself) is required to undergo a third-party conformity assessment with a view to its placing on the market or putting into service pursuant to that same Union harmonisation legislation [Article 6, paragraph 1].\n\nAdditionally, **Article 80, paragraph 1** establishes a procedural mechanism where a market surveillance authority can re-classify an AI system as high-risk if it has sufficient reason to believe that a system classified by the provider as non-high-risk (under Article 6(3)) is indeed high-risk based on the conditions set out in **Article 6(3)** and Commission guidelines [Article 80, paragraph 1].\n\nFurthermore, **Article 79** (referenced in **Article 82, paragraph 1**) serves as a basis for determining risk even if an AI system complies with the Regulation; if an evaluation under Article 79 reveals that the system presents a risk to health, safety, fundamental rights, or public interest, it may be deemed high-risk despite compliance [Article 82, paragraph 1].\n\n*Note: The provided excerpts do not contain the full text of Article 6(3) regarding the specific list of high-risk categories (such as social scoring or biometric systems), only referencing it in the context of re-evaluation.*",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "A product-related system is high-risk when it is a safety component or covered product under Annex I and requires third-party conformity assessment.",
+                    "Systems listed in Annex III are also generally high-risk.",
+                    "An Annex III system may avoid that classification if it poses no significant risk and meets one of the specified limited-task conditions, but profiling systems remain high-risk.",
+                    "A provider relying on the exception must document the assessment before market placement or service."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately reflects the criteria for determining high-risk AI systems as outlined in the provided excerpts. It correctly identifies the conditions related to safety components, Annex I products, and conformity assessments. The answer also incorporates the re-evaluation mechanism described in Article 80 and the potential for risk even with compliance as detailed in Article 79.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-en-article-6-paragraph-1",
+                    "article_number": "6",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9831005334854126
+                },
+                {
+                    "chunk_id": "ai-act-en-article-9-paragraph-6",
+                    "article_number": "9",
+                    "paragraph_number": "6",
+                    "reranker_score": 0.9690417647361755
+                },
+                {
+                    "chunk_id": "ai-act-en-article-82-paragraph-1",
+                    "article_number": "82",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9655267000198364
+                },
+                {
+                    "chunk_id": "ai-act-en-article-80-paragraph-1",
+                    "article_number": "80",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9641384482383728
+                },
+                {
+                    "chunk_id": "ai-act-en-article-20-paragraph-2",
+                    "article_number": "20",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.9476898908615112
+                }
+            ],
+            "retrieval_ms": 3785.504,
+            "generation_ms": 15027.619,
+            "total_latency_ms": 18813.123,
+            "citations": [
+                {
+                    "article": "6",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "6",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "80",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "80",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "82",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "82",
+                    "paragraph": "1"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "6",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "6",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "80",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "80",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "82",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "82",
+                    "paragraph": "1"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 0.25,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g007",
+            "question": "What data-quality and governance requirements apply to high-risk AI systems?",
+            "answerable": true,
+            "answer": "Based on the provided legal excerpts, the data-quality and governance requirements for high-risk AI systems are as follows:\n\n**1. Development Basis for Training Data**\nHigh-risk AI systems that use techniques involving the training of AI models must be developed using training, validation, and testing data sets that meet specific quality criteria (defined in Articles 10, paragraphs 2 to 5). These requirements apply whenever such data sets are used [Article 10, paragraph 1].\n\n**2. Specific Quality Criteria for Data Sets**\nTraining, validation, and testing data sets must be:\n*   Relevant;\n*   Sufficiently representative;\n*   To the best extent possible, free of errors and complete in view of the intended purpose;\n*   Possessing appropriate statistical properties, including those regarding the persons or groups of persons for whom the system is intended [Article 10, paragraph 3].\n\n**3. Consideration of Contextual Characteristics**\nData sets must take into account, to the extent required by the intended purpose, the characteristics or elements particular to the specific geographical, contextual, behavioural, or functional setting where the high-risk AI system is used [Article 10, paragraph 4].\n\n**4. Data Management within Quality Systems**\nProviders of high-risk AI systems must implement a quality management system that includes specific systems and procedures for data management. This encompasses operations such as data acquisition, collection, analysis, labelling, storage, filtration, mining, aggregation, retention, and any other related operations performed before or for the purpose of placing the system on the market or putting it into service [Article 17, paragraph 1].\n\nAdditionally, providers must ensure their high-risk AI systems comply with accessibility requirements in accordance with specific Directives [Article 16, paragraph 1].",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "Training, validation and testing data must be managed under governance practices appropriate to the intended purpose, including data collection, preparation, assumptions and bias controls.",
+                    "The data sets must be relevant, sufficiently representative, as complete as possible and, to the best extent possible, error-free.",
+                    "The data must account for relevant geographical, contextual, behavioural or functional settings.",
+                    "Providers of high-risk AI systems must implement a quality management system that includes systems and procedures for data management, encompassing data acquisition, collection, analysis, labelling, storage, filtration, mining, aggregation, retention, and any related operations."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately summarizes the data-quality and governance requirements for high-risk AI systems as outlined in the provided legal excerpts. It draws directly from Articles 10, 17, 16, and references the relevant paragraphs to support each point. The expected points are also accurately derived from the source material.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-en-article-10-paragraph-1",
+                    "article_number": "10",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9846518039703369
+                },
+                {
+                    "chunk_id": "ai-act-en-article-17-paragraph-1",
+                    "article_number": "17",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9760225415229797
+                },
+                {
+                    "chunk_id": "ai-act-en-article-10-paragraph-3",
+                    "article_number": "10",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.9486264586448669
+                },
+                {
+                    "chunk_id": "ai-act-en-article-10-paragraph-4",
+                    "article_number": "10",
+                    "paragraph_number": "4",
+                    "reranker_score": 0.9434385895729065
+                },
+                {
+                    "chunk_id": "ai-act-en-article-16-paragraph-1",
+                    "article_number": "16",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.8914048075675964
+                }
+            ],
+            "retrieval_ms": 4369.733,
+            "generation_ms": 16286.712,
+            "total_latency_ms": 20656.445,
+            "citations": [
+                {
+                    "article": "10",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "10",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "10",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "17",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "10",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "10",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "10",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "17",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 0.667,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g008",
+            "question": "What transparency and instruction requirements apply to high-risk AI systems?",
+            "answerable": true,
+            "answer": "Based on the supplied legal excerpts, the transparency and instruction requirements for high-risk AI systems are as follows:\n\n**1. General Transparency Requirements**\nHigh-risk AI systems must be designed and developed to ensure their operation is sufficiently transparent so that deployers can interpret the system's output and use it appropriately. This transparency must align with the obligations set out in Section 3 of the Regulation [Article 13, paragraph 1].\n\n**2. Instructions for Use Requirements**\nHigh-risk AI systems must be accompanied by instructions for use (in an appropriate digital format or otherwise) that include concise, complete, correct, and clear information relevant to deployers [Article 13, paragraph 2]. These instructions must contain at least the following specific information:\n*   The identity and contact details of the provider (and authorized representative where applicable) [Article 13, paragraph 3(a)].\n*   Characteristics, capabilities, and limitations of performance, including intended purpose, expected levels of accuracy/robustness/cybersecurity, and known circumstances impacting these metrics [Article 13, paragraph 3(b)(i)-(ii)].\n*   Known or foreseeable circumstances related to use or misuse that may lead to risks to health, safety, or fundamental rights [Article 13, paragraph 3(b)(iii)].\n*   Technical capabilities to explain outputs where applicable [Article 13, paragraph 3(b)(iv)].\n*   Performance regarding specific persons or groups where appropriate [Article 13, paragraph 3(b)(v)].\n*   Specifications for input data and training/validation/testing datasets where appropriate [Article 13, paragraph 3(b)(vi)].\n*   Information enabling deployers to interpret outputs and use the system appropriately [Article 13, paragraph 3(b)(vii)].\n*   Changes to the system and performance pre-determined at the time of initial conformity assessment [Article 13, paragraph",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "The system must be transparent enough for deployers to interpret its output and use it appropriately.",
+                    "It must include concise, complete, correct, clear, accessible and comprehensible instructions for use.",
+                    "Instructions must describe matters including the provider, intended purpose, performance limitations, risks, human oversight, resources, maintenance and logging mechanisms."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately summarizes the transparency and instruction requirements for high-risk AI systems as outlined in the provided EU AI Act excerpts. All claims are directly supported by citations from the source documents. The covered points align with the detailed requirements specified in Articles 13 and 43 of the Regulation.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-en-article-13-paragraph-2",
+                    "article_number": "13",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.9935789108276367
+                },
+                {
+                    "chunk_id": "ai-act-en-article-13-paragraph-1",
+                    "article_number": "13",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9885643124580383
+                },
+                {
+                    "chunk_id": "ai-act-en-article-13-paragraph-3",
+                    "article_number": "13",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.9724097847938538
+                },
+                {
+                    "chunk_id": "ai-act-en-article-43-paragraph-3",
+                    "article_number": "43",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.9036784172058105
+                },
+                {
+                    "chunk_id": "ai-act-en-article-16-paragraph-1",
+                    "article_number": "16",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.8890188932418823
+                }
+            ],
+            "retrieval_ms": 8395.051,
+            "generation_ms": 18070.534,
+            "total_latency_ms": 26465.585,
+            "citations": [
+                {
+                    "article": "13",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "13",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "13",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "13",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "13",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "13",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "13",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "13",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "13",
+                    "paragraph": "3"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "13",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "13",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "13",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "13",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "13",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "13",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "13",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "13",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "13",
+                    "paragraph": "3"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 1.0,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g009",
+            "question": "How must human oversight work for a high-risk AI system?",
+            "answerable": true,
+            "answer": "Based on the provided legal excerpts, human oversight for a high-risk AI system must function in the following ways:\n\n*   **Design Requirement**: High-risk AI systems must be designed and developed so that they can be effectively overseen by natural persons during use, including through appropriate human-machine interface tools [Article 14, paragraph 1].\n*   **Risk Prevention**: The oversight aims to prevent or minimize risks to health, safety, or fundamental rights that may emerge when the system is used as intended or misused, particularly where such risks persist despite other requirements [Article 14, paragraph 2].\n*   **Oversight Measures**: These measures must be commensurate with the risks, level of autonomy, and context of use, implemented either by building them into the system before market placement or ensuring they are appropriate for the deployer to implement [Article 14, paragraph 3].\n*   **Assignments**: Deployers must assign human oversight to natural persons who possess the necessary competence, training, authority, and support [Article 26, paragraph 2].\n*   **Capabilities of Natural Persons**: When assigned, these natural persons must be enabled to:\n    *   Properly understand the system's capacities and limitations and monitor its operation (including detecting anomalies) [Article 14, paragraph 4(a)].\n    *   Remain aware of the tendency to over-rely on AI outputs (automation bias), especially regarding decisions made by natural persons [Article 14, paragraph 4(b)].\n    *   Correctly interpret the system's output using available tools and methods [Article 14, paragraph 4(c)].\n    *   Decide in specific situations not to use the system or to disregard, override, or reverse its output [Article 14, paragraph 4(d)].\n    *   Intervene in or interrupt the system operation via a 'stop' button or similar procedure to bring it to",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "High-risk systems must be designed so natural persons can effectively oversee them while they are in use.",
+                    "Oversight must aim to prevent or minimise health, safety and fundamental-rights risks.",
+                    "Oversight personnel must be able to understand limitations, avoid automation bias, interpret output, override decisions and safely stop the system where appropriate."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately summarizes the key requirements for human oversight of high-risk AI systems as outlined in the provided legal excerpts. All claims are directly supported by citations to specific articles and paragraphs within the AI Act.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-en-article-14-paragraph-2",
+                    "article_number": "14",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.9969756603240967
+                },
+                {
+                    "chunk_id": "ai-act-en-article-14-paragraph-4",
+                    "article_number": "14",
+                    "paragraph_number": "4",
+                    "reranker_score": 0.9959816932678223
+                },
+                {
+                    "chunk_id": "ai-act-en-article-14-paragraph-1",
+                    "article_number": "14",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9873479604721069
+                },
+                {
+                    "chunk_id": "ai-act-en-article-14-paragraph-3",
+                    "article_number": "14",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.9829062223434448
+                },
+                {
+                    "chunk_id": "ai-act-en-article-26-paragraph-2",
+                    "article_number": "26",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.9504769444465637
+                }
+            ],
+            "retrieval_ms": 4267.587,
+            "generation_ms": 14734.062,
+            "total_latency_ms": 19001.649,
+            "citations": [
+                {
+                    "article": "14",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "14",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "14",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "14",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "14",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "14",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "14",
+                    "paragraph": "4"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "14",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "14",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "14",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "14",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "14",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "14",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "14",
+                    "paragraph": "4"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 1.0,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g010",
+            "question": "What are the main obligations of providers of high-risk AI systems?",
+            "answerable": true,
+            "answer": "Based on the supplied legal excerpts, the main obligations of providers of high-risk AI systems are detailed in **Article 16**. These obligations include:\n\n*   Ensuring compliance with the requirements set out in Section 2 [Article 16, paragraph 1].\n*   Indicating their name, registered trade name or mark, and contact address on the system, packaging, or documentation [Article 16, paragraph 1].\n*   Maintaining a quality management system compliant with **Article 17** [Article 16, paragraph 1].\n*   Keeping the documentation referred to in **Article 18** [Article 16, paragraph 1].\n*   Keeping automatically generated logs as referred to in **Article 19** [Article 16, paragraph 1].\n*   Ensuring the system undergoes the relevant conformity assessment procedure prior to being placed on the market or put into service [Article 16, paragraph 1].\n*   Drawing up an EU declaration of conformity in accordance with **Article 47** [Article 16, paragraph 1].\n*   Affixing the CE marking to indicate conformity with the Regulation [Article 16, paragraph 1].\n*   Complying with registration obligations referred to in **Article 49(1)** [Article 16, paragraph 1].\n*   Taking necessary corrective actions and providing information as required in **Article 20** [Article 16, paragraph 1].\n*   Demonstrating conformity upon a reasoned request from a national competent authority [Article 16, paragraph 1].\n*   Ensuring compliance with accessibility requirements under specific Directives [Article 16, paragraph 1].\n\nAdditionally, **Article 17** notes that providers subject to quality management obligations under relevant sectoral Union law may include certain aspects as part of those systems [Article",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "Providers must ensure compliance with the requirements for high-risk systems and maintain a compliant quality management system.",
+                    "They must keep required documentation and controlled logs.",
+                    "They must complete conformity assessment, issue the EU declaration of conformity, affix CE marking and register the system.",
+                    "They must take corrective action, cooperate with authorities and meet accessibility requirements."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately summarizes the obligations of high-risk AI system providers as detailed in Article 16 of the EU AI Act, supported by numerous citations. The point coverage is complete, aligning with the expected points.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-en-article-16-paragraph-1",
+                    "article_number": "16",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9993927478790283
+                },
+                {
+                    "chunk_id": "ai-act-en-article-26-paragraph-1",
+                    "article_number": "26",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9940325617790222
+                },
+                {
+                    "chunk_id": "ai-act-en-article-26-paragraph-8",
+                    "article_number": "26",
+                    "paragraph_number": "8",
+                    "reranker_score": 0.9934727549552917
+                },
+                {
+                    "chunk_id": "ai-act-en-article-17-paragraph-3",
+                    "article_number": "17",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.9930155277252197
+                },
+                {
+                    "chunk_id": "ai-act-en-article-25-paragraph-1",
+                    "article_number": "25",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9907801747322083
+                }
+            ],
+            "retrieval_ms": 3639.177,
+            "generation_ms": 15977.979,
+            "total_latency_ms": 19617.157,
+            "citations": [
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 1.0,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g011",
+            "question": "What operational duties do deployers of high-risk AI systems have?",
+            "answerable": true,
+            "answer": "Based on the supplied legal excerpts, deployers of high-risk AI systems have the following operational duties:\n\n*   **Use systems in accordance with instructions:** Deployers must take appropriate technical and organisational measures to ensure they use high-risk AI systems in accordance with the instructions for use accompanying the systems [Article 26, paragraph 1].\n*   **Assign human oversight:** Deployers must assign human oversight to natural persons who have the necessary competence, training, authority, and support [Article 26, paragraph 2].\n*   **Monitor operation:** Deployers shall monitor the operation of the high-risk AI system based on the instructions for use. For financial institutions subject to Union financial services law, this monitoring obligation is deemed fulfilled by complying with relevant internal governance rules [Article 26, paragraph 5].\n*   **Suspend use and inform authorities upon risk:** If there is reason to consider that the use of the system may result in a risk within the meaning of Article 79(1), deployers must suspend the use of the system without undue delay and inform the provider, distributor, and relevant market surveillance authority [Article 26, paragraph 5].\n*   **Report serious incidents:** In the event of a serious incident, deployers must immediately inform the provider, followed by the importer or distributor and relevant market surveillance authorities [Article 26, paragraph 5].\n*   **Cooperate with authorities:** Deployers must cooperate with relevant competent authorities in any actions those authorities take regarding the high-risk AI system to implement the Regulation [Article 26, paragraph 12].\n*   **Comply with registration obligations (for public authorities):** Public authorities or Union institutions acting as deployers must comply with registration obligations under Article 49. If they find a system has not been registered in the EU database, they shall not use it and must inform the provider or distributor [Article 26, paragraph 8",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "Deployers must use the system according to its instructions and take appropriate technical and organisational measures.",
+                    "They must assign qualified, trained and authorised people to human oversight.",
+                    "They must monitor operation, report risks or serious incidents and suspend use when required.",
+                    "They must cooperate with authorities."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately summarizes the operational duties of deployers of high-risk AI systems as outlined in the provided source excerpts. All claims are directly supported by citations and the answer covers all the expected points.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-en-article-26-paragraph-5",
+                    "article_number": "26",
+                    "paragraph_number": "5",
+                    "reranker_score": 0.9921128749847412
+                },
+                {
+                    "chunk_id": "ai-act-en-article-26-paragraph-1",
+                    "article_number": "26",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9861329793930054
+                },
+                {
+                    "chunk_id": "ai-act-en-article-26-paragraph-12",
+                    "article_number": "26",
+                    "paragraph_number": "12",
+                    "reranker_score": 0.9813871383666992
+                },
+                {
+                    "chunk_id": "ai-act-en-article-26-paragraph-8",
+                    "article_number": "26",
+                    "paragraph_number": "8",
+                    "reranker_score": 0.9782803058624268
+                },
+                {
+                    "chunk_id": "ai-act-en-article-26-paragraph-2",
+                    "article_number": "26",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.9728084206581116
+                }
+            ],
+            "retrieval_ms": 4120.447,
+            "generation_ms": 14975.96,
+            "total_latency_ms": 19096.407,
+            "citations": [
+                {
+                    "article": "26",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "5"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "5"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "5"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "12"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "8"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "26",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "5"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "5"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "5"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "12"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "8"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 0.75,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g012",
+            "question": "What must a fundamental rights impact assessment for a high-risk AI system contain?",
+            "answerable": true,
+            "answer": "Based on the supplied legal excerpts, a fundamental rights impact assessment for a high-risk AI system must contain specific elements as outlined in **Article 27, paragraph 1**. These elements include:\n\n*   A description of the deployer's processes in which the high-risk AI system will be used in line with its intended purpose [Article 27, paragraph 1(a)].\n*   A description of the period of time within which, and the frequency with which, each high-risk AI system is intended to be used [Article 27, paragraph 1(b)].\n*   The categories of natural persons and groups likely to be affected by its use in the specific context [Article 27, paragraph 1(c)].\n*   The specific risks of harm likely to have an impact on the categories of natural persons or groups identified, taking into account information given by the provider pursuant to Article 13 [Article 27, paragraph 1(d)].\n*   A description of the implementation of human oversight measures, according to the instructions for use [Article 27, paragraph 1(e)].\n*   The measures to be taken in the case of the materialisation of those risks, including arrangements for internal governance and complaint mechanisms [Article 27, paragraph 1(f)].\n\nAdditionally, **Article 27, paragraph 2** notes that if any of these elements change or are no longer up to date during use, the deployer must take steps to update the information. Furthermore, **Article 13, paragraph 3** specifies that the \"instructions for use\" (which inform the assessment under Article 27) must contain details regarding risks to health and safety or fundamental rights [Article 13, paragraph 3(iii)].",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "Coverers must assess processes, duration and frequency of use, affected people, risks, human oversight and risk-response arrangements before deployment.",
+                    "The assessment applies to first use and must be updated when its relevant elements change.",
+                    "After completing the assessment, the deployer must generally notify the market surveillance authority of the results."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately reflects the requirements outlined in Article 27 of the EU AI Act, supported by direct citations from the provided excerpts. It comprehensively covers the key elements of a fundamental rights impact assessment for high-risk AI systems, including the need for ongoing updates and notification to market surveillance authorities.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-en-article-27-paragraph-1",
+                    "article_number": "27",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9959553480148315
+                },
+                {
+                    "chunk_id": "ai-act-en-article-27-paragraph-2",
+                    "article_number": "27",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.9519094824790955
+                },
+                {
+                    "chunk_id": "ai-act-en-article-13-paragraph-3",
+                    "article_number": "13",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.9484681487083435
+                },
+                {
+                    "chunk_id": "ai-act-en-article-27-paragraph-5",
+                    "article_number": "27",
+                    "paragraph_number": "5",
+                    "reranker_score": 0.9372590184211731
+                },
+                {
+                    "chunk_id": "ai-act-en-article-6-paragraph-3",
+                    "article_number": "6",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.8936108946800232
+                }
+            ],
+            "retrieval_ms": 5202.55,
+            "generation_ms": 16806.856,
+            "total_latency_ms": 22009.406,
+            "citations": [
+                {
+                    "article": "27",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "27",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "27",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "27",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "27",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "27",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "27",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "27",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "13",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "13",
+                    "paragraph": "3"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "27",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "27",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "27",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "27",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "27",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "27",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "27",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "27",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "13",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "13",
+                    "paragraph": "3"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 0.667,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g013",
+            "question": "What obligations apply to providers of general-purpose AI models?",
+            "answerable": true,
+            "answer": "Based on the supplied legal excerpts, the following obligations apply to providers of general-purpose AI models:\n\n*   **Technical Documentation:** Providers must draw up and keep up-to-date technical documentation regarding the model's training, testing process, and evaluation results (containing information from Annex XI), and make this available to other AI system providers upon request [Article 53, paragraph 1].\n*   **Information Sharing:** Providers must provide information and documentation to other AI system providers to enable them to understand the capabilities and limitations of the model and comply with their obligations, including elements from Annex XII [Article 53, paragraph 1].\n*   **Copyright Compliance:** Providers must establish a policy to comply with Union law on copyright and related rights, specifically identifying and complying with reservations of rights under Article 4(3) of Directive (EU) 2019/790 [Article 53, paragraph 1].\n*   **Training Data Summary:** Providers must draw up and make publicly available a sufficiently detailed summary about the content used for training the model, following a template provided by the AI Office [Article 53, paragraph 1].\n*   **Cooperation:** Providers must cooperate as necessary with the Commission and national competent authorities in the exercise of their competences and powers [Article 53, paragraph 3].\n*   **Compliance Demonstration:** Providers may rely on codes of practice (under Article 56) or European harmonised standards to demonstrate compliance; if they do not adhere to these, they must demonstrate alternative adequate means of compliance for assessment by the Commission [Article 53, paragraph 4].\n\n**Exceptions:**\nThe obligations regarding technical documentation and information sharing (paragraph 1 points a and b) do **not** apply to providers releasing models under free and open-source licences where parameters and architecture information are publicly available. However, this exception does not apply to general-purpose AI models with systemic risks",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "Providers must maintain technical documentation about training, testing and evaluation.",
+                    "They must give downstream AI-system providers information about the model's capabilities and limitations.",
+                    "They must adopt a copyright-compliance policy and publish a sufficiently detailed summary of training content.",
+                    "Some documentation duties are waived for qualifying open-source models, except models with systemic risk."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately summarizes the obligations outlined in Article 53 of the EU AI Act, supported by direct citations from the provided source excerpts. The points are clearly derived from the text and presented in a concise and organized manner.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-en-article-53-paragraph-1",
+                    "article_number": "53",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9994014501571655
+                },
+                {
+                    "chunk_id": "ai-act-en-article-53-paragraph-4",
+                    "article_number": "53",
+                    "paragraph_number": "4",
+                    "reranker_score": 0.9989739656448364
+                },
+                {
+                    "chunk_id": "ai-act-en-article-53-paragraph-3",
+                    "article_number": "53",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.9988816380500793
+                },
+                {
+                    "chunk_id": "ai-act-en-article-55-paragraph-1",
+                    "article_number": "55",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9988768696784973
+                },
+                {
+                    "chunk_id": "ai-act-en-article-53-paragraph-2",
+                    "article_number": "53",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.9988588094711304
+                }
+            ],
+            "retrieval_ms": 4333.66,
+            "generation_ms": 15880.296,
+            "total_latency_ms": 20213.956,
+            "citations": [
+                {
+                    "article": "53",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "53",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "53",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "53",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "53",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "53",
+                    "paragraph": "4"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "53",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "53",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "53",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "53",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "53",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "53",
+                    "paragraph": "4"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 1.0,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g014",
+            "question": "What additional duties apply to general-purpose AI models with systemic risk?",
+            "answerable": true,
+            "answer": "Based on the provided legal excerpts, the following additional duties apply to providers of general-purpose AI models with systemic risk:\n\n*   **Model Evaluation:** Providers must perform model evaluation in accordance with standardized protocols and tools reflecting the state of the art, including conducting and documenting adversarial testing to identify and mitigate systemic risks [Article 55, paragraph 1].\n*   **Risk Assessment:** Providers must assess and mitigate possible systemic risks at the Union level, including their sources, that may stem from the development, placing on the market, or use of these models [Article 55, paragraph 1].\n*   **Reporting Serious Incidents:** Providers must keep track of, document, and report relevant information about serious incidents and possible corrective measures to address them without undue delay to the AI Office and, as appropriate, to national competent authorities [Article 55, paragraph 1].\n*   **Cybersecurity Protection:** Providers must ensure an adequate level of cybersecurity protection for the general-purpose AI model with systemic risk and the physical infrastructure of the model [Article 55, paragraph 1].\n\nAdditionally, regarding compliance demonstration:\n*   **Codes of Practice or Harmonized Standards:** Providers may rely on codes of practice (under Article 56) to demonstrate compliance until a harmonized standard is published; however, compliance with European harmonized standards grants a presumption of conformity [Article 55, paragraph 2].\n*   **Alternative Compliance Demonstration:** If providers do not adhere to an approved code of practice or comply with a European harmonized standard, they must demonstrate alternative adequate means of compliance for assessment by the Commission [Article 55, paragraph 2].\n\nThe scientific panel of independent experts also has a duty to alert the AI Office of possible systemic risks at the Union level regarding these models [Article 68, paragraph 3].",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "Providers must evaluate and adversarially test the model using state-of-the-art standardised protocols and tools.",
+                    "They must assess and mitigate systemic risks at Union level.",
+                    "They must track and report serious incidents and ensure adequate cybersecurity for the model and its infrastructure.",
+                    "They may demonstrate compliance through approved codes or harmonised standards, or show adequate alternative means."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately reflects the duties outlined in Article 55 of the EU AI Act, supported by citations to the relevant sections. The point coverage is complete, addressing all expected points.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-en-article-55-paragraph-1",
+                    "article_number": "55",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9968042373657227
+                },
+                {
+                    "chunk_id": "ai-act-en-article-53-paragraph-2",
+                    "article_number": "53",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.9724569320678711
+                },
+                {
+                    "chunk_id": "ai-act-en-article-55-paragraph-2",
+                    "article_number": "55",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.9673647880554199
+                },
+                {
+                    "chunk_id": "ai-act-en-article-68-paragraph-3",
+                    "article_number": "68",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.9579173922538757
+                },
+                {
+                    "chunk_id": "ai-act-en-article-51-paragraph-1",
+                    "article_number": "51",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9551327228546143
+                }
+            ],
+            "retrieval_ms": 5533.559,
+            "generation_ms": 15854.883,
+            "total_latency_ms": 21388.442,
+            "citations": [
+                {
+                    "article": "55",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "55",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "55",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "55",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "55",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "55",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "68",
+                    "paragraph": "3"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "55",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "55",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "55",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "55",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "55",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "55",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "68",
+                    "paragraph": "3"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 1.0,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g015",
+            "question": "What does post-market monitoring require for a high-risk AI system?",
+            "answerable": true,
+            "answer": "Based on the provided legal excerpts, post-market monitoring for a high-risk AI system requires providers to establish and document a system that actively collects, documents, and analyzes relevant data regarding the system's performance throughout its lifetime to evaluate continuous compliance with Chapter III, Section 2 requirements. This obligation includes analyzing interactions with other AI systems where relevant but excludes sensitive operational data of law-enforcement authorities. Additionally, this monitoring must be proportionate to the nature of the technology and the risks involved, and it serves as a specific component within the broader quality management system required for providers.\n\n**Citations:**\n*   **Article 72, paragraph 1**: Requires providers to establish and document a post-market monitoring system that is proportionate to the nature of the AI technologies and the risks of the high-risk AI system.\n*   **Article 72, paragraph 2**: Requires the post-market monitoring system to actively and systematically collect, document, and analyze relevant data on performance throughout the lifetime to evaluate continuous compliance with Chapter III, Section 2 requirements, including an analysis of interaction with other AI systems where relevant.\n*   **Article 17, paragraph 1(h)**: Specifies that a quality management system for high-risk AI systems must include the setting-up, implementation, and maintenance of a post-market monitoring system in accordance with Article 72.",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "Providers must establish and document a proportionate post-market monitoring system.",
+                    "The system must actively collect, document and analyse performance data throughout the AI system's lifetime to evaluate continuing compliance.",
+                    "Monitoring must follow a plan that forms part of the technical documentation."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately reflects the requirements outlined in the provided legal excerpts regarding post-market monitoring for high-risk AI systems. It correctly identifies the need for a proportionate system, active data collection, and integration with the quality management system. All claims are directly supported by citations from the source documents.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-en-article-72-paragraph-2",
+                    "article_number": "72",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.9991355538368225
+                },
+                {
+                    "chunk_id": "ai-act-en-article-72-paragraph-1",
+                    "article_number": "72",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9966205358505249
+                },
+                {
+                    "chunk_id": "ai-act-en-article-72-paragraph-4",
+                    "article_number": "72",
+                    "paragraph_number": "4",
+                    "reranker_score": 0.9949436783790588
+                },
+                {
+                    "chunk_id": "ai-act-en-article-17-paragraph-1",
+                    "article_number": "17",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9889658093452454
+                },
+                {
+                    "chunk_id": "ai-act-en-article-9-paragraph-2",
+                    "article_number": "9",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.9825317859649658
+                }
+            ],
+            "retrieval_ms": 4930.721,
+            "generation_ms": 13135.137,
+            "total_latency_ms": 18065.858,
+            "citations": [
+                {
+                    "article": "72",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "72",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "17",
+                    "paragraph": "1"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "72",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "72",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "17",
+                    "paragraph": "1"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 0.667,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g016",
+            "question": "How and when must serious incidents involving high-risk AI systems be reported?",
+            "answerable": true,
+            "answer": "Based on the provided legal excerpts, serious incidents involving high-risk AI systems must be reported to the market surveillance authorities of the Member States where the incident occurred [Article 73, paragraph 1]. The report must be made immediately after the provider establishes a causal link between the AI system and the incident or determines there is a reasonable likelihood of such a link, but in any event, not later than 15 days after the provider or deployer becomes aware of the incident [Article 73, paragraph 2].\n\nHowever, if the death of a person occurs, the report must be provided immediately after the provider or deployer establishes (or suspects) a causal relationship between the high-risk AI system and the serious incident, but not later than 10 days after they become aware of the incident [Article 73, paragraph 4].\n\nAdditionally, for high-risk AI systems that are safety components of devices or are themselves devices covered by Regulations (EU) 2017/745 and (EU) 2017/746, the notification must be made to the national competent authority chosen by the Member States where the incident occurred [Article 73, paragraph 10].\n\nFinally, any serious incident identified during testing in real-world conditions outside AI regulatory sandboxes must be reported to the national market surveillance authority in accordance with Article 73 [Article 60, paragraph 7].",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "Providers must report serious incidents to the market surveillance authority where the incident occurred.",
+                    "The general deadline is immediately after establishing or reasonably suspecting a causal link and no later than 15 days after awareness.",
+                    "Incidents involving death must be reported no later than 10 days after awareness.",
+                    "The provider must investigate, assess risk, take corrective action and cooperate with authorities."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately reflects the reporting requirements outlined in Article 73 of the AI Act, including the 15-day and 10-day deadlines, and the specific reporting procedures for different types of incidents. The citations directly support each claim made in the answer.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-en-article-73-paragraph-4",
+                    "article_number": "73",
+                    "paragraph_number": "4",
+                    "reranker_score": 0.9948312640190125
+                },
+                {
+                    "chunk_id": "ai-act-en-article-73-paragraph-1",
+                    "article_number": "73",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9938554167747498
+                },
+                {
+                    "chunk_id": "ai-act-en-article-73-paragraph-10",
+                    "article_number": "73",
+                    "paragraph_number": "10",
+                    "reranker_score": 0.9909824728965759
+                },
+                {
+                    "chunk_id": "ai-act-en-article-73-paragraph-2",
+                    "article_number": "73",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.9908173084259033
+                },
+                {
+                    "chunk_id": "ai-act-en-article-60-paragraph-7",
+                    "article_number": "60",
+                    "paragraph_number": "7",
+                    "reranker_score": 0.9894696474075317
+                }
+            ],
+            "retrieval_ms": 2762.992,
+            "generation_ms": 11816.381,
+            "total_latency_ms": 14579.373,
+            "citations": [
+                {
+                    "article": "73",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "73",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "73",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "73",
+                    "paragraph": "10"
+                },
+                {
+                    "article": "60",
+                    "paragraph": "7"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "73",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "73",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "73",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "73",
+                    "paragraph": "10"
+                },
+                {
+                    "article": "60",
+                    "paragraph": "7"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 0.6,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g017",
+            "question": "What is the AI Act's general application date, and when do Chapters I and II, the general-purpose AI rules and Article 6(1) start applying?",
+            "answerable": true,
+            "answer": "Based on the supplied legal excerpts, the text does not contain information regarding the **general application date** of the EU AI Act or the specific start dates for **Chapters I and II**.\n\nThe provided excerpts only specify compliance deadlines for systems already placed on the market before certain dates:\n*   **High-risk AI systems** (placed on the market before 2 August 2026) must comply by 2 August 2030 [Article 111, paragraph 2].\n*   **General-purpose AI models** (placed on the market before 2 August 2025) must comply by 2 August 2027 [Article 111, paragraph 3].\n*   **Large-scale IT systems** (components placed on the market before 2 August 2027) must be brought into compliance by 31 December 2030 [Article 111, paragraph 1].\n\nThe excerpts do not state when the Regulation generally enters into force or when Chapters I and II begin applying. Therefore, the answer cannot be derived from the provided text.",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 0,
+                "point_coverage": 0,
+                "citation_support": 0,
+                "covered_points": [
+                    "The Regulation generally applies from 2 August 2026.",
+                    "Chapters I and II apply from 2 February 2025.",
+                    "Specified governance, GPAI, penalties and confidentiality provisions apply from 2 August 2025, with Article 101 excluded from that timing.",
+                    "Article 6(1) and its corresponding obligations apply from 2 August 2027."
+                ],
+                "unsupported_claims": [
+                    "The text does not contain information regarding the general application date of the EU AI Act or the specific start dates for Chapters I and II."
+                ],
+                "reason": "The answer correctly identifies that the provided excerpts do not explicitly state the general application date of the AI Act or the start dates for Chapters I and II. However, it misinterprets the deadlines for compliance for different categories of AI systems, which are not the requested information. The expected points are based on an interpretation of the deadlines for compliance, not direct statements from the text.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-en-article-111-paragraph-2",
+                    "article_number": "111",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.52812260389328
+                },
+                {
+                    "chunk_id": "ai-act-en-article-111-paragraph-3",
+                    "article_number": "111",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.34407225251197815
+                },
+                {
+                    "chunk_id": "ai-act-en-article-111-paragraph-1",
+                    "article_number": "111",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.31567463278770447
+                },
+                {
+                    "chunk_id": "ai-act-en-article-1-paragraph-2",
+                    "article_number": "1",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.11658383160829544
+                },
+                {
+                    "chunk_id": "ai-act-en-article-53-paragraph-1",
+                    "article_number": "53",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.018612492829561234
+                }
+            ],
+            "retrieval_ms": 3413.034,
+            "generation_ms": 11632.797,
+            "total_latency_ms": 15045.831,
+            "citations": [
+                {
+                    "article": "111",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "111",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "111",
+                    "paragraph": "1"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "111",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "111",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "111",
+                    "paragraph": "1"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 0.0,
+            "refused": true,
+            "refusal_correct": false
+        },
+        {
+            "id": "g018",
+            "question": "What minimum salary must an AI engineer receive under the EU AI Act?",
+            "answerable": false,
+            "answer": "Based on the supplied legal excerpts, there is no information regarding a minimum salary or wage requirement for AI engineers under the EU AI Act. The provided text covers regulatory sandboxes, fines for general-purpose AI model providers, obligations for such providers, amendments to other directives, and codes of conduct, but it does not contain any provisions concerning employee salaries or wages.\n\nTherefore, the excerpts do not contain enough information to answer this question.",
+            "model": "qwen3.5:4b",
+            "judge": null,
+            "sources": [
+                {
+                    "chunk_id": "ai-act-en-article-58-paragraph-2",
+                    "article_number": "58",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.01978232152760029
+                },
+                {
+                    "chunk_id": "ai-act-en-article-101-paragraph-1",
+                    "article_number": "101",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.006615214049816132
+                },
+                {
+                    "chunk_id": "ai-act-en-article-53-paragraph-1",
+                    "article_number": "53",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.004759299568831921
+                },
+                {
+                    "chunk_id": "ai-act-en-article-110-paragraph-1",
+                    "article_number": "110",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.003037357237190008
+                },
+                {
+                    "chunk_id": "ai-act-en-article-95-paragraph-2",
+                    "article_number": "95",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.0021472168155014515
+                }
+            ],
+            "retrieval_ms": 4443.317,
+            "generation_ms": 10094.319,
+            "total_latency_ms": 14537.636,
+            "citations": [],
+            "valid_citations": [],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": false,
+            "expected_source_recall": 1.0,
+            "refused": true,
+            "refusal_correct": true
+        },
+        {
+            "id": "g019",
+            "question": "Which cloud provider must companies use to comply with the EU AI Act?",
+            "answerable": false,
+            "answer": "Based on the supplied legal excerpts, there is no requirement for companies to use a specific cloud provider to comply with the EU AI Act. The text does not mention any mandatory cloud service or infrastructure requirements.\n\nThe excerpts discuss obligations regarding codes of practice, harmonised standards, regulatory sandboxes, and registration for high-risk systems, but none specify a particular cloud provider [Article 53, paragraph 4; Article 55, paragraph 2; Article 58, paragraph 2; Article 26, paragraph 8].\n\nThe excerpts do not contain enough information to answer which cloud provider must be used.",
+            "model": "qwen3.5:4b",
+            "judge": null,
+            "sources": [
+                {
+                    "chunk_id": "ai-act-en-article-53-paragraph-4",
+                    "article_number": "53",
+                    "paragraph_number": "4",
+                    "reranker_score": 0.013210869394242764
+                },
+                {
+                    "chunk_id": "ai-act-en-article-58-paragraph-2",
+                    "article_number": "58",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.011512229219079018
+                },
+                {
+                    "chunk_id": "ai-act-en-article-55-paragraph-2",
+                    "article_number": "55",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.009127388708293438
+                },
+                {
+                    "chunk_id": "ai-act-en-article-26-paragraph-8",
+                    "article_number": "26",
+                    "paragraph_number": "8",
+                    "reranker_score": 0.008971982635557652
+                },
+                {
+                    "chunk_id": "ai-act-en-article-92-paragraph-5",
+                    "article_number": "92",
+                    "paragraph_number": "5",
+                    "reranker_score": 0.0033613594714552164
+                }
+            ],
+            "retrieval_ms": 4645.363,
+            "generation_ms": 7067.163,
+            "total_latency_ms": 11712.526,
+            "citations": [
+                {
+                    "article": "53",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "55",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "58",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "8"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "53",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "55",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "58",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "8"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 1.0,
+            "refused": true,
+            "refusal_correct": true
+        },
+        {
+            "id": "g020",
+            "question": "What is the current European market share of each generative AI product?",
+            "answerable": false,
+            "answer": "Based on the supplied legal excerpts, there is no information regarding the current European market share of any generative AI product.\n\nThe provided text mentions \"market share\" only in **Article 99, paragraph 7(e)** as one of the factors that national competent authorities must consider when deciding on the amount of an administrative fine for infringements under the EU AI Act. It does not contain data or statistics about actual market shares.",
+            "model": "qwen3.5:4b",
+            "judge": null,
+            "sources": [
+                {
+                    "chunk_id": "ai-act-en-article-99-paragraph-7",
+                    "article_number": "99",
+                    "paragraph_number": "7",
+                    "reranker_score": 0.009338011965155602
+                },
+                {
+                    "chunk_id": "ai-act-en-article-40-paragraph-2",
+                    "article_number": "40",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.006331333424896002
+                },
+                {
+                    "chunk_id": "ai-act-en-article-53-paragraph-1",
+                    "article_number": "53",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.0017354987794533372
+                },
+                {
+                    "chunk_id": "ai-act-en-article-74-paragraph-12",
+                    "article_number": "74",
+                    "paragraph_number": "12",
+                    "reranker_score": 0.0016980634536594152
+                },
+                {
+                    "chunk_id": "ai-act-en-article-6-paragraph-1",
+                    "article_number": "6",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.001046353834681213
+                }
+            ],
+            "retrieval_ms": 2521.274,
+            "generation_ms": 7187.177,
+            "total_latency_ms": 9708.452,
+            "citations": [
+                {
+                    "article": "99",
+                    "paragraph": "7"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "99",
+                    "paragraph": "7"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 1.0,
+            "refused": true,
+            "refusal_correct": true
         }
     ],
-    "average_groundedness": 2.0,
-    "average_point_coverage": 2.0,
-    "average_citation_support": 2.0
+    "average_groundedness": 1.875,
+    "average_point_coverage": 1.875,
+    "average_citation_support": 1.875
 }

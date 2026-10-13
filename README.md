@@ -57,6 +57,7 @@ flowchart LR
 
 - [x] Implement BM25 keyword retrieval
 - [x] Create a labelled retrieval evaluation set
+- [x] Expand evaluation coverage to 42 retrieval and 20 generation questions
 - [x] Add semantic vector search
 - [x] Store embeddings in PostgreSQL with pgvector
 - [x] Implement hybrid retrieval with Reciprocal Rank Fusion
@@ -88,26 +89,26 @@ The system is designed around three requirements:
 
 ## Retrieval results
 
-The retrieval evaluation contains nine answerable questions labelled with their relevant EU AI Act articles.
+The retrieval evaluation contains 42 manually labelled questions: 38 answerable questions mapped to relevant EU AI Act articles and four unsupported questions reserved for refusal testing.
 
-All retrieval configurations used the same document chunks and returned five results per question. The reranker processed the top 10 hybrid candidates.
+All retrieval configurations used the same document chunks and returned five results per answerable question. The reranker processed the top 10 hybrid candidates.
 
 | Method | Recall@1 | Recall@5 | MRR | Average latency |
 |---|---:|---:|---:|---:|
-| BM25 | 0.556 | 0.778 | 0.667 | 0.313 ms |
-| Multilingual E5 | 0.889 | 1.000 | 0.944 | 15.114 ms |
-| Hybrid RRF | 0.778 | 1.000 | 0.889 | 88.215 ms |
-| Hybrid RRF + BGE reranker | 1.000 | 1.000 | 1.000 | 1,488.462 ms |
+| BM25 | 0.632 | 0.789 | 0.695 | 0.212 ms |
+| Multilingual E5 | 0.868 | 0.947 | 0.901 | 48.379 ms |
+| Hybrid RRF | 0.737 | 0.947 | 0.831 | 63.928 ms |
+| Hybrid RRF + BGE reranker | 0.947 | 0.947 | 0.947 | 7,199.120 ms |
 
 Semantic search uses `intfloat/multilingual-e5-base`. Its latency includes query embedding and vector comparison but excludes model loading.
 
 Reranking uses `BAAI/bge-reranker-v2-m3` over the top 10 hybrid candidates. Model-loading time is excluded, while the first query includes inference warm-up.
 
-These results are preliminary because the evaluation set is small.
+These results remain preliminary because the dataset is manually constructed and covers a single regulation.
 
 ## Generation evaluation
 
-Answer generation was evaluated on four questions using local Ollama models:
+Answer generation was evaluated on 20 questions: 16 answerable questions and four unsupported questions. The evaluation used local Ollama models:
 
 - Generator: `qwen3.5:4b`
 - Judge: `gemma3:4b`
@@ -116,20 +117,20 @@ Answer generation was evaluated on four questions using local Ollama models:
 
 | Metric | Result |
 |---|---:|
-| Groundedness | 2.000 / 2 |
-| Citation support | 2.000 / 2 |
-| Point coverage | 2.000 / 2 |
+| Groundedness | 1.875 / 2 |
+| Citation support | 1.875 / 2 |
+| Point coverage | 1.875 / 2 |
 | Citation precision | 1.000 |
 | Valid citation rate | 1.000 |
-| Refusal accuracy | 1.000 |
-| Expected-source recall | 0.889 |
-| Average retrieval latency | 2,843.769 ms |
-| Average generation latency | 11,255.577 ms |
-| Average total latency | 14,099.346 ms |
+| Refusal accuracy | 0.950 |
+| Expected-source recall | 0.767 |
+| Average retrieval latency | 3,966.561 ms |
+| Average generation latency | 12,890.616 ms |
+| Average total latency | 16,857.177 ms |
 
 Groundedness, citation support and point coverage are scored from 0 to 2 by the local `gemma3:4b` judge. Total latency includes retrieval and answer generation but excludes judge evaluation.
 
-These results are preliminary because the generation evaluation contains only four questions.
+These results remain preliminary because the generation evaluation contains 20 questions and uses a local language model as the judge.
 
 ## Data source
 
@@ -536,7 +537,7 @@ data/evaluation/generation-results.json
 ## Limitations
 
 - Only the English EU AI Act is currently indexed.
-- The generation evaluation contains only four questions.
+- The generation evaluation contains 20 manually labelled questions and has not been reviewed by a legal expert.
 - The answer-quality judge is a local language model rather than a legal expert.
 - Local-model latency depends on the available hardware.
 - Document amendments and consolidated versions are not synchronized automatically.
@@ -545,7 +546,7 @@ data/evaluation/generation-results.json
 
 ## Roadmap
 
-1. Expand the retrieval and generation evaluation sets.
+1. Add continuous integration with GitHub Actions.
 2. Add Italian-language queries and answers.
 3. Add GDPR and NIS2 as additional data sources.
 4. Detect and process updated consolidated regulations automatically.

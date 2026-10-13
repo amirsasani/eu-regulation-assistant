@@ -3,7 +3,9 @@
     "id": "g001",
     "question": "What risk management obligations apply to high-risk AI systems?",
     "answerable": true,
-    "expected_articles": ["9"],
+    "expected_articles": [
+      "9"
+    ],
     "expected_points": [
       {
         "point": "A risk management system must be established, implemented, documented and maintained.",
@@ -14,7 +16,7 @@
         "chunk_id": "ai-act-en-article-9-paragraph-2"
       },
       {
-        "point": "The system must identify, evaluate and mitigate reasonably foreseeable risks.",
+        "point": "The process must identify, evaluate and address known and reasonably foreseeable risks.",
         "chunk_id": "ai-act-en-article-9-paragraph-2"
       },
       {
@@ -27,7 +29,9 @@
     "id": "g002",
     "question": "Must high-risk AI systems automatically record events during operation?",
     "answerable": true,
-    "expected_articles": ["12"],
+    "expected_articles": [
+      "12"
+    ],
     "expected_points": [
       {
         "point": "High-risk systems must technically allow automatic event logging throughout their lifetime.",
@@ -43,7 +47,9 @@
     "id": "g003",
     "question": "What transparency obligations apply to AI-generated content and deepfakes?",
     "answerable": true,
-    "expected_articles": ["50"],
+    "expected_articles": [
+      "50"
+    ],
     "expected_points": [
       {
         "point": "Providers must mark synthetic outputs in a machine-readable and detectable format.",
@@ -58,6 +64,341 @@
   {
     "id": "g004",
     "question": "Which encryption algorithm must every high-risk AI system use?",
+    "answerable": false,
+    "expected_articles": [],
+    "expected_points": []
+  },
+  {
+    "id": "g005",
+    "question": "Does the AI Act apply to companies outside the EU?",
+    "answerable": true,
+    "expected_articles": [
+      "2"
+    ],
+    "expected_points": [
+      {
+        "point": "The Act applies to providers placing AI systems or general-purpose AI models on the EU market regardless of where the provider is established.",
+        "chunk_id": "ai-act-en-article-2-paragraph-1"
+      },
+      {
+        "point": "It also applies to third-country providers and deployers when the AI system's output is used in the Union.",
+        "chunk_id": "ai-act-en-article-2-paragraph-1"
+      }
+    ]
+  },
+  {
+    "id": "g006",
+    "question": "How does the AI Act determine whether an AI system is high-risk?",
+    "answerable": true,
+    "expected_articles": [
+      "6"
+    ],
+    "expected_points": [
+      {
+        "point": "A product-related system is high-risk when it is a safety component or covered product under Annex I and requires third-party conformity assessment.",
+        "chunk_id": "ai-act-en-article-6-paragraph-1"
+      },
+      {
+        "point": "Systems listed in Annex III are also generally high-risk.",
+        "chunk_id": "ai-act-en-article-6-paragraph-2"
+      },
+      {
+        "point": "An Annex III system may avoid that classification if it poses no significant risk and meets one of the specified limited-task conditions, but profiling systems remain high-risk.",
+        "chunk_id": "ai-act-en-article-6-paragraph-3"
+      },
+      {
+        "point": "A provider relying on the exception must document the assessment before market placement or service.",
+        "chunk_id": "ai-act-en-article-6-paragraph-4"
+      }
+    ]
+  },
+  {
+    "id": "g007",
+    "question": "What data-quality and governance requirements apply to high-risk AI systems?",
+    "answerable": true,
+    "expected_articles": [
+      "10"
+    ],
+    "expected_points": [
+      {
+        "point": "Training, validation and testing data must be managed under governance practices appropriate to the intended purpose, including data collection, preparation, assumptions and bias controls.",
+        "chunk_id": "ai-act-en-article-10-paragraph-2"
+      },
+      {
+        "point": "The data sets must be relevant, sufficiently representative, as complete as possible and, to the best extent possible, error-free.",
+        "chunk_id": "ai-act-en-article-10-paragraph-3"
+      },
+      {
+        "point": "The data must account for relevant geographical, contextual, behavioural or functional settings.",
+        "chunk_id": "ai-act-en-article-10-paragraph-4"
+      }
+    ]
+  },
+  {
+    "id": "g008",
+    "question": "What transparency and instruction requirements apply to high-risk AI systems?",
+    "answerable": true,
+    "expected_articles": [
+      "13"
+    ],
+    "expected_points": [
+      {
+        "point": "The system must be transparent enough for deployers to interpret its output and use it appropriately.",
+        "chunk_id": "ai-act-en-article-13-paragraph-1"
+      },
+      {
+        "point": "It must include concise, complete, correct, clear, accessible and comprehensible instructions for use.",
+        "chunk_id": "ai-act-en-article-13-paragraph-2"
+      },
+      {
+        "point": "Instructions must describe matters including the provider, intended purpose, performance limitations, risks, human oversight, resources, maintenance and logging mechanisms.",
+        "chunk_id": "ai-act-en-article-13-paragraph-3"
+      }
+    ]
+  },
+  {
+    "id": "g009",
+    "question": "How must human oversight work for a high-risk AI system?",
+    "answerable": true,
+    "expected_articles": [
+      "14"
+    ],
+    "expected_points": [
+      {
+        "point": "High-risk systems must be designed so natural persons can effectively oversee them while they are in use.",
+        "chunk_id": "ai-act-en-article-14-paragraph-1"
+      },
+      {
+        "point": "Oversight must aim to prevent or minimise health, safety and fundamental-rights risks.",
+        "chunk_id": "ai-act-en-article-14-paragraph-2"
+      },
+      {
+        "point": "Oversight personnel must be able to understand limitations, avoid automation bias, interpret output, override decisions and safely stop the system where appropriate.",
+        "chunk_id": "ai-act-en-article-14-paragraph-4"
+      }
+    ]
+  },
+  {
+    "id": "g010",
+    "question": "What are the main obligations of providers of high-risk AI systems?",
+    "answerable": true,
+    "expected_articles": [
+      "16"
+    ],
+    "expected_points": [
+      {
+        "point": "Providers must ensure compliance with the requirements for high-risk systems and maintain a compliant quality management system.",
+        "chunk_id": "ai-act-en-article-16-paragraph-1"
+      },
+      {
+        "point": "They must keep required documentation and controlled logs.",
+        "chunk_id": "ai-act-en-article-16-paragraph-1"
+      },
+      {
+        "point": "They must complete conformity assessment, issue the EU declaration of conformity, affix CE marking and register the system.",
+        "chunk_id": "ai-act-en-article-16-paragraph-1"
+      },
+      {
+        "point": "They must take corrective action, cooperate with authorities and meet accessibility requirements.",
+        "chunk_id": "ai-act-en-article-16-paragraph-1"
+      }
+    ]
+  },
+  {
+    "id": "g011",
+    "question": "What operational duties do deployers of high-risk AI systems have?",
+    "answerable": true,
+    "expected_articles": [
+      "26"
+    ],
+    "expected_points": [
+      {
+        "point": "Deployers must use the system according to its instructions and take appropriate technical and organisational measures.",
+        "chunk_id": "ai-act-en-article-26-paragraph-1"
+      },
+      {
+        "point": "They must assign qualified, trained and authorised people to human oversight.",
+        "chunk_id": "ai-act-en-article-26-paragraph-2"
+      },
+      {
+        "point": "They must monitor operation, report risks or serious incidents and suspend use when required.",
+        "chunk_id": "ai-act-en-article-26-paragraph-5"
+      },
+      {
+        "point": "They must normally retain logs under their control for at least six months.",
+        "chunk_id": "ai-act-en-article-26-paragraph-6"
+      }
+    ]
+  },
+  {
+    "id": "g012",
+    "question": "What must a fundamental rights impact assessment for a high-risk AI system contain?",
+    "answerable": true,
+    "expected_articles": [
+      "27"
+    ],
+    "expected_points": [
+      {
+        "point": "Covered deployers must assess processes, duration and frequency of use, affected people, risks, human oversight and risk-response arrangements before deployment.",
+        "chunk_id": "ai-act-en-article-27-paragraph-1"
+      },
+      {
+        "point": "The assessment applies to first use and must be updated when its relevant elements change.",
+        "chunk_id": "ai-act-en-article-27-paragraph-2"
+      },
+      {
+        "point": "After completing the assessment, the deployer must generally notify the market surveillance authority of the results.",
+        "chunk_id": "ai-act-en-article-27-paragraph-3"
+      }
+    ]
+  },
+  {
+    "id": "g013",
+    "question": "What obligations apply to providers of general-purpose AI models?",
+    "answerable": true,
+    "expected_articles": [
+      "53"
+    ],
+    "expected_points": [
+      {
+        "point": "Providers must maintain technical documentation about training, testing and evaluation.",
+        "chunk_id": "ai-act-en-article-53-paragraph-1"
+      },
+      {
+        "point": "They must give downstream AI-system providers information about the model's capabilities and limitations.",
+        "chunk_id": "ai-act-en-article-53-paragraph-1"
+      },
+      {
+        "point": "They must adopt a copyright-compliance policy and publish a sufficiently detailed summary of training content.",
+        "chunk_id": "ai-act-en-article-53-paragraph-1"
+      },
+      {
+        "point": "Some documentation duties are waived for qualifying open-source models, except models with systemic risk.",
+        "chunk_id": "ai-act-en-article-53-paragraph-2"
+      }
+    ]
+  },
+  {
+    "id": "g014",
+    "question": "What additional duties apply to general-purpose AI models with systemic risk?",
+    "answerable": true,
+    "expected_articles": [
+      "55"
+    ],
+    "expected_points": [
+      {
+        "point": "Providers must evaluate and adversarially test the model using state-of-the-art standardised protocols and tools.",
+        "chunk_id": "ai-act-en-article-55-paragraph-1"
+      },
+      {
+        "point": "They must assess and mitigate systemic risks at Union level.",
+        "chunk_id": "ai-act-en-article-55-paragraph-1"
+      },
+      {
+        "point": "They must track and report serious incidents and ensure adequate cybersecurity for the model and its infrastructure.",
+        "chunk_id": "ai-act-en-article-55-paragraph-1"
+      },
+      {
+        "point": "They may demonstrate compliance through approved codes or harmonised standards, or show adequate alternative means.",
+        "chunk_id": "ai-act-en-article-55-paragraph-2"
+      }
+    ]
+  },
+  {
+    "id": "g015",
+    "question": "What does post-market monitoring require for a high-risk AI system?",
+    "answerable": true,
+    "expected_articles": [
+      "72"
+    ],
+    "expected_points": [
+      {
+        "point": "Providers must establish and document a proportionate post-market monitoring system.",
+        "chunk_id": "ai-act-en-article-72-paragraph-1"
+      },
+      {
+        "point": "The system must actively collect, document and analyse performance data throughout the AI system's lifetime to evaluate continuing compliance.",
+        "chunk_id": "ai-act-en-article-72-paragraph-2"
+      },
+      {
+        "point": "Monitoring must follow a plan that forms part of the technical documentation.",
+        "chunk_id": "ai-act-en-article-72-paragraph-3"
+      }
+    ]
+  },
+  {
+    "id": "g016",
+    "question": "How and when must serious incidents involving high-risk AI systems be reported?",
+    "answerable": true,
+    "expected_articles": [
+      "73"
+    ],
+    "expected_points": [
+      {
+        "point": "Providers must report serious incidents to the market surveillance authority where the incident occurred.",
+        "chunk_id": "ai-act-en-article-73-paragraph-1"
+      },
+      {
+        "point": "The general deadline is immediately after establishing or reasonably suspecting a causal link and no later than 15 days after awareness.",
+        "chunk_id": "ai-act-en-article-73-paragraph-2"
+      },
+      {
+        "point": "Widespread infringements and specified serious incidents must be reported within two days.",
+        "chunk_id": "ai-act-en-article-73-paragraph-3"
+      },
+      {
+        "point": "Incidents involving death must be reported no later than 10 days after awareness.",
+        "chunk_id": "ai-act-en-article-73-paragraph-4"
+      },
+      {
+        "point": "The provider must investigate, assess risk, take corrective action and cooperate with authorities.",
+        "chunk_id": "ai-act-en-article-73-paragraph-6"
+      }
+    ]
+  },
+  {
+    "id": "g017",
+    "question": "What is the AI Act's general application date, and when do Chapters I and II, the general-purpose AI rules and Article 6(1) start applying?",
+    "answerable": true,
+    "expected_articles": [
+      "113"
+    ],
+    "expected_points": [
+      {
+        "point": "The Regulation generally applies from 2 August 2026.",
+        "chunk_id": "ai-act-en-article-113-paragraph-1"
+      },
+      {
+        "point": "Chapters I and II apply from 2 February 2025.",
+        "chunk_id": "ai-act-en-article-113-paragraph-1"
+      },
+      {
+        "point": "Specified governance, GPAI, penalties and confidentiality provisions apply from 2 August 2025, with Article 101 excluded from that timing.",
+        "chunk_id": "ai-act-en-article-113-paragraph-1"
+      },
+      {
+        "point": "Article 6(1) and its corresponding obligations apply from 2 August 2027.",
+        "chunk_id": "ai-act-en-article-113-paragraph-1"
+      }
+    ]
+  },
+  {
+    "id": "g018",
+    "question": "What minimum salary must an AI engineer receive under the EU AI Act?",
+    "answerable": false,
+    "expected_articles": [],
+    "expected_points": []
+  },
+  {
+    "id": "g019",
+    "question": "Which cloud provider must companies use to comply with the EU AI Act?",
+    "answerable": false,
+    "expected_articles": [],
+    "expected_points": []
+  },
+  {
+    "id": "g020",
+    "question": "What is the current European market share of each generative AI product?",
     "answerable": false,
     "expected_articles": [],
     "expected_points": []

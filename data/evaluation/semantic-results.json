@@ -1,12 +1,73 @@
 {
   "method": "semantic",
-  "questions_evaluated": 9,
+  "questions_evaluated": 38,
   "top_k": 5,
-  "recall_at_1": 0.8888888888888888,
-  "recall_at_5": 1.0,
-  "mrr": 0.9444444444444444,
-  "average_latency_ms": 16.57136111114394,
-  "failures": [],
+  "recall_at_1": 0.868421052631579,
+  "recall_at_5": 0.9473684210526315,
+  "mrr": 0.9013157894736842,
+  "average_latency_ms": 48.37933871055468,
+  "failures": [
+    {
+      "id": "q016",
+      "question": "What are the main obligations of a provider of a high-risk AI system?",
+      "expected_articles": [
+        "16"
+      ],
+      "retrieved_articles": [
+        "25",
+        "24",
+        "24",
+        "24",
+        "24"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-25-paragraph-1",
+        "ai-act-en-article-24-paragraph-3",
+        "ai-act-en-article-24-paragraph-5",
+        "ai-act-en-article-24-paragraph-4",
+        "ai-act-en-article-24-paragraph-2"
+      ],
+      "scores": [
+        0.903755,
+        0.895564,
+        0.889952,
+        0.88951,
+        0.889355
+      ],
+      "first_relevant_rank": null,
+      "latency_ms": 43.571
+    },
+    {
+      "id": "q037",
+      "question": "What is the AI Act's general application date, and when do Chapters I and II, the general-purpose AI rules and Article 6(1) start applying?",
+      "expected_articles": [
+        "113"
+      ],
+      "retrieved_articles": [
+        "111",
+        "111",
+        "111",
+        "53",
+        "101"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-111-paragraph-1",
+        "ai-act-en-article-111-paragraph-2",
+        "ai-act-en-article-111-paragraph-3",
+        "ai-act-en-article-53-paragraph-1",
+        "ai-act-en-article-101-paragraph-6"
+      ],
+      "scores": [
+        0.874974,
+        0.867086,
+        0.864231,
+        0.859851,
+        0.858502
+      ],
+      "first_relevant_rank": null,
+      "latency_ms": 41.446
+    }
+  ],
   "query_results": [
     {
       "id": "q001",
@@ -30,13 +91,13 @@
       ],
       "scores": [
         0.867152,
-        0.855443,
+        0.855444,
         0.8513,
         0.851162,
         0.850765
       ],
       "first_relevant_rank": 1,
-      "latency_ms": 15.805
+      "latency_ms": 51.16
     },
     {
       "id": "q002",
@@ -60,13 +121,13 @@
       ],
       "scores": [
         0.895828,
-        0.895768,
+        0.895767,
         0.895509,
         0.888335,
         0.887953
       ],
       "first_relevant_rank": 1,
-      "latency_ms": 16.868
+      "latency_ms": 45.166
     },
     {
       "id": "q003",
@@ -93,10 +154,10 @@
         0.887166,
         0.887056,
         0.885987,
-        0.885208
+        0.885209
       ],
       "first_relevant_rank": 1,
-      "latency_ms": 16.184
+      "latency_ms": 51.645
     },
     {
       "id": "q004",
@@ -126,7 +187,7 @@
         0.874121
       ],
       "first_relevant_rank": 1,
-      "latency_ms": 19.362
+      "latency_ms": 45.935
     },
     {
       "id": "q005",
@@ -156,7 +217,7 @@
         0.861548
       ],
       "first_relevant_rank": 1,
-      "latency_ms": 16.057
+      "latency_ms": 50.901
     },
     {
       "id": "q006",
@@ -182,11 +243,11 @@
         0.897222,
         0.89679,
         0.894847,
-        0.893736,
+        0.893737,
         0.88695
       ],
       "first_relevant_rank": 2,
-      "latency_ms": 17.467
+      "latency_ms": 45.447
     },
     {
       "id": "q007",
@@ -216,7 +277,7 @@
         0.881629
       ],
       "first_relevant_rank": 1,
-      "latency_ms": 15.477
+      "latency_ms": 44.083
     },
     {
       "id": "q008",
@@ -241,12 +302,12 @@
       "scores": [
         0.901525,
         0.873042,
-        0.871511,
+        0.871512,
         0.867673,
         0.864891
       ],
       "first_relevant_rank": 1,
-      "latency_ms": 15.732
+      "latency_ms": 44.278
     },
     {
       "id": "q009",
@@ -273,10 +334,880 @@
         0.826005,
         0.815511,
         0.811423,
-        0.811159
+        0.81116
       ],
       "first_relevant_rank": 1,
-      "latency_ms": 16.19
+      "latency_ms": 45.837
+    },
+    {
+      "id": "q011",
+      "question": "Does the AI Act apply to a provider outside the EU when its AI system's output is used in the Union?",
+      "expected_articles": [
+        "2"
+      ],
+      "retrieved_articles": [
+        "2",
+        "2",
+        "50",
+        "3",
+        "60"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-2-paragraph-1",
+        "ai-act-en-article-2-paragraph-3",
+        "ai-act-en-article-50-paragraph-2",
+        "ai-act-en-article-3-paragraph-1",
+        "ai-act-en-article-60-paragraph-1"
+      ],
+      "scores": [
+        0.893013,
+        0.879583,
+        0.86235,
+        0.861285,
+        0.861214
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 46.706
+    },
+    {
+      "id": "q012",
+      "question": "What must providers and deployers do to ensure their staff have sufficient AI literacy?",
+      "expected_articles": [
+        "4"
+      ],
+      "retrieved_articles": [
+        "4",
+        "50",
+        "13",
+        "26",
+        "26"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-4-paragraph-1",
+        "ai-act-en-article-50-paragraph-2",
+        "ai-act-en-article-13-paragraph-1",
+        "ai-act-en-article-26-paragraph-7",
+        "ai-act-en-article-26-paragraph-2"
+      ],
+      "scores": [
+        0.897782,
+        0.856641,
+        0.846508,
+        0.843788,
+        0.842573
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 49.368
+    },
+    {
+      "id": "q013",
+      "question": "When can an AI system listed in Annex III avoid being classified as high-risk?",
+      "expected_articles": [
+        "6"
+      ],
+      "retrieved_articles": [
+        "6",
+        "6",
+        "80",
+        "6",
+        "80"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-6-paragraph-3",
+        "ai-act-en-article-6-paragraph-4",
+        "ai-act-en-article-80-paragraph-5",
+        "ai-act-en-article-6-paragraph-2",
+        "ai-act-en-article-80-paragraph-2"
+      ],
+      "scores": [
+        0.914329,
+        0.903044,
+        0.898713,
+        0.898711,
+        0.898456
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 63.511
+    },
+    {
+      "id": "q014",
+      "question": "What technical documentation must be prepared for a high-risk AI system before it is marketed?",
+      "expected_articles": [
+        "11"
+      ],
+      "retrieved_articles": [
+        "16",
+        "11",
+        "11",
+        "6",
+        "9"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-16-paragraph-1",
+        "ai-act-en-article-11-paragraph-2",
+        "ai-act-en-article-11-paragraph-1",
+        "ai-act-en-article-6-paragraph-4",
+        "ai-act-en-article-9-paragraph-8"
+      ],
+      "scores": [
+        0.883357,
+        0.876514,
+        0.874202,
+        0.873691,
+        0.873
+      ],
+      "first_relevant_rank": 2,
+      "latency_ms": 46.1
+    },
+    {
+      "id": "q015",
+      "question": "What accuracy, robustness and cybersecurity requirements apply to high-risk AI systems?",
+      "expected_articles": [
+        "15"
+      ],
+      "retrieved_articles": [
+        "15",
+        "15",
+        "15",
+        "15",
+        "42"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-15-paragraph-1",
+        "ai-act-en-article-15-paragraph-4",
+        "ai-act-en-article-15-paragraph-5",
+        "ai-act-en-article-15-paragraph-3",
+        "ai-act-en-article-42-paragraph-2"
+      ],
+      "scores": [
+        0.920228,
+        0.916152,
+        0.905683,
+        0.900399,
+        0.874315
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 44.622
+    },
+    {
+      "id": "q016",
+      "question": "What are the main obligations of a provider of a high-risk AI system?",
+      "expected_articles": [
+        "16"
+      ],
+      "retrieved_articles": [
+        "25",
+        "24",
+        "24",
+        "24",
+        "24"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-25-paragraph-1",
+        "ai-act-en-article-24-paragraph-3",
+        "ai-act-en-article-24-paragraph-5",
+        "ai-act-en-article-24-paragraph-4",
+        "ai-act-en-article-24-paragraph-2"
+      ],
+      "scores": [
+        0.903755,
+        0.895564,
+        0.889952,
+        0.88951,
+        0.889355
+      ],
+      "first_relevant_rank": null,
+      "latency_ms": 43.571
+    },
+    {
+      "id": "q017",
+      "question": "What must a provider include in its quality management system?",
+      "expected_articles": [
+        "17"
+      ],
+      "retrieved_articles": [
+        "17",
+        "17",
+        "17",
+        "63",
+        "17"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-17-paragraph-4",
+        "ai-act-en-article-17-paragraph-2",
+        "ai-act-en-article-17-paragraph-3",
+        "ai-act-en-article-63-paragraph-1",
+        "ai-act-en-article-17-paragraph-1"
+      ],
+      "scores": [
+        0.851327,
+        0.844886,
+        0.835975,
+        0.810927,
+        0.810893
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 47.929
+    },
+    {
+      "id": "q018",
+      "question": "How long must providers retain documentation for high-risk AI systems?",
+      "expected_articles": [
+        "18"
+      ],
+      "retrieved_articles": [
+        "18",
+        "26",
+        "19",
+        "47",
+        "16"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-18-paragraph-1",
+        "ai-act-en-article-26-paragraph-6",
+        "ai-act-en-article-19-paragraph-1",
+        "ai-act-en-article-47-paragraph-1",
+        "ai-act-en-article-16-paragraph-1"
+      ],
+      "scores": [
+        0.909458,
+        0.901993,
+        0.890827,
+        0.889266,
+        0.882315
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 47.889
+    },
+    {
+      "id": "q019",
+      "question": "What duties does an authorised representative of a non-EU provider have?",
+      "expected_articles": [
+        "22"
+      ],
+      "retrieved_articles": [
+        "22",
+        "22",
+        "22",
+        "54",
+        "54"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-22-paragraph-2",
+        "ai-act-en-article-22-paragraph-3",
+        "ai-act-en-article-22-paragraph-1",
+        "ai-act-en-article-54-paragraph-4",
+        "ai-act-en-article-54-paragraph-1"
+      ],
+      "scores": [
+        0.827722,
+        0.82513,
+        0.825125,
+        0.822818,
+        0.822102
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 43.305
+    },
+    {
+      "id": "q020",
+      "question": "What must an importer verify before placing a high-risk AI system on the EU market?",
+      "expected_articles": [
+        "23"
+      ],
+      "retrieved_articles": [
+        "23",
+        "23",
+        "24",
+        "23",
+        "16"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-23-paragraph-1",
+        "ai-act-en-article-23-paragraph-2",
+        "ai-act-en-article-24-paragraph-1",
+        "ai-act-en-article-23-paragraph-5",
+        "ai-act-en-article-16-paragraph-1"
+      ],
+      "scores": [
+        0.903435,
+        0.893499,
+        0.888312,
+        0.88112,
+        0.875532
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 43.969
+    },
+    {
+      "id": "q021",
+      "question": "What checks must a distributor perform before making a high-risk AI system available?",
+      "expected_articles": [
+        "24"
+      ],
+      "retrieved_articles": [
+        "24",
+        "24",
+        "24",
+        "24",
+        "25"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-24-paragraph-2",
+        "ai-act-en-article-24-paragraph-1",
+        "ai-act-en-article-24-paragraph-4",
+        "ai-act-en-article-24-paragraph-5",
+        "ai-act-en-article-25-paragraph-1"
+      ],
+      "scores": [
+        0.893663,
+        0.887979,
+        0.8875,
+        0.88172,
+        0.878612
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 44.356
+    },
+    {
+      "id": "q022",
+      "question": "When is a distributor, importer, deployer or other third party treated as the provider of a high-risk AI system?",
+      "expected_articles": [
+        "25"
+      ],
+      "retrieved_articles": [
+        "25",
+        "24",
+        "24",
+        "3",
+        "23"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-25-paragraph-1",
+        "ai-act-en-article-24-paragraph-2",
+        "ai-act-en-article-24-paragraph-4",
+        "ai-act-en-article-3-paragraph-1",
+        "ai-act-en-article-23-paragraph-2"
+      ],
+      "scores": [
+        0.904523,
+        0.885136,
+        0.882598,
+        0.878897,
+        0.877825
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 45.02
+    },
+    {
+      "id": "q023",
+      "question": "What responsibilities do deployers have for input data, human oversight and operational monitoring?",
+      "expected_articles": [
+        "26"
+      ],
+      "retrieved_articles": [
+        "26",
+        "26",
+        "26",
+        "26",
+        "14"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-26-paragraph-2",
+        "ai-act-en-article-26-paragraph-3",
+        "ai-act-en-article-26-paragraph-4",
+        "ai-act-en-article-26-paragraph-5",
+        "ai-act-en-article-14-paragraph-4"
+      ],
+      "scores": [
+        0.859547,
+        0.837678,
+        0.829212,
+        0.828402,
+        0.82534
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 46.272
+    },
+    {
+      "id": "q024",
+      "question": "Who must perform a fundamental rights impact assessment before deploying a high-risk AI system?",
+      "expected_articles": [
+        "27"
+      ],
+      "retrieved_articles": [
+        "27",
+        "27",
+        "27",
+        "27",
+        "27"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-27-paragraph-2",
+        "ai-act-en-article-27-paragraph-1",
+        "ai-act-en-article-27-paragraph-5",
+        "ai-act-en-article-27-paragraph-3",
+        "ai-act-en-article-27-paragraph-4"
+      ],
+      "scores": [
+        0.910524,
+        0.896601,
+        0.894944,
+        0.882343,
+        0.880697
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 47.092
+    },
+    {
+      "id": "q025",
+      "question": "When must a substantially modified high-risk AI system undergo a new conformity assessment?",
+      "expected_articles": [
+        "43"
+      ],
+      "retrieved_articles": [
+        "43",
+        "43",
+        "36",
+        "111",
+        "43"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-43-paragraph-4",
+        "ai-act-en-article-43-paragraph-1",
+        "ai-act-en-article-36-paragraph-3",
+        "ai-act-en-article-111-paragraph-2",
+        "ai-act-en-article-43-paragraph-2"
+      ],
+      "scores": [
+        0.918525,
+        0.865605,
+        0.86377,
+        0.863349,
+        0.861173
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 47.009
+    },
+    {
+      "id": "q026",
+      "question": "Who must register high-risk AI systems and their use in the EU database?",
+      "expected_articles": [
+        "49"
+      ],
+      "retrieved_articles": [
+        "26",
+        "71",
+        "71",
+        "49",
+        "71"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-26-paragraph-8",
+        "ai-act-en-article-71-paragraph-1",
+        "ai-act-en-article-71-paragraph-5",
+        "ai-act-en-article-49-paragraph-3",
+        "ai-act-en-article-71-paragraph-6"
+      ],
+      "scores": [
+        0.905236,
+        0.904301,
+        0.898399,
+        0.893243,
+        0.891702
+      ],
+      "first_relevant_rank": 4,
+      "latency_ms": 51.635
+    },
+    {
+      "id": "q027",
+      "question": "Must a chatbot tell a person that they are interacting with an AI system?",
+      "expected_articles": [
+        "50"
+      ],
+      "retrieved_articles": [
+        "50",
+        "61",
+        "50",
+        "14",
+        "26"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-50-paragraph-1",
+        "ai-act-en-article-61-paragraph-1",
+        "ai-act-en-article-50-paragraph-3",
+        "ai-act-en-article-14-paragraph-4",
+        "ai-act-en-article-26-paragraph-7"
+      ],
+      "scores": [
+        0.848959,
+        0.83329,
+        0.833216,
+        0.832989,
+        0.831399
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 50.762
+    },
+    {
+      "id": "q028",
+      "question": "When is a general-purpose AI model classified as having systemic risk?",
+      "expected_articles": [
+        "51"
+      ],
+      "retrieved_articles": [
+        "51",
+        "55",
+        "52",
+        "55",
+        "52"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-51-paragraph-1",
+        "ai-act-en-article-55-paragraph-1",
+        "ai-act-en-article-52-paragraph-5",
+        "ai-act-en-article-55-paragraph-2",
+        "ai-act-en-article-52-paragraph-2"
+      ],
+      "scores": [
+        0.910664,
+        0.888812,
+        0.883421,
+        0.878946,
+        0.87894
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 46.339
+    },
+    {
+      "id": "q029",
+      "question": "What documentation, copyright and training-content duties apply to providers of general-purpose AI models?",
+      "expected_articles": [
+        "53"
+      ],
+      "retrieved_articles": [
+        "53",
+        "53",
+        "91",
+        "91",
+        "53"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-53-paragraph-1",
+        "ai-act-en-article-53-paragraph-3",
+        "ai-act-en-article-91-paragraph-1",
+        "ai-act-en-article-91-paragraph-5",
+        "ai-act-en-article-53-paragraph-4"
+      ],
+      "scores": [
+        0.903655,
+        0.882122,
+        0.881524,
+        0.880065,
+        0.87913
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 46.729
+    },
+    {
+      "id": "q030",
+      "question": "What additional obligations apply to providers of general-purpose AI models with systemic risk?",
+      "expected_articles": [
+        "55"
+      ],
+      "retrieved_articles": [
+        "55",
+        "55",
+        "55",
+        "52",
+        "53"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-55-paragraph-1",
+        "ai-act-en-article-55-paragraph-2",
+        "ai-act-en-article-55-paragraph-3",
+        "ai-act-en-article-52-paragraph-5",
+        "ai-act-en-article-53-paragraph-2"
+      ],
+      "scores": [
+        0.918228,
+        0.91147,
+        0.886415,
+        0.882591,
+        0.879413
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 46.145
+    },
+    {
+      "id": "q031",
+      "question": "How must providers monitor a high-risk AI system after it is placed on the market?",
+      "expected_articles": [
+        "72"
+      ],
+      "retrieved_articles": [
+        "72",
+        "72",
+        "72",
+        "25",
+        "60"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-72-paragraph-2",
+        "ai-act-en-article-72-paragraph-1",
+        "ai-act-en-article-72-paragraph-4",
+        "ai-act-en-article-25-paragraph-1",
+        "ai-act-en-article-60-paragraph-7"
+      ],
+      "scores": [
+        0.898402,
+        0.89813,
+        0.888429,
+        0.887261,
+        0.885033
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 44.047
+    },
+    {
+      "id": "q032",
+      "question": "What are the deadlines for reporting serious incidents involving high-risk AI systems?",
+      "expected_articles": [
+        "73"
+      ],
+      "retrieved_articles": [
+        "73",
+        "73",
+        "73",
+        "73",
+        "73"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-73-paragraph-4",
+        "ai-act-en-article-73-paragraph-2",
+        "ai-act-en-article-73-paragraph-10",
+        "ai-act-en-article-73-paragraph-1",
+        "ai-act-en-article-73-paragraph-9"
+      ],
+      "scores": [
+        0.899661,
+        0.893877,
+        0.885842,
+        0.883025,
+        0.881007
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 45.674
+    },
+    {
+      "id": "q033",
+      "question": "When may a market surveillance authority request access to the source code of a high-risk AI system?",
+      "expected_articles": [
+        "74"
+      ],
+      "retrieved_articles": [
+        "74",
+        "75",
+        "74",
+        "46",
+        "79"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-74-paragraph-13",
+        "ai-act-en-article-75-paragraph-3",
+        "ai-act-en-article-74-paragraph-12",
+        "ai-act-en-article-46-paragraph-3",
+        "ai-act-en-article-79-paragraph-2"
+      ],
+      "scores": [
+        0.924941,
+        0.8815,
+        0.881209,
+        0.872753,
+        0.870651
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 46.033
+    },
+    {
+      "id": "q034",
+      "question": "Can a person or company complain to a market surveillance authority about an AI Act infringement?",
+      "expected_articles": [
+        "85"
+      ],
+      "retrieved_articles": [
+        "85",
+        "89",
+        "74",
+        "83",
+        "88"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-85-paragraph-1",
+        "ai-act-en-article-89-paragraph-2",
+        "ai-act-en-article-74-paragraph-2",
+        "ai-act-en-article-83-paragraph-2",
+        "ai-act-en-article-88-paragraph-2"
+      ],
+      "scores": [
+        0.890865,
+        0.883383,
+        0.875216,
+        0.869842,
+        0.86778
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 47.293
+    },
+    {
+      "id": "q035",
+      "question": "When does an affected person have a right to an explanation of an AI-assisted decision?",
+      "expected_articles": [
+        "86"
+      ],
+      "retrieved_articles": [
+        "86",
+        "86",
+        "91",
+        "61",
+        "86"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-86-paragraph-1",
+        "ai-act-en-article-86-paragraph-2",
+        "ai-act-en-article-91-paragraph-5",
+        "ai-act-en-article-61-paragraph-1",
+        "ai-act-en-article-86-paragraph-3"
+      ],
+      "scores": [
+        0.886444,
+        0.861987,
+        0.84927,
+        0.846458,
+        0.8446
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 83.401
+    },
+    {
+      "id": "q036",
+      "question": "What are the maximum fines for prohibited AI practices and other operator violations?",
+      "expected_articles": [
+        "99"
+      ],
+      "retrieved_articles": [
+        "99",
+        "100",
+        "100",
+        "101",
+        "101"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-99-paragraph-3",
+        "ai-act-en-article-100-paragraph-2",
+        "ai-act-en-article-100-paragraph-3",
+        "ai-act-en-article-101-paragraph-1",
+        "ai-act-en-article-101-paragraph-4"
+      ],
+      "scores": [
+        0.879627,
+        0.871361,
+        0.860772,
+        0.846041,
+        0.842767
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 52.463
+    },
+    {
+      "id": "q037",
+      "question": "What is the AI Act's general application date, and when do Chapters I and II, the general-purpose AI rules and Article 6(1) start applying?",
+      "expected_articles": [
+        "113"
+      ],
+      "retrieved_articles": [
+        "111",
+        "111",
+        "111",
+        "53",
+        "101"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-111-paragraph-1",
+        "ai-act-en-article-111-paragraph-2",
+        "ai-act-en-article-111-paragraph-3",
+        "ai-act-en-article-53-paragraph-1",
+        "ai-act-en-article-101-paragraph-6"
+      ],
+      "scores": [
+        0.874974,
+        0.867086,
+        0.864231,
+        0.859851,
+        0.858502
+      ],
+      "first_relevant_rank": null,
+      "latency_ms": 41.446
+    },
+    {
+      "id": "q038",
+      "question": "How does the AI Act define an AI system?",
+      "expected_articles": [
+        "3"
+      ],
+      "retrieved_articles": [
+        "3",
+        "75",
+        "111",
+        "50",
+        "79"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-3-paragraph-1",
+        "ai-act-en-article-75-paragraph-1",
+        "ai-act-en-article-111-paragraph-1",
+        "ai-act-en-article-50-paragraph-1",
+        "ai-act-en-article-79-paragraph-4"
+      ],
+      "scores": [
+        0.872313,
+        0.867499,
+        0.866912,
+        0.864786,
+        0.864052
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 52.426
+    },
+    {
+      "id": "q039",
+      "question": "For how long must a deployer keep logs generated by a high-risk AI system?",
+      "expected_articles": [
+        "26"
+      ],
+      "retrieved_articles": [
+        "26",
+        "19",
+        "12",
+        "26",
+        "26"
+      ],
+      "retrieved_chunks": [
+        "ai-act-en-article-26-paragraph-6",
+        "ai-act-en-article-19-paragraph-1",
+        "ai-act-en-article-12-paragraph-1",
+        "ai-act-en-article-26-paragraph-8",
+        "ai-act-en-article-26-paragraph-1"
+      ],
+      "scores": [
+        0.926895,
+        0.899109,
+        0.871704,
+        0.859542,
+        0.859013
+      ],
+      "first_relevant_rank": 1,
+      "latency_ms": 52.851
     }
   ],
   "model": "intfloat/multilingual-e5-base",

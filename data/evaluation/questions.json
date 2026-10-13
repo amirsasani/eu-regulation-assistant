@@ -1,12 +1,372 @@
 [
-{"id":"q001","question":"Which artificial intelligence practices are prohibited under the EU AI Act?","relevant_articles":["5"],"category":"direct","difficulty":"easy"},
-{"id":"q002","question":"How can I determine whether an AI system should be classified as high-risk?","relevant_articles":["6"],"category":"paraphrased","difficulty":"medium"},
-{"id":"q003","question":"What risk management obligations apply to high-risk AI systems?","relevant_articles":["9"],"category":"paraphrased","difficulty":"medium"},
-{"id":"q004","question":"What requirements apply to training, validation and testing data used by high-risk AI systems?","relevant_articles":["10"],"category":"direct","difficulty":"easy"},
-{"id":"q005","question":"Must high-risk AI systems automatically record events during their operation?","relevant_articles":["12"],"category":"paraphrased","difficulty":"medium"},
-{"id":"q006","question":"What information must providers give deployers so that high-risk AI systems can be used correctly?","relevant_articles":["13"],"category":"paraphrased","difficulty":"medium"},
-{"id":"q007","question":"How must human oversight be incorporated into a high-risk AI system?","relevant_articles":["14"],"category":"direct","difficulty":"easy"},
-{"id":"q008","question":"What must deployers do when monitoring a high-risk AI system and keeping its logs?","relevant_articles":["26"],"category":"multi_passage","difficulty":"hard"},
-{"id":"q009","question":"When must people be informed that content is artificially generated or manipulated, including deepfakes?","relevant_articles":["50"],"category":"paraphrased","difficulty":"medium"},
-{"id":"q010","question":"How is income from cryptocurrency taxed in Italy?","relevant_articles":[],"category":"unsupported","difficulty":"easy"}
+  {
+    "id": "q001",
+    "question": "Which artificial intelligence practices are prohibited under the EU AI Act?",
+    "relevant_articles": [
+      "5"
+    ],
+    "category": "direct",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q002",
+    "question": "How can I determine whether an AI system should be classified as high-risk?",
+    "relevant_articles": [
+      "6"
+    ],
+    "category": "paraphrased",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q003",
+    "question": "What risk management obligations apply to high-risk AI systems?",
+    "relevant_articles": [
+      "9"
+    ],
+    "category": "paraphrased",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q004",
+    "question": "What requirements apply to training, validation and testing data used by high-risk AI systems?",
+    "relevant_articles": [
+      "10"
+    ],
+    "category": "direct",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q005",
+    "question": "Must high-risk AI systems automatically record events during their operation?",
+    "relevant_articles": [
+      "12"
+    ],
+    "category": "paraphrased",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q006",
+    "question": "What information must providers give deployers so that high-risk AI systems can be used correctly?",
+    "relevant_articles": [
+      "13"
+    ],
+    "category": "paraphrased",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q007",
+    "question": "How must human oversight be incorporated into a high-risk AI system?",
+    "relevant_articles": [
+      "14"
+    ],
+    "category": "direct",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q008",
+    "question": "What must deployers do when monitoring a high-risk AI system and keeping its logs?",
+    "relevant_articles": [
+      "26"
+    ],
+    "category": "multi_passage",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q009",
+    "question": "When must people be informed that content is artificially generated or manipulated, including deepfakes?",
+    "relevant_articles": [
+      "50"
+    ],
+    "category": "paraphrased",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q010",
+    "question": "How is income from cryptocurrency taxed in Italy?",
+    "relevant_articles": [],
+    "category": "unsupported",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q011",
+    "question": "Does the AI Act apply to a provider outside the EU when its AI system's output is used in the Union?",
+    "relevant_articles": [
+      "2"
+    ],
+    "category": "scenario",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q012",
+    "question": "What must providers and deployers do to ensure their staff have sufficient AI literacy?",
+    "relevant_articles": [
+      "4"
+    ],
+    "category": "paraphrased",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q013",
+    "question": "When can an AI system listed in Annex III avoid being classified as high-risk?",
+    "relevant_articles": [
+      "6"
+    ],
+    "category": "scenario",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q014",
+    "question": "What technical documentation must be prepared for a high-risk AI system before it is marketed?",
+    "relevant_articles": [
+      "11"
+    ],
+    "category": "direct",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q015",
+    "question": "What accuracy, robustness and cybersecurity requirements apply to high-risk AI systems?",
+    "relevant_articles": [
+      "15"
+    ],
+    "category": "direct",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q016",
+    "question": "What are the main obligations of a provider of a high-risk AI system?",
+    "relevant_articles": [
+      "16"
+    ],
+    "category": "multi_passage",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q017",
+    "question": "What must a provider include in its quality management system?",
+    "relevant_articles": [
+      "17"
+    ],
+    "category": "direct",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q018",
+    "question": "How long must providers retain documentation for high-risk AI systems?",
+    "relevant_articles": [
+      "18"
+    ],
+    "category": "paraphrased",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q019",
+    "question": "What duties does an authorised representative of a non-EU provider have?",
+    "relevant_articles": [
+      "22"
+    ],
+    "category": "scenario",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q020",
+    "question": "What must an importer verify before placing a high-risk AI system on the EU market?",
+    "relevant_articles": [
+      "23"
+    ],
+    "category": "scenario",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q021",
+    "question": "What checks must a distributor perform before making a high-risk AI system available?",
+    "relevant_articles": [
+      "24"
+    ],
+    "category": "scenario",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q022",
+    "question": "When is a distributor, importer, deployer or other third party treated as the provider of a high-risk AI system?",
+    "relevant_articles": [
+      "25"
+    ],
+    "category": "scenario",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q023",
+    "question": "What responsibilities do deployers have for input data, human oversight and operational monitoring?",
+    "relevant_articles": [
+      "26"
+    ],
+    "category": "multi_passage",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q024",
+    "question": "Who must perform a fundamental rights impact assessment before deploying a high-risk AI system?",
+    "relevant_articles": [
+      "27"
+    ],
+    "category": "scenario",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q025",
+    "question": "When must a substantially modified high-risk AI system undergo a new conformity assessment?",
+    "relevant_articles": [
+      "43"
+    ],
+    "category": "scenario",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q026",
+    "question": "Who must register high-risk AI systems and their use in the EU database?",
+    "relevant_articles": [
+      "49"
+    ],
+    "category": "multi_passage",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q027",
+    "question": "Must a chatbot tell a person that they are interacting with an AI system?",
+    "relevant_articles": [
+      "50"
+    ],
+    "category": "scenario",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q028",
+    "question": "When is a general-purpose AI model classified as having systemic risk?",
+    "relevant_articles": [
+      "51"
+    ],
+    "category": "direct",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q029",
+    "question": "What documentation, copyright and training-content duties apply to providers of general-purpose AI models?",
+    "relevant_articles": [
+      "53"
+    ],
+    "category": "multi_passage",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q030",
+    "question": "What additional obligations apply to providers of general-purpose AI models with systemic risk?",
+    "relevant_articles": [
+      "55"
+    ],
+    "category": "direct",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q031",
+    "question": "How must providers monitor a high-risk AI system after it is placed on the market?",
+    "relevant_articles": [
+      "72"
+    ],
+    "category": "paraphrased",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q032",
+    "question": "What are the deadlines for reporting serious incidents involving high-risk AI systems?",
+    "relevant_articles": [
+      "73"
+    ],
+    "category": "multi_passage",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q033",
+    "question": "When may a market surveillance authority request access to the source code of a high-risk AI system?",
+    "relevant_articles": [
+      "74"
+    ],
+    "category": "scenario",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q034",
+    "question": "Can a person or company complain to a market surveillance authority about an AI Act infringement?",
+    "relevant_articles": [
+      "85"
+    ],
+    "category": "paraphrased",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q035",
+    "question": "When does an affected person have a right to an explanation of an AI-assisted decision?",
+    "relevant_articles": [
+      "86"
+    ],
+    "category": "scenario",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q036",
+    "question": "What are the maximum fines for prohibited AI practices and other operator violations?",
+    "relevant_articles": [
+      "99"
+    ],
+    "category": "multi_passage",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q037",
+    "question": "What is the AI Act's general application date, and when do Chapters I and II, the general-purpose AI rules and Article 6(1) start applying?",
+    "relevant_articles": [
+      "113"
+    ],
+    "category": "multi_passage",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q038",
+    "question": "How does the AI Act define an AI system?",
+    "relevant_articles": [
+      "3"
+    ],
+    "category": "direct",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q039",
+    "question": "For how long must a deployer keep logs generated by a high-risk AI system?",
+    "relevant_articles": [
+      "26"
+    ],
+    "category": "direct",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q040",
+    "question": "How many paid vacation days must an AI engineer receive under the EU AI Act?",
+    "relevant_articles": [],
+    "category": "unsupported",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q041",
+    "question": "Which cloud hosting provider does the EU AI Act require companies to use?",
+    "relevant_articles": [],
+    "category": "unsupported",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q042",
+    "question": "What is the current market share of generative AI products in Europe?",
+    "relevant_articles": [],
+    "category": "unsupported",
+    "difficulty": "easy"
+  }
 ]

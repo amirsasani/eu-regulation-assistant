@@ -15,6 +15,8 @@ REFUSAL_PHRASES = (
     "does not specify",
     "do not specify",
     "cannot determine",
+    "there is no information",
+    "there is no requirement",
 )
 
 
@@ -74,9 +76,10 @@ def calculate_expected_source_recall(expected_points: list[dict], sources: list[
 
 
 def contains_refusal(answer: str) -> bool:
-    normalized_answer = answer.lower()
+    normalized_answer = answer.strip().lower()
+    opening_paragraph = re.split(r"\n\s*\n", normalized_answer, maxsplit=1)[0]
 
-    return any(phrase in normalized_answer for phrase in REFUSAL_PHRASES)
+    return any(phrase in opening_paragraph for phrase in REFUSAL_PHRASES)
 
 
 def evaluate_answer(answer: str, sources: list[dict], evaluation_item: dict) -> dict:
