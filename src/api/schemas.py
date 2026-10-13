@@ -34,7 +34,7 @@ class PostgresReadiness(BaseModel):
 
 class OllamaReadiness(BaseModel):
     status: Literal["ok", "unavailable"]
-    models: list[str] = Field(default_factory=list)
+    model: str | None = None
 
 
 class ReadinessServices(BaseModel):

@@ -48,7 +48,7 @@ def health():
         }
     },
 )
-def readiness(response: Response):
+def readiness(response: Response) -> ReadinessResponse:
     services = {
         "postgres": {"status": "unavailable"},
         "ollama": {"status": "unavailable"},

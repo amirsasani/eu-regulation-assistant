@@ -18,6 +18,8 @@ The project currently focuses on the **EU Artificial Intelligence Act** and uses
 - Adds article and paragraph citations
 - Refuses questions that cannot be answered from the retrieved sources
 - Evaluates retrieval, grounding and citation correctness
+- Exposes the complete RAG pipeline through FastAPI
+- Reports application and dependency readiness
 
 ## Architecture
 
@@ -40,6 +42,7 @@ flowchart LR
     I --> J[Top source chunks]
     J --> K[Ollama generator]
     K --> L[Answer with citations]
+    L --> M[FastAPI response]
 ```
 
 ## Current status
@@ -174,11 +177,13 @@ eu-regulation-assistant/
 │   ├── search_postgres.py
 │   └── search_semantic.py
 ├── src/
+│   ├── api/
 │   ├── database/
 │   ├── evaluation/
 │   ├── generation/
 │   ├── ingestion/
-│   └── retrieval/
+│   ├── retrieval/
+│   └── services/
 ├── .env.example
 ├── docker-compose.yml
 ├── LICENSE
@@ -205,7 +210,7 @@ source .venv/bin/activate
 Install the Python dependencies:
 
 ```bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 Create the environment configuration:
@@ -311,7 +316,6 @@ python -m scripts.search_postgres \
 ```bash
 python -m scripts.search_hybrid \
   --query "What risk management obligations apply to high-risk AI systems?" \
-   --rerank \
   --top_k 5 \
   --candidate_k 10
 ```
@@ -328,6 +332,98 @@ python -m scripts.ask \
 ```
 
 The command retrieves relevant passages, reranks them and generates an answer containing article and paragraph citations.
+
+## API
+
+The FastAPI application loads the BM25 index, embedding model and reranker once during startup so they can be reused across requests.
+
+Start the API from the activated virtual environment:
+
+```bash
+python -m uvicorn src.api.app:app --reload
+```
+
+Interactive API documentation is available at:
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+### Endpoints
+
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/health` | Confirms that the FastAPI process is running |
+| `GET` | `/ready` | Checks PostgreSQL, indexed chunk count and the configured Ollama model |
+| `POST` | `/ask` | Runs retrieval, reranking and grounded answer generation |
+
+### Health check
+
+```bash
+curl http://127.0.0.1:8000/health
+```
+
+```json
+{
+  "status": "ok"
+}
+```
+
+### Readiness check
+
+```bash
+curl http://127.0.0.1:8000/ready
+```
+
+```json
+{
+  "status": "ok",
+  "services": {
+    "postgres": {
+      "status": "ok",
+      "chunks": 519
+    },
+    "ollama": {
+      "status": "ok",
+      "model": "qwen3.5:4b"
+    }
+  }
+}
+```
+
+The readiness endpoint returns HTTP `503` when PostgreSQL, the indexed chunks or the configured Ollama model are unavailable.
+
+### Ask a question
+
+```bash
+curl -X POST http://127.0.0.1:8000/ask \
+  -H "Content-Type: application/json" \
+  -d '{
+    "question": "What risk management obligations apply to high-risk AI systems?",
+    "top_k": 5,
+    "candidate_k": 10
+  }'
+```
+
+Example response:
+
+```json
+{
+  "answer": "A risk management system must be established, implemented, documented and maintained [Article 9, paragraph 1].",
+  "model": "qwen3.5:4b",
+  "sources": [
+    {
+      "chunk_id": "ai-act-en-article-9-paragraph-1",
+      "article_number": "9",
+      "article_title": "Risk management system",
+      "paragraph_number": "1",
+      "text": "A risk management system shall be established...",
+      "source_url": "https://eur-lex.europa.eu/",
+      "reranker_score": 0.99
+    }
+  ]
+}
+```
 
 ## Evaluation
 
@@ -362,16 +458,16 @@ data/evaluation/generation-results.json
 - The answer-quality judge is a local language model rather than a legal expert.
 - Local-model latency depends on the available hardware.
 - Document amendments and consolidated versions are not synchronized automatically.
-- The project does not yet expose an HTTP API or user interface.
+- The project exposes an HTTP API but does not yet include a graphical user interface.
 
 ## Roadmap
 
-1. Expose retrieval and generation through FastAPI.
-2. Add API tests and containerized deployment.
-3. Expand the retrieval and generation evaluation sets.
-4. Add Italian-language queries and answers.
-5. Add GDPR and NIS2 as additional data sources.
-6. Detect and process updated consolidated regulations automatically.
+1. Add API tests and containerized deployment.
+2. Expand the retrieval and generation evaluation sets.
+3. Add Italian-language queries and answers.
+4. Add GDPR and NIS2 as additional data sources.
+5. Detect and process updated consolidated regulations automatically.
+6. Add a simple web interface.
 
 ## License
 
