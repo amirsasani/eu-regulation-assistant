@@ -48,6 +48,23 @@ ORDER BY embedding <=> %s
 LIMIT %s;
 """
 
+SEARCH_BY_LANGUAGE_SQL = """
+SELECT
+    chunk_id,
+    document_id,
+    language,
+    article_number,
+    article_title,
+    paragraph_number,
+    text,
+    source_url,
+    1 - (embedding <=> %s) AS similarity
+FROM regulation_chunks
+WHERE language = %s
+ORDER BY embedding <=> %s
+LIMIT %s;
+"""
+
 def upsert_documents(documents: list[dict], embeddings: np.ndarray, default_document_id: str) -> int:
     if len(documents) != len(embeddings):
         raise ValueError("Document and embedding counts do not match.")
@@ -79,7 +96,11 @@ def upsert_documents(documents: list[dict], embeddings: np.ndarray, default_docu
     return len(rows)
 
 
-def search_similar(query_embedding: np.ndarray, top_k: int = 5):
+def search_similar(
+    query_embedding: np.ndarray,
+    top_k: int = 5,
+    language: str | None = None,
+):
     if top_k < 1:
         raise ValueError("top_k must be at least 1.")
 
@@ -89,14 +110,25 @@ def search_similar(query_embedding: np.ndarray, top_k: int = 5):
         register_vector(connection)
 
         with connection.cursor() as cursor:
-            cursor.execute(
-                SEARCH_SQL,
-                (
-                    query_embedding,
-                    query_embedding,
-                    top_k,
-                ),
-            )
+            if language is None:
+                cursor.execute(
+                    SEARCH_SQL,
+                    (
+                        query_embedding,
+                        query_embedding,
+                        top_k,
+                    ),
+                )
+            else:
+                cursor.execute(
+                    SEARCH_BY_LANGUAGE_SQL,
+                    (
+                        query_embedding,
+                        language,
+                        query_embedding,
+                        top_k,
+                    ),
+                )
 
             rows = cursor.fetchall()
 

@@ -4,6 +4,7 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DOCUMENTS_FILE = PROJECT_ROOT / "data/processed/ai-act-articles.json"
+ITALIAN_DOCUMENTS_FILE = PROJECT_ROOT / "data/processed/ai-act-articles-it.json"
 RETRIEVAL_QUESTIONS_FILE = PROJECT_ROOT / "data/evaluation/questions.json"
 ITALIAN_RETRIEVAL_QUESTIONS_FILE = (
     PROJECT_ROOT / "data/evaluation/questions-it.json"
@@ -43,6 +44,18 @@ def test_italian_retrieval_questions_match_english_labels():
         assert italian["relevant_articles"] == english["relevant_articles"]
         assert italian["category"] == english["category"]
         assert italian["difficulty"] == english["difficulty"]
+
+
+def test_italian_corpus_contains_all_articles_and_unique_chunks():
+    documents = load_json(ITALIAN_DOCUMENTS_FILE)
+    chunk_ids = [document["chunk_id"] for document in documents]
+    article_numbers = {str(document["article_number"]) for document in documents}
+
+    assert len(documents) >= 500
+    assert len(chunk_ids) == len(set(chunk_ids))
+    assert article_numbers == {str(number) for number in range(1, 114)}
+    assert all(document["language"] == "it" for document in documents)
+    assert all("/IT/" in document["source_url"] for document in documents)
 
 
 def test_generation_labels_reference_existing_chunks():

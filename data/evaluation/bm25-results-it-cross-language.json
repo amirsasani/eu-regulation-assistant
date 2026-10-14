@@ -1,0 +1,1165 @@
+{
+    "method": "BM25",
+    "questions_evaluated": 38,
+    "latency_ms": 0.194,
+    "top_k": 5,
+    "recall_at_1": 0.053,
+    "recall_at_5": 0.105,
+    "mrr": 0.079,
+    "failures": [
+        {
+            "id": "q001",
+            "question": "Quali pratiche di intelligenza artificiale sono vietate dal regolamento UE sull'intelligenza artificiale?",
+            "expected_articles": [
+                "5"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.856
+        },
+        {
+            "id": "q002",
+            "question": "Come si può determinare se un sistema di IA debba essere classificato ad alto rischio?",
+            "expected_articles": [
+                "6"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.467
+        },
+        {
+            "id": "q003",
+            "question": "Quali obblighi di gestione del rischio si applicano ai sistemi di IA ad alto rischio?",
+            "expected_articles": [
+                "9"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.218
+        },
+        {
+            "id": "q004",
+            "question": "Quali requisiti si applicano ai dati di addestramento, validazione e prova utilizzati dai sistemi di IA ad alto rischio?",
+            "expected_articles": [
+                "10"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.166
+        },
+        {
+            "id": "q005",
+            "question": "I sistemi di IA ad alto rischio devono registrare automaticamente gli eventi durante il loro funzionamento?",
+            "expected_articles": [
+                "12"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.156
+        },
+        {
+            "id": "q006",
+            "question": "Quali informazioni devono fornire i fornitori ai deployer affinché i sistemi di IA ad alto rischio siano utilizzati correttamente?",
+            "expected_articles": [
+                "13"
+            ],
+            "retrieved_articles": [
+                "27",
+                "26",
+                "26",
+                "73",
+                "73"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.463
+        },
+        {
+            "id": "q007",
+            "question": "In che modo deve essere integrata la sorveglianza umana in un sistema di IA ad alto rischio?",
+            "expected_articles": [
+                "14"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.318
+        },
+        {
+            "id": "q009",
+            "question": "Quando le persone devono essere informate che un contenuto è stato generato o manipolato artificialmente, compresi i deepfake?",
+            "expected_articles": [
+                "50"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.16
+        },
+        {
+            "id": "q012",
+            "question": "Cosa devono fare i fornitori e i deployer per garantire che il loro personale possieda un livello sufficiente di alfabetizzazione in materia di IA?",
+            "expected_articles": [
+                "4"
+            ],
+            "retrieved_articles": [
+                "27",
+                "26",
+                "26",
+                "73",
+                "73"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.224
+        },
+        {
+            "id": "q013",
+            "question": "Quando può un sistema di IA elencato nell'allegato III evitare di essere classificato ad alto rischio?",
+            "expected_articles": [
+                "6"
+            ],
+            "retrieved_articles": [
+                "7",
+                "49",
+                "49",
+                "49",
+                "80"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.176
+        },
+        {
+            "id": "q014",
+            "question": "Quale documentazione tecnica deve essere predisposta per un sistema di IA ad alto rischio prima della sua immissione sul mercato?",
+            "expected_articles": [
+                "11"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.139
+        },
+        {
+            "id": "q015",
+            "question": "Quali requisiti di accuratezza, robustezza e cibersicurezza si applicano ai sistemi di IA ad alto rischio?",
+            "expected_articles": [
+                "15"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.133
+        },
+        {
+            "id": "q016",
+            "question": "Quali sono i principali obblighi di un fornitore di un sistema di IA ad alto rischio?",
+            "expected_articles": [
+                "16"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.124
+        },
+        {
+            "id": "q017",
+            "question": "Cosa deve includere un fornitore nel proprio sistema di gestione della qualità?",
+            "expected_articles": [
+                "17"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.126
+        },
+        {
+            "id": "q018",
+            "question": "Per quanto tempo i fornitori devono conservare la documentazione relativa ai sistemi di IA ad alto rischio?",
+            "expected_articles": [
+                "18"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.12
+        },
+        {
+            "id": "q019",
+            "question": "Quali obblighi ha il rappresentante autorizzato di un fornitore con sede fuori dall'UE?",
+            "expected_articles": [
+                "22"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.122
+        },
+        {
+            "id": "q020",
+            "question": "Cosa deve verificare un importatore prima di immettere un sistema di IA ad alto rischio sul mercato dell'UE?",
+            "expected_articles": [
+                "23"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.12
+        },
+        {
+            "id": "q021",
+            "question": "Quali controlli deve effettuare un distributore prima di mettere a disposizione un sistema di IA ad alto rischio?",
+            "expected_articles": [
+                "24"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.127
+        },
+        {
+            "id": "q022",
+            "question": "Quando un distributore, importatore, deployer o altro terzo è considerato il fornitore di un sistema di IA ad alto rischio?",
+            "expected_articles": [
+                "25"
+            ],
+            "retrieved_articles": [
+                "27",
+                "26",
+                "26",
+                "73",
+                "73"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.124
+        },
+        {
+            "id": "q024",
+            "question": "Chi deve effettuare una valutazione d'impatto sui diritti fondamentali prima di utilizzare un sistema di IA ad alto rischio?",
+            "expected_articles": [
+                "27"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.219
+        },
+        {
+            "id": "q025",
+            "question": "Quando un sistema di IA ad alto rischio modificato in modo sostanziale deve essere sottoposto a una nuova valutazione della conformità?",
+            "expected_articles": [
+                "43"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.243
+        },
+        {
+            "id": "q026",
+            "question": "Chi deve registrare i sistemi di IA ad alto rischio e il loro utilizzo nella banca dati dell'UE?",
+            "expected_articles": [
+                "49"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.215
+        },
+        {
+            "id": "q027",
+            "question": "Un chatbot deve informare una persona che sta interagendo con un sistema di IA?",
+            "expected_articles": [
+                "50"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.299
+        },
+        {
+            "id": "q028",
+            "question": "Quando un modello di IA per finalità generali è classificato come modello con rischio sistemico?",
+            "expected_articles": [
+                "51"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.174
+        },
+        {
+            "id": "q029",
+            "question": "Quali obblighi relativi alla documentazione, al diritto d'autore e ai contenuti di addestramento si applicano ai fornitori di modelli di IA per finalità generali?",
+            "expected_articles": [
+                "53"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.154
+        },
+        {
+            "id": "q030",
+            "question": "Quali obblighi aggiuntivi si applicano ai fornitori di modelli di IA per finalità generali con rischio sistemico?",
+            "expected_articles": [
+                "55"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.134
+        },
+        {
+            "id": "q031",
+            "question": "In che modo i fornitori devono monitorare un sistema di IA ad alto rischio dopo la sua immissione sul mercato?",
+            "expected_articles": [
+                "72"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.125
+        },
+        {
+            "id": "q032",
+            "question": "Quali sono i termini per segnalare incidenti gravi che coinvolgono sistemi di IA ad alto rischio?",
+            "expected_articles": [
+                "73"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.126
+        },
+        {
+            "id": "q033",
+            "question": "Quando un'autorità di vigilanza del mercato può richiedere l'accesso al codice sorgente di un sistema di IA ad alto rischio?",
+            "expected_articles": [
+                "74"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.128
+        },
+        {
+            "id": "q034",
+            "question": "Una persona o un'impresa può presentare un reclamo a un'autorità di vigilanza del mercato per una violazione del regolamento sull'intelligenza artificiale?",
+            "expected_articles": [
+                "85"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.132
+        },
+        {
+            "id": "q035",
+            "question": "Quando una persona interessata ha diritto a una spiegazione di una decisione assistita dall'IA?",
+            "expected_articles": [
+                "86"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.126
+        },
+        {
+            "id": "q036",
+            "question": "Quali sono le sanzioni pecuniarie massime per le pratiche di IA vietate e per le altre violazioni commesse dagli operatori?",
+            "expected_articles": [
+                "99"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.117
+        },
+        {
+            "id": "q037",
+            "question": "Qual è la data generale di applicazione del regolamento sull'intelligenza artificiale e quando iniziano ad applicarsi i capi I e II, le norme sull'IA per finalità generali e l'articolo 6, paragrafo 1?",
+            "expected_articles": [
+                "113"
+            ],
+            "retrieved_articles": [
+                "59",
+                "2",
+                "5",
+                "10",
+                "10"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.141
+        },
+        {
+            "id": "q038",
+            "question": "Come definisce il regolamento sull'intelligenza artificiale un sistema di IA?",
+            "expected_articles": [
+                "3"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.122
+        }
+    ],
+    "query_results": [
+        {
+            "id": "q001",
+            "question": "Quali pratiche di intelligenza artificiale sono vietate dal regolamento UE sull'intelligenza artificiale?",
+            "expected_articles": [
+                "5"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.856
+        },
+        {
+            "id": "q002",
+            "question": "Come si può determinare se un sistema di IA debba essere classificato ad alto rischio?",
+            "expected_articles": [
+                "6"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.467
+        },
+        {
+            "id": "q003",
+            "question": "Quali obblighi di gestione del rischio si applicano ai sistemi di IA ad alto rischio?",
+            "expected_articles": [
+                "9"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.218
+        },
+        {
+            "id": "q004",
+            "question": "Quali requisiti si applicano ai dati di addestramento, validazione e prova utilizzati dai sistemi di IA ad alto rischio?",
+            "expected_articles": [
+                "10"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.166
+        },
+        {
+            "id": "q005",
+            "question": "I sistemi di IA ad alto rischio devono registrare automaticamente gli eventi durante il loro funzionamento?",
+            "expected_articles": [
+                "12"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.156
+        },
+        {
+            "id": "q006",
+            "question": "Quali informazioni devono fornire i fornitori ai deployer affinché i sistemi di IA ad alto rischio siano utilizzati correttamente?",
+            "expected_articles": [
+                "13"
+            ],
+            "retrieved_articles": [
+                "27",
+                "26",
+                "26",
+                "73",
+                "73"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.463
+        },
+        {
+            "id": "q007",
+            "question": "In che modo deve essere integrata la sorveglianza umana in un sistema di IA ad alto rischio?",
+            "expected_articles": [
+                "14"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.318
+        },
+        {
+            "id": "q008",
+            "question": "Cosa devono fare i deployer per monitorare un sistema di IA ad alto rischio e conservarne i log?",
+            "expected_articles": [
+                "26"
+            ],
+            "retrieved_articles": [
+                "27",
+                "26",
+                "26",
+                "73",
+                "73"
+            ],
+            "first_relevant_rank": 2,
+            "latency_ms": 0.183
+        },
+        {
+            "id": "q009",
+            "question": "Quando le persone devono essere informate che un contenuto è stato generato o manipolato artificialmente, compresi i deepfake?",
+            "expected_articles": [
+                "50"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.16
+        },
+        {
+            "id": "q011",
+            "question": "Il regolamento sull'intelligenza artificiale si applica a un fornitore con sede fuori dall'UE quando l'output del suo sistema di IA è utilizzato nell'Unione?",
+            "expected_articles": [
+                "2"
+            ],
+            "retrieved_articles": [
+                "2",
+                "14",
+                "13",
+                "86",
+                "13"
+            ],
+            "first_relevant_rank": 1,
+            "latency_ms": 0.152
+        },
+        {
+            "id": "q012",
+            "question": "Cosa devono fare i fornitori e i deployer per garantire che il loro personale possieda un livello sufficiente di alfabetizzazione in materia di IA?",
+            "expected_articles": [
+                "4"
+            ],
+            "retrieved_articles": [
+                "27",
+                "26",
+                "26",
+                "73",
+                "73"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.224
+        },
+        {
+            "id": "q013",
+            "question": "Quando può un sistema di IA elencato nell'allegato III evitare di essere classificato ad alto rischio?",
+            "expected_articles": [
+                "6"
+            ],
+            "retrieved_articles": [
+                "7",
+                "49",
+                "49",
+                "49",
+                "80"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.176
+        },
+        {
+            "id": "q014",
+            "question": "Quale documentazione tecnica deve essere predisposta per un sistema di IA ad alto rischio prima della sua immissione sul mercato?",
+            "expected_articles": [
+                "11"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.139
+        },
+        {
+            "id": "q015",
+            "question": "Quali requisiti di accuratezza, robustezza e cibersicurezza si applicano ai sistemi di IA ad alto rischio?",
+            "expected_articles": [
+                "15"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.133
+        },
+        {
+            "id": "q016",
+            "question": "Quali sono i principali obblighi di un fornitore di un sistema di IA ad alto rischio?",
+            "expected_articles": [
+                "16"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.124
+        },
+        {
+            "id": "q017",
+            "question": "Cosa deve includere un fornitore nel proprio sistema di gestione della qualità?",
+            "expected_articles": [
+                "17"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.126
+        },
+        {
+            "id": "q018",
+            "question": "Per quanto tempo i fornitori devono conservare la documentazione relativa ai sistemi di IA ad alto rischio?",
+            "expected_articles": [
+                "18"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.12
+        },
+        {
+            "id": "q019",
+            "question": "Quali obblighi ha il rappresentante autorizzato di un fornitore con sede fuori dall'UE?",
+            "expected_articles": [
+                "22"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.122
+        },
+        {
+            "id": "q020",
+            "question": "Cosa deve verificare un importatore prima di immettere un sistema di IA ad alto rischio sul mercato dell'UE?",
+            "expected_articles": [
+                "23"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.12
+        },
+        {
+            "id": "q021",
+            "question": "Quali controlli deve effettuare un distributore prima di mettere a disposizione un sistema di IA ad alto rischio?",
+            "expected_articles": [
+                "24"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.127
+        },
+        {
+            "id": "q022",
+            "question": "Quando un distributore, importatore, deployer o altro terzo è considerato il fornitore di un sistema di IA ad alto rischio?",
+            "expected_articles": [
+                "25"
+            ],
+            "retrieved_articles": [
+                "27",
+                "26",
+                "26",
+                "73",
+                "73"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.124
+        },
+        {
+            "id": "q023",
+            "question": "Quali responsabilità hanno i deployer riguardo ai dati di input, alla sorveglianza umana e al monitoraggio operativo?",
+            "expected_articles": [
+                "26"
+            ],
+            "retrieved_articles": [
+                "26",
+                "12",
+                "50",
+                "27",
+                "26"
+            ],
+            "first_relevant_rank": 1,
+            "latency_ms": 0.129
+        },
+        {
+            "id": "q024",
+            "question": "Chi deve effettuare una valutazione d'impatto sui diritti fondamentali prima di utilizzare un sistema di IA ad alto rischio?",
+            "expected_articles": [
+                "27"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.219
+        },
+        {
+            "id": "q025",
+            "question": "Quando un sistema di IA ad alto rischio modificato in modo sostanziale deve essere sottoposto a una nuova valutazione della conformità?",
+            "expected_articles": [
+                "43"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.243
+        },
+        {
+            "id": "q026",
+            "question": "Chi deve registrare i sistemi di IA ad alto rischio e il loro utilizzo nella banca dati dell'UE?",
+            "expected_articles": [
+                "49"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.215
+        },
+        {
+            "id": "q027",
+            "question": "Un chatbot deve informare una persona che sta interagendo con un sistema di IA?",
+            "expected_articles": [
+                "50"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.299
+        },
+        {
+            "id": "q028",
+            "question": "Quando un modello di IA per finalità generali è classificato come modello con rischio sistemico?",
+            "expected_articles": [
+                "51"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.174
+        },
+        {
+            "id": "q029",
+            "question": "Quali obblighi relativi alla documentazione, al diritto d'autore e ai contenuti di addestramento si applicano ai fornitori di modelli di IA per finalità generali?",
+            "expected_articles": [
+                "53"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.154
+        },
+        {
+            "id": "q030",
+            "question": "Quali obblighi aggiuntivi si applicano ai fornitori di modelli di IA per finalità generali con rischio sistemico?",
+            "expected_articles": [
+                "55"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.134
+        },
+        {
+            "id": "q031",
+            "question": "In che modo i fornitori devono monitorare un sistema di IA ad alto rischio dopo la sua immissione sul mercato?",
+            "expected_articles": [
+                "72"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.125
+        },
+        {
+            "id": "q032",
+            "question": "Quali sono i termini per segnalare incidenti gravi che coinvolgono sistemi di IA ad alto rischio?",
+            "expected_articles": [
+                "73"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.126
+        },
+        {
+            "id": "q033",
+            "question": "Quando un'autorità di vigilanza del mercato può richiedere l'accesso al codice sorgente di un sistema di IA ad alto rischio?",
+            "expected_articles": [
+                "74"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.128
+        },
+        {
+            "id": "q034",
+            "question": "Una persona o un'impresa può presentare un reclamo a un'autorità di vigilanza del mercato per una violazione del regolamento sull'intelligenza artificiale?",
+            "expected_articles": [
+                "85"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.132
+        },
+        {
+            "id": "q035",
+            "question": "Quando una persona interessata ha diritto a una spiegazione di una decisione assistita dall'IA?",
+            "expected_articles": [
+                "86"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.126
+        },
+        {
+            "id": "q036",
+            "question": "Quali sono le sanzioni pecuniarie massime per le pratiche di IA vietate e per le altre violazioni commesse dagli operatori?",
+            "expected_articles": [
+                "99"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.117
+        },
+        {
+            "id": "q037",
+            "question": "Qual è la data generale di applicazione del regolamento sull'intelligenza artificiale e quando iniziano ad applicarsi i capi I e II, le norme sull'IA per finalità generali e l'articolo 6, paragrafo 1?",
+            "expected_articles": [
+                "113"
+            ],
+            "retrieved_articles": [
+                "59",
+                "2",
+                "5",
+                "10",
+                "10"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.141
+        },
+        {
+            "id": "q038",
+            "question": "Come definisce il regolamento sull'intelligenza artificiale un sistema di IA?",
+            "expected_articles": [
+                "3"
+            ],
+            "retrieved_articles": [
+                "113",
+                "37",
+                "36",
+                "38",
+                "37"
+            ],
+            "first_relevant_rank": null,
+            "latency_ms": 0.122
+        },
+        {
+            "id": "q039",
+            "question": "Per quanto tempo un deployer deve conservare i log generati da un sistema di IA ad alto rischio?",
+            "expected_articles": [
+                "26"
+            ],
+            "retrieved_articles": [
+                "27",
+                "26",
+                "26",
+                "73",
+                "73"
+            ],
+            "first_relevant_rank": 2,
+            "latency_ms": 0.125
+        }
+    ]
+}

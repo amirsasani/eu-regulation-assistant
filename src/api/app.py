@@ -122,6 +122,7 @@ def ask_question(payload: AskRequest, request: Request):
     response_sources = [
         SourceResponse(
             chunk_id=source["chunk_id"],
+            language=source["language"],
             article_number=str(source["article_number"]),
             article_title=source.get("article_title"),
             paragraph_number=source.get("paragraph_number"),

@@ -10,14 +10,14 @@ The project currently focuses on the **EU Artificial Intelligence Act** and uses
 
 ## Features
 
-- Downloads and parses the official EU AI Act
+- Downloads and parses the official English and Italian EU AI Act texts
 - Preserves article and paragraph metadata
 - Supports BM25 keyword retrieval
 - Stores semantic embeddings in PostgreSQL with pgvector
 - Combines keyword and semantic search using Reciprocal Rank Fusion
 - Reranks candidates with a cross-encoder
 - Generates grounded answers using local Ollama models
-- Accepts English and Italian questions and answers in the selected language
+- Retrieves English and Italian sources and answers in the selected language
 - Adds article and paragraph citations
 - Refuses questions that cannot be answered from the retrieved sources
 - Evaluates retrieval, grounding and citation correctness
@@ -82,7 +82,7 @@ flowchart LR
 - [x] Accept Italian questions and generate Italian answers
 - [x] Add Italian API, service and prompt tests
 - [x] Create an Italian-language evaluation set
-- [ ] Index the official Italian text of the EU AI Act
+- [x] Index the official Italian text of the EU AI Act
 - [ ] Add GDPR and NIS2 documents
 
 ## Why this project?
@@ -99,9 +99,9 @@ The system is designed around three requirements:
 
 The retrieval evaluation contains paired English and Italian datasets. Each has 42 manually labelled questions: 38 answerable questions mapped to relevant EU AI Act articles and four unsupported questions reserved for refusal testing.
 
-All retrieval configurations used the same English document chunks and returned five results per answerable question. The reranker processed the top 10 hybrid candidates.
+Every configuration returned five results per answerable question, and the reranker processed the top 10 hybrid candidates. Italian questions were evaluated against both the English corpus and the official Italian corpus.
 
-### English questions
+### English questions over the English corpus
 
 | Method | Recall@1 | Recall@5 | MRR | Average latency |
 |---|---:|---:|---:|---:|
@@ -119,11 +119,20 @@ All retrieval configurations used the same English document chunks and returned 
 | Hybrid RRF | 0.079 | 0.816 | 0.423 | 45.269 ms |
 | Hybrid RRF + BGE reranker | 0.816 | 0.868 | 0.842 | 860.502 ms |
 
+### Italian questions over the Italian corpus
+
+| Method | Recall@1 | Recall@5 | MRR | Average latency |
+|---|---:|---:|---:|---:|
+| BM25 | 0.605 | 0.842 | 0.705 | 0.245 ms |
+| Multilingual E5 | 0.868 | 0.895 | 0.882 | 15.930 ms |
+| Hybrid RRF | 0.763 | 0.921 | 0.833 | 47.093 ms |
+| Hybrid RRF + BGE reranker | 0.842 | 0.921 | 0.875 | 1,105.035 ms |
+
 Semantic search uses `intfloat/multilingual-e5-base`. Its latency includes query embedding and vector comparison but excludes model loading.
 
 Reranking uses `BAAI/bge-reranker-v2-m3` over the top 10 hybrid candidates. Model-loading time is excluded, while the first query includes inference warm-up.
 
-The Italian benchmark measures cross-language retrieval because the indexed regulation is currently English. Multilingual semantic search transfers well, while BM25 has little shared vocabulary. Plain RRF inherits weak Italian BM25 rankings; the multilingual reranker recovers most of the semantic candidate quality.
+The comparison shows why corpus language matters. Multilingual semantic retrieval transfers well across languages, but BM25 Recall@1 rises from `0.053` to `0.605` when Italian questions search Italian text. The native Italian corpus also raises reranked Recall@5 from `0.868` to `0.921`.
 
 These results remain preliminary because the datasets are manually constructed, the Italian questions have not been reviewed by a legal translator and the corpus covers a single regulation.
 
@@ -155,26 +164,26 @@ These results remain preliminary because the generation evaluation contains 20 q
 
 ## Data source
 
-The initial dataset is the official English text of:
+The project indexes the official English and Italian texts of Regulation (EU) 2024/1689, the Artificial Intelligence Act:
 
-- Regulation (EU) 2024/1689 — Artificial Intelligence Act
 - CELEX identifier: `32024R1689`
-- Source: [EUR-Lex](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689)
+- English source: [EUR-Lex](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689)
+- Italian source: [EUR-Lex](https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX%3A32024R1689)
 
-The parser currently produces 519 article and paragraph chunks.
+The parser produces 519 article and paragraph chunks per language, for 1,038 indexed chunks in total.
 
 Each extracted record contains:
 
 ```json
 {
   "document_id": "32024R1689",
-  "language": "en",
+  "language": "it",
   "article_number": "9",
-  "article_title": "Risk management system",
+  "article_title": "Sistema di gestione dei rischi",
   "paragraph_number": "1",
   "text": "...",
   "source_url": "...",
-  "chunk_id": "ai-act-en-article-9-paragraph-1"
+  "chunk_id": "ai-act-it-article-9-paragraph-1"
 }
 ```
 
@@ -185,7 +194,8 @@ eu-regulation-assistant/
 ├── data/
 │   ├── evaluation/
 │   ├── indexes/
-│   │   └── semantic/
+│   │   ├── semantic/
+│   │   └── semantic-it/
 │   ├── processed/
 │   └── raw/
 ├── scripts/
@@ -304,32 +314,39 @@ ollama serve
 
 ## Document ingestion
 
-Download and parse the EU AI Act:
+Download and parse both official language versions:
 
 ```bash
-python -m src.ingestion.fetch_document
-python -m src.ingestion.parse_document
+python -m src.ingestion.fetch_document --language en
+python -m src.ingestion.parse_document --language en
+python -m src.ingestion.fetch_document --language it
+python -m src.ingestion.parse_document --language it
 ```
 
-The structured output is saved to:
+The structured outputs are saved to:
 
 ```text
 data/processed/ai-act-articles.json
+data/processed/ai-act-articles-it.json
 ```
 
 ## Semantic index
 
-Generate the document embeddings:
+Generate and load the English index:
 
 ```bash
 python -m scripts.build_semantic_index
-```
-
-Load the document chunks and embeddings into PostgreSQL:
-
-```bash
 python -m scripts.load_semantic_index
 ```
+
+Generate and load the Italian index:
+
+```bash
+python -m scripts.build_semantic_index --documents data/processed/ai-act-articles-it.json --output-directory data/indexes/semantic-it
+python -m scripts.load_semantic_index --documents data/processed/ai-act-articles-it.json --index-directory data/indexes/semantic-it
+```
+
+PostgreSQL stores both corpora and semantic search filters rows by the requested language.
 
 ## Search
 
@@ -370,7 +387,7 @@ python -m scripts.ask \
 
 The command retrieves relevant passages, reranks them and generates an answer containing article and paragraph citations.
 
-Ask in Italian while retrieving from the English source text:
+Ask in Italian using the official Italian source text:
 
 ```bash
 python -m scripts.ask \
@@ -380,7 +397,7 @@ python -m scripts.ask \
   --candidate_k 10
 ```
 
-The multilingual embedding model supports cross-language retrieval. The current corpus remains English, and Ollama generates the final answer in Italian.
+The service selects the Italian BM25 index and filters PostgreSQL semantic search to Italian chunks before Ollama generates the answer in Italian.
 
 ## API
 
@@ -430,7 +447,7 @@ curl http://127.0.0.1:8000/ready
   "services": {
     "postgres": {
       "status": "ok",
-      "chunks": 519
+      "chunks": 1038
     },
     "ollama": {
       "status": "ok",
@@ -464,6 +481,7 @@ Example response:
   "sources": [
     {
       "chunk_id": "ai-act-en-article-9-paragraph-1",
+      "language": "en",
       "article_number": "9",
       "article_title": "Risk management system",
       "paragraph_number": "1",
@@ -588,8 +606,17 @@ python -m scripts.evaluate_hybrid --rerank --candidate_k 10
 Run the paired Italian evaluation over the English corpus:
 
 ```bash
-python -m scripts.evaluate_bm25 --questions_file data/evaluation/questions-it.json --language it --output_file data/evaluation/bm25-results-it.json
-python -m scripts.evaluate_semantic --questions data/evaluation/questions-it.json --output data/evaluation/semantic-results-it.json
+python -m scripts.evaluate_bm25 --questions_file data/evaluation/questions-it.json --language it --output_file data/evaluation/bm25-results-it-cross-language.json
+python -m scripts.evaluate_semantic --questions data/evaluation/questions-it.json --output data/evaluation/semantic-results-it-cross-language.json
+python -m scripts.evaluate_hybrid --questions_file data/evaluation/questions-it.json --language it --corpus_language en --candidate_k 10 --output_file data/evaluation/hybrid-results-it-cross-language.json
+python -m scripts.evaluate_hybrid --questions_file data/evaluation/questions-it.json --language it --corpus_language en --candidate_k 10 --rerank --output_file data/evaluation/hybrid-reranked-results-it-cross-language.json
+```
+
+Run the Italian evaluation over the official Italian corpus:
+
+```bash
+python -m scripts.evaluate_bm25 --json_file data/processed/ai-act-articles-it.json --questions_file data/evaluation/questions-it.json --language it --output_file data/evaluation/bm25-results-it.json
+python -m scripts.evaluate_semantic --documents data/processed/ai-act-articles-it.json --questions data/evaluation/questions-it.json --index-directory data/indexes/semantic-it --output data/evaluation/semantic-results-it.json
 python -m scripts.evaluate_hybrid --questions_file data/evaluation/questions-it.json --language it --candidate_k 10 --output_file data/evaluation/hybrid-results-it.json
 python -m scripts.evaluate_hybrid --questions_file data/evaluation/questions-it.json --language it --candidate_k 10 --rerank --output_file data/evaluation/hybrid-reranked-results-it.json
 ```
@@ -610,8 +637,7 @@ data/evaluation/generation-results.json
 
 ## Limitations
 
-- Only the English EU AI Act is currently indexed. Italian questions use cross-language semantic retrieval over English excerpts.
-- Italian BM25 matching is limited until the official Italian text is indexed.
+- English and Italian are indexed, but no other official EU language is currently available.
 - Italian answer-generation quality has not yet been measured on a labelled generation dataset.
 - The generation evaluation contains 20 manually labelled questions and has not been reviewed by a legal expert.
 - The answer-quality judge is a local language model rather than a legal expert.
@@ -622,12 +648,10 @@ data/evaluation/generation-results.json
 
 ## Roadmap
 
-1. Index the official Italian text of the EU AI Act.
-2. Compare cross-language retrieval with retrieval over the Italian corpus.
-3. Add an Italian generation evaluation set.
-4. Add GDPR and NIS2 as additional data sources.
-5. Detect and process updated consolidated regulations automatically.
-6. Add a simple web interface.
+1. Add an Italian generation evaluation set.
+2. Add GDPR and NIS2 as additional data sources.
+3. Detect and process updated consolidated regulations automatically.
+4. Add a simple web interface.
 
 ## License
 

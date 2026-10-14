@@ -43,6 +43,9 @@ def calculate_file_hash(path: Path):
 
 
 def build_index(documents_path: Path, output_directory: Path, model_name: str, batch_size: int):
+    documents_path = documents_path.resolve()
+    output_directory = output_directory.resolve()
+
     documents = load_documents(documents_path)
 
     print(f"Loading model: {model_name}")

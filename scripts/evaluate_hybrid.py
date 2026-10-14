@@ -10,7 +10,7 @@ from sentence_transformers import SentenceTransformer, CrossEncoder
 
 from src.retrieval.reranker import create_reranker
 
-from scripts.search_hybrid import search_hybrid, MODEL_NAME
+from scripts.search_hybrid import DOCUMENTS_FILES, MODEL_NAME, search_hybrid
 from src.retrieval.bm25 import create_bm25_index
 
 
@@ -37,6 +37,7 @@ def evaluate(
     candidate_k: int,
     language: str,
     reranker_model: CrossEncoder | None,
+    corpus_language: str | None = None,
 ) -> dict:
     answerable_questions = [question for question in questions if question["relevant_articles"]]
 
@@ -61,6 +62,7 @@ def evaluate(
             candidate_k=candidate_k,
             language=language,
             reranker_model=reranker_model,
+            corpus_language=corpus_language,
         )
 
         latency_ms = (time.perf_counter() - started_at) * 1000
@@ -110,16 +112,19 @@ def evaluate(
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--documents_file", type=Path, default=DOCUMENTS_FILE)
+    parser.add_argument("--documents_file", type=Path, default=None)
     parser.add_argument("--questions_file", type=Path, default=QUESTIONS_FILE)
     parser.add_argument("--output_file", type=Path, default=None)
-    parser.add_argument("--language", default=LANGUAGE)
+    parser.add_argument("--language", choices=sorted(DOCUMENTS_FILES), default=LANGUAGE)
+    parser.add_argument("--corpus_language", choices=sorted(DOCUMENTS_FILES), default=None)
     parser.add_argument("--top_k", type=int, default=5)
     parser.add_argument("--candidate_k", type=int, default=10)
     parser.add_argument("--rerank", action="store_true")
     args = parser.parse_args()
 
-    documents = utils.load_json_file(args.documents_file)
+    corpus_language = args.corpus_language or args.language
+    documents_file = args.documents_file or DOCUMENTS_FILES[corpus_language]
+    documents = utils.load_json_file(documents_file)
     questions = utils.load_json_file(args.questions_file)
 
     bm25_retriever = create_bm25_index(documents, args.language)
@@ -135,6 +140,7 @@ def main():
         candidate_k=min(args.candidate_k, len(documents)),
         language=args.language,
         reranker_model=reranker_model,
+        corpus_language=corpus_language,
     )
 
     pprint(results)

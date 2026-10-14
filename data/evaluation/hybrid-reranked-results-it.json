@@ -3,33 +3,33 @@
     "questions_evaluated": 38,
     "top_k": 5,
     "candidate_k": 10,
-    "recall_at_1": 0.816,
-    "recall_at_5": 0.868,
-    "mrr": 0.842,
-    "average_latency_ms": 860.502,
+    "recall_at_1": 0.842,
+    "recall_at_5": 0.921,
+    "mrr": 0.875,
+    "average_latency_ms": 1105.035,
     "failures": [
         {
-            "id": "q004",
-            "question": "Quali requisiti si applicano ai dati di addestramento, validazione e prova utilizzati dai sistemi di IA ad alto rischio?",
+            "id": "q001",
+            "question": "Quali pratiche di intelligenza artificiale sono vietate dal regolamento UE sull'intelligenza artificiale?",
             "expected_articles": [
-                "10"
+                "5"
             ],
             "retrieved_articles": [
-                "42",
-                "13",
-                "43",
-                "16",
-                "26"
+                "108",
+                "1",
+                "110",
+                "105",
+                "109"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-42-paragraph-1",
-                "ai-act-en-article-13-paragraph-3",
-                "ai-act-en-article-43-paragraph-1",
-                "ai-act-en-article-16-paragraph-1",
-                "ai-act-en-article-26-paragraph-8"
+                "ai-act-it-article-108-paragraph-1",
+                "ai-act-it-article-1-paragraph-1",
+                "ai-act-it-article-110-paragraph-1",
+                "ai-act-it-article-105-paragraph-1",
+                "ai-act-it-article-109-paragraph-1"
             ],
             "first_relevant_rank": null,
-            "latency_ms": 1956.919
+            "latency_ms": 2733.231
         },
         {
             "id": "q016",
@@ -38,67 +38,21 @@
                 "16"
             ],
             "retrieved_articles": [
+                "25",
+                "23",
+                "20",
                 "24",
-                "24",
-                "24",
-                "24",
-                "24"
+                "26"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-24-paragraph-3",
-                "ai-act-en-article-24-paragraph-4",
-                "ai-act-en-article-24-paragraph-6",
-                "ai-act-en-article-24-paragraph-5",
-                "ai-act-en-article-24-paragraph-2"
+                "ai-act-it-article-25-paragraph-1",
+                "ai-act-it-article-23-paragraph-1",
+                "ai-act-it-article-20-paragraph-1",
+                "ai-act-it-article-24-paragraph-4",
+                "ai-act-it-article-26-paragraph-8"
             ],
             "first_relevant_rank": null,
-            "latency_ms": 451.584
-        },
-        {
-            "id": "q026",
-            "question": "Chi deve registrare i sistemi di IA ad alto rischio e il loro utilizzo nella banca dati dell'UE?",
-            "expected_articles": [
-                "49"
-            ],
-            "retrieved_articles": [
-                "26",
-                "71",
-                "71",
-                "71",
-                "80"
-            ],
-            "retrieved_chunks": [
-                "ai-act-en-article-26-paragraph-8",
-                "ai-act-en-article-71-paragraph-1",
-                "ai-act-en-article-71-paragraph-5",
-                "ai-act-en-article-71-paragraph-2",
-                "ai-act-en-article-80-paragraph-8"
-            ],
-            "first_relevant_rank": null,
-            "latency_ms": 376.443
-        },
-        {
-            "id": "q037",
-            "question": "Qual è la data generale di applicazione del regolamento sull'intelligenza artificiale e quando iniziano ad applicarsi i capi I e II, le norme sull'IA per finalità generali e l'articolo 6, paragrafo 1?",
-            "expected_articles": [
-                "113"
-            ],
-            "retrieved_articles": [
-                "111",
-                "111",
-                "108",
-                "109",
-                "5"
-            ],
-            "retrieved_chunks": [
-                "ai-act-en-article-111-paragraph-2",
-                "ai-act-en-article-111-paragraph-1",
-                "ai-act-en-article-108-paragraph-1",
-                "ai-act-en-article-109-paragraph-1",
-                "ai-act-en-article-5-paragraph-1"
-            ],
-            "first_relevant_rank": null,
-            "latency_ms": 3201.959
+            "latency_ms": 583.372
         },
         {
             "id": "q038",
@@ -107,21 +61,21 @@
                 "3"
             ],
             "retrieved_articles": [
-                "104",
-                "105",
-                "109",
+                "1",
                 "75",
-                "111"
+                "65",
+                "74",
+                "65"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-104-paragraph-1",
-                "ai-act-en-article-105-paragraph-1",
-                "ai-act-en-article-109-paragraph-1",
-                "ai-act-en-article-75-paragraph-1",
-                "ai-act-en-article-111-paragraph-1"
+                "ai-act-it-article-1-paragraph-1",
+                "ai-act-it-article-75-paragraph-1",
+                "ai-act-it-article-65-paragraph-5",
+                "ai-act-it-article-74-paragraph-1",
+                "ai-act-it-article-65-paragraph-6"
             ],
             "first_relevant_rank": null,
-            "latency_ms": 482.66
+            "latency_ms": 1491.409
         }
     ],
     "query_results": [
@@ -132,21 +86,21 @@
                 "5"
             ],
             "retrieved_articles": [
-                "5",
-                "5",
+                "108",
+                "1",
+                "110",
                 "105",
-                "2",
-                "74"
+                "109"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-5-paragraph-1",
-                "ai-act-en-article-5-paragraph-8",
-                "ai-act-en-article-105-paragraph-1",
-                "ai-act-en-article-2-paragraph-3",
-                "ai-act-en-article-74-paragraph-1"
+                "ai-act-it-article-108-paragraph-1",
+                "ai-act-it-article-1-paragraph-1",
+                "ai-act-it-article-110-paragraph-1",
+                "ai-act-it-article-105-paragraph-1",
+                "ai-act-it-article-109-paragraph-1"
             ],
-            "first_relevant_rank": 1,
-            "latency_ms": 4582.511
+            "first_relevant_rank": null,
+            "latency_ms": 2733.231
         },
         {
             "id": "q002",
@@ -155,21 +109,21 @@
                 "6"
             ],
             "retrieved_articles": [
-                "80",
                 "6",
                 "80",
+                "82",
                 "6",
-                "80"
+                "9"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-80-paragraph-2",
-                "ai-act-en-article-6-paragraph-1",
-                "ai-act-en-article-80-paragraph-1",
-                "ai-act-en-article-6-paragraph-4",
-                "ai-act-en-article-80-paragraph-7"
+                "ai-act-it-article-6-paragraph-1",
+                "ai-act-it-article-80-paragraph-1",
+                "ai-act-it-article-82-paragraph-1",
+                "ai-act-it-article-6-paragraph-4",
+                "ai-act-it-article-9-paragraph-6"
             ],
-            "first_relevant_rank": 2,
-            "latency_ms": 522.886
+            "first_relevant_rank": 1,
+            "latency_ms": 576.534
         },
         {
             "id": "q003",
@@ -178,21 +132,21 @@
                 "9"
             ],
             "retrieved_articles": [
-                "9",
                 "16",
+                "17",
+                "17",
                 "9",
-                "80",
                 "9"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-9-paragraph-10",
-                "ai-act-en-article-16-paragraph-1",
-                "ai-act-en-article-9-paragraph-2",
-                "ai-act-en-article-80-paragraph-2",
-                "ai-act-en-article-9-paragraph-1"
+                "ai-act-it-article-16-paragraph-1",
+                "ai-act-it-article-17-paragraph-1",
+                "ai-act-it-article-17-paragraph-3",
+                "ai-act-it-article-9-paragraph-10",
+                "ai-act-it-article-9-paragraph-6"
             ],
-            "first_relevant_rank": 1,
-            "latency_ms": 855.515
+            "first_relevant_rank": 4,
+            "latency_ms": 1212.894
         },
         {
             "id": "q004",
@@ -202,20 +156,20 @@
             ],
             "retrieved_articles": [
                 "42",
-                "13",
-                "43",
-                "16",
-                "26"
+                "10",
+                "10",
+                "10",
+                "74"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-42-paragraph-1",
-                "ai-act-en-article-13-paragraph-3",
-                "ai-act-en-article-43-paragraph-1",
-                "ai-act-en-article-16-paragraph-1",
-                "ai-act-en-article-26-paragraph-8"
+                "ai-act-it-article-42-paragraph-1",
+                "ai-act-it-article-10-paragraph-1",
+                "ai-act-it-article-10-paragraph-3",
+                "ai-act-it-article-10-paragraph-2",
+                "ai-act-it-article-74-paragraph-12"
             ],
-            "first_relevant_rank": null,
-            "latency_ms": 1956.919
+            "first_relevant_rank": 2,
+            "latency_ms": 2149.181
         },
         {
             "id": "q005",
@@ -226,19 +180,19 @@
             "retrieved_articles": [
                 "12",
                 "12",
-                "73",
-                "73",
-                "73"
+                "19",
+                "26",
+                "14"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-12-paragraph-1",
-                "ai-act-en-article-12-paragraph-2",
-                "ai-act-en-article-73-paragraph-10",
-                "ai-act-en-article-73-paragraph-1",
-                "ai-act-en-article-73-paragraph-9"
+                "ai-act-it-article-12-paragraph-1",
+                "ai-act-it-article-12-paragraph-2",
+                "ai-act-it-article-19-paragraph-1",
+                "ai-act-it-article-26-paragraph-6",
+                "ai-act-it-article-14-paragraph-4"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 966.632
+            "latency_ms": 752.289
         },
         {
             "id": "q006",
@@ -250,18 +204,18 @@
                 "13",
                 "26",
                 "13",
-                "26",
-                "27"
+                "14",
+                "26"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-13-paragraph-2",
-                "ai-act-en-article-26-paragraph-7",
-                "ai-act-en-article-13-paragraph-1",
-                "ai-act-en-article-26-paragraph-5",
-                "ai-act-en-article-27-paragraph-2"
+                "ai-act-it-article-13-paragraph-2",
+                "ai-act-it-article-26-paragraph-7",
+                "ai-act-it-article-13-paragraph-1",
+                "ai-act-it-article-14-paragraph-4",
+                "ai-act-it-article-26-paragraph-9"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 710.169
+            "latency_ms": 756.782
         },
         {
             "id": "q007",
@@ -271,20 +225,20 @@
             ],
             "retrieved_articles": [
                 "14",
-                "82",
-                "80",
-                "74",
-                "80"
+                "14",
+                "14",
+                "14",
+                "14"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-14-paragraph-4",
-                "ai-act-en-article-82-paragraph-1",
-                "ai-act-en-article-80-paragraph-2",
-                "ai-act-en-article-74-paragraph-13",
-                "ai-act-en-article-80-paragraph-1"
+                "ai-act-it-article-14-paragraph-3",
+                "ai-act-it-article-14-paragraph-4",
+                "ai-act-it-article-14-paragraph-2",
+                "ai-act-it-article-14-paragraph-1",
+                "ai-act-it-article-14-paragraph-5"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 661.708
+            "latency_ms": 2153.641
         },
         {
             "id": "q008",
@@ -294,20 +248,20 @@
             ],
             "retrieved_articles": [
                 "26",
-                "26",
+                "14",
                 "26",
                 "26",
                 "26"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-26-paragraph-6",
-                "ai-act-en-article-26-paragraph-5",
-                "ai-act-en-article-26-paragraph-12",
-                "ai-act-en-article-26-paragraph-4",
-                "ai-act-en-article-26-paragraph-1"
+                "ai-act-it-article-26-paragraph-6",
+                "ai-act-it-article-14-paragraph-4",
+                "ai-act-it-article-26-paragraph-7",
+                "ai-act-it-article-26-paragraph-1",
+                "ai-act-it-article-26-paragraph-8"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 658.607
+            "latency_ms": 746.506
         },
         {
             "id": "q009",
@@ -319,18 +273,18 @@
                 "50",
                 "50",
                 "50",
-                "50",
-                "14"
+                "10",
+                "50"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-50-paragraph-4",
-                "ai-act-en-article-50-paragraph-7",
-                "ai-act-en-article-50-paragraph-2",
-                "ai-act-en-article-50-paragraph-3",
-                "ai-act-en-article-14-paragraph-4"
+                "ai-act-it-article-50-paragraph-4",
+                "ai-act-it-article-50-paragraph-2",
+                "ai-act-it-article-50-paragraph-1",
+                "ai-act-it-article-10-paragraph-5",
+                "ai-act-it-article-50-paragraph-3"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 663.234
+            "latency_ms": 999.213
         },
         {
             "id": "q011",
@@ -341,19 +295,19 @@
             "retrieved_articles": [
                 "2",
                 "2",
-                "2",
                 "74",
-                "74"
+                "74",
+                "108"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-2-paragraph-1",
-                "ai-act-en-article-2-paragraph-3",
-                "ai-act-en-article-2-paragraph-6",
-                "ai-act-en-article-74-paragraph-8",
-                "ai-act-en-article-74-paragraph-2"
+                "ai-act-it-article-2-paragraph-1",
+                "ai-act-it-article-2-paragraph-3",
+                "ai-act-it-article-74-paragraph-1",
+                "ai-act-it-article-74-paragraph-12",
+                "ai-act-it-article-108-paragraph-1"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 1913.957
+            "latency_ms": 1452.193
         },
         {
             "id": "q012",
@@ -364,19 +318,19 @@
             "retrieved_articles": [
                 "4",
                 "26",
-                "26",
                 "13",
+                "26",
                 "26"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-4-paragraph-1",
-                "ai-act-en-article-26-paragraph-2",
-                "ai-act-en-article-26-paragraph-4",
-                "ai-act-en-article-13-paragraph-1",
-                "ai-act-en-article-26-paragraph-7"
+                "ai-act-it-article-4-paragraph-1",
+                "ai-act-it-article-26-paragraph-5",
+                "ai-act-it-article-13-paragraph-1",
+                "ai-act-it-article-26-paragraph-2",
+                "ai-act-it-article-26-paragraph-7"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 427.195
+            "latency_ms": 794.022
         },
         {
             "id": "q013",
@@ -386,20 +340,20 @@
             ],
             "retrieved_articles": [
                 "6",
+                "7",
                 "6",
-                "6",
-                "49",
+                "80",
                 "80"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-6-paragraph-3",
-                "ai-act-en-article-6-paragraph-4",
-                "ai-act-en-article-6-paragraph-2",
-                "ai-act-en-article-49-paragraph-3",
-                "ai-act-en-article-80-paragraph-2"
+                "ai-act-it-article-6-paragraph-3",
+                "ai-act-it-article-7-paragraph-1",
+                "ai-act-it-article-6-paragraph-4",
+                "ai-act-it-article-80-paragraph-7",
+                "ai-act-it-article-80-paragraph-1"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 560.484
+            "latency_ms": 600.015
         },
         {
             "id": "q014",
@@ -412,17 +366,17 @@
                 "23",
                 "11",
                 "6",
-                "16"
+                "72"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-11-paragraph-1",
-                "ai-act-en-article-23-paragraph-1",
-                "ai-act-en-article-11-paragraph-2",
-                "ai-act-en-article-6-paragraph-4",
-                "ai-act-en-article-16-paragraph-1"
+                "ai-act-it-article-11-paragraph-1",
+                "ai-act-it-article-23-paragraph-1",
+                "ai-act-it-article-11-paragraph-2",
+                "ai-act-it-article-6-paragraph-4",
+                "ai-act-it-article-72-paragraph-3"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 842.456
+            "latency_ms": 559.62
         },
         {
             "id": "q015",
@@ -434,18 +388,18 @@
                 "15",
                 "15",
                 "15",
-                "15",
-                "42"
+                "42",
+                "15"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-15-paragraph-1",
-                "ai-act-en-article-15-paragraph-4",
-                "ai-act-en-article-15-paragraph-5",
-                "ai-act-en-article-15-paragraph-3",
-                "ai-act-en-article-42-paragraph-2"
+                "ai-act-it-article-15-paragraph-4",
+                "ai-act-it-article-15-paragraph-1",
+                "ai-act-it-article-15-paragraph-5",
+                "ai-act-it-article-42-paragraph-2",
+                "ai-act-it-article-15-paragraph-3"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 488.392
+            "latency_ms": 2170.509
         },
         {
             "id": "q016",
@@ -454,21 +408,21 @@
                 "16"
             ],
             "retrieved_articles": [
+                "25",
+                "23",
+                "20",
                 "24",
-                "24",
-                "24",
-                "24",
-                "24"
+                "26"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-24-paragraph-3",
-                "ai-act-en-article-24-paragraph-4",
-                "ai-act-en-article-24-paragraph-6",
-                "ai-act-en-article-24-paragraph-5",
-                "ai-act-en-article-24-paragraph-2"
+                "ai-act-it-article-25-paragraph-1",
+                "ai-act-it-article-23-paragraph-1",
+                "ai-act-it-article-20-paragraph-1",
+                "ai-act-it-article-24-paragraph-4",
+                "ai-act-it-article-26-paragraph-8"
             ],
             "first_relevant_rank": null,
-            "latency_ms": 451.584
+            "latency_ms": 583.372
         },
         {
             "id": "q017",
@@ -480,18 +434,18 @@
                 "17",
                 "17",
                 "17",
-                "17",
-                "16"
+                "18",
+                "17"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-17-paragraph-3",
-                "ai-act-en-article-17-paragraph-1",
-                "ai-act-en-article-17-paragraph-2",
-                "ai-act-en-article-17-paragraph-4",
-                "ai-act-en-article-16-paragraph-1"
+                "ai-act-it-article-17-paragraph-3",
+                "ai-act-it-article-17-paragraph-1",
+                "ai-act-it-article-17-paragraph-4",
+                "ai-act-it-article-18-paragraph-1",
+                "ai-act-it-article-17-paragraph-2"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 1127.226
+            "latency_ms": 1252.1
         },
         {
             "id": "q018",
@@ -502,19 +456,19 @@
             "retrieved_articles": [
                 "18",
                 "19",
-                "23",
                 "26",
-                "47"
+                "23",
+                "16"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-18-paragraph-1",
-                "ai-act-en-article-19-paragraph-1",
-                "ai-act-en-article-23-paragraph-5",
-                "ai-act-en-article-26-paragraph-6",
-                "ai-act-en-article-47-paragraph-1"
+                "ai-act-it-article-18-paragraph-1",
+                "ai-act-it-article-19-paragraph-1",
+                "ai-act-it-article-26-paragraph-6",
+                "ai-act-it-article-23-paragraph-5",
+                "ai-act-it-article-16-paragraph-1"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 381.403
+            "latency_ms": 954.543
         },
         {
             "id": "q019",
@@ -524,20 +478,20 @@
             ],
             "retrieved_articles": [
                 "22",
-                "99",
                 "22",
-                "24",
-                "24"
+                "22",
+                "54",
+                "54"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-22-paragraph-1",
-                "ai-act-en-article-99-paragraph-4",
-                "ai-act-en-article-22-paragraph-3",
-                "ai-act-en-article-24-paragraph-1",
-                "ai-act-en-article-24-paragraph-4"
+                "ai-act-it-article-22-paragraph-3",
+                "ai-act-it-article-22-paragraph-4",
+                "ai-act-it-article-22-paragraph-1",
+                "ai-act-it-article-54-paragraph-1",
+                "ai-act-it-article-54-paragraph-5"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 1107.613
+            "latency_ms": 1074.942
         },
         {
             "id": "q020",
@@ -549,18 +503,18 @@
                 "23",
                 "24",
                 "23",
-                "23",
-                "80"
+                "16",
+                "49"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-23-paragraph-1",
-                "ai-act-en-article-24-paragraph-1",
-                "ai-act-en-article-23-paragraph-2",
-                "ai-act-en-article-23-paragraph-5",
-                "ai-act-en-article-80-paragraph-8"
+                "ai-act-it-article-23-paragraph-1",
+                "ai-act-it-article-24-paragraph-1",
+                "ai-act-it-article-23-paragraph-2",
+                "ai-act-it-article-16-paragraph-1",
+                "ai-act-it-article-49-paragraph-1"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 422.927
+            "latency_ms": 867.897
         },
         {
             "id": "q021",
@@ -572,18 +526,18 @@
                 "24",
                 "24",
                 "24",
-                "24",
-                "24"
+                "23",
+                "26"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-24-paragraph-1",
-                "ai-act-en-article-24-paragraph-4",
-                "ai-act-en-article-24-paragraph-2",
-                "ai-act-en-article-24-paragraph-3",
-                "ai-act-en-article-24-paragraph-5"
+                "ai-act-it-article-24-paragraph-1",
+                "ai-act-it-article-24-paragraph-2",
+                "ai-act-it-article-24-paragraph-4",
+                "ai-act-it-article-23-paragraph-1",
+                "ai-act-it-article-26-paragraph-7"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 430.408
+            "latency_ms": 446.227
         },
         {
             "id": "q022",
@@ -593,20 +547,20 @@
             ],
             "retrieved_articles": [
                 "25",
+                "26",
                 "24",
                 "24",
-                "24",
-                "24"
+                "26"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-25-paragraph-1",
-                "ai-act-en-article-24-paragraph-4",
-                "ai-act-en-article-24-paragraph-2",
-                "ai-act-en-article-24-paragraph-3",
-                "ai-act-en-article-24-paragraph-5"
+                "ai-act-it-article-25-paragraph-1",
+                "ai-act-it-article-26-paragraph-5",
+                "ai-act-it-article-24-paragraph-4",
+                "ai-act-it-article-24-paragraph-2",
+                "ai-act-it-article-26-paragraph-8"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 558.938
+            "latency_ms": 782.899
         },
         {
             "id": "q023",
@@ -618,18 +572,18 @@
                 "26",
                 "26",
                 "26",
-                "26",
-                "50"
+                "14",
+                "26"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-26-paragraph-4",
-                "ai-act-en-article-26-paragraph-5",
-                "ai-act-en-article-26-paragraph-2",
-                "ai-act-en-article-26-paragraph-3",
-                "ai-act-en-article-50-paragraph-2"
+                "ai-act-it-article-26-paragraph-2",
+                "ai-act-it-article-26-paragraph-5",
+                "ai-act-it-article-26-paragraph-4",
+                "ai-act-it-article-14-paragraph-4",
+                "ai-act-it-article-26-paragraph-3"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 659.565
+            "latency_ms": 753.823
         },
         {
             "id": "q024",
@@ -640,19 +594,19 @@
             "retrieved_articles": [
                 "27",
                 "27",
-                "27",
+                "82",
                 "27",
                 "27"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-27-paragraph-2",
-                "ai-act-en-article-27-paragraph-1",
-                "ai-act-en-article-27-paragraph-3",
-                "ai-act-en-article-27-paragraph-5",
-                "ai-act-en-article-27-paragraph-4"
+                "ai-act-it-article-27-paragraph-1",
+                "ai-act-it-article-27-paragraph-2",
+                "ai-act-it-article-82-paragraph-1",
+                "ai-act-it-article-27-paragraph-3",
+                "ai-act-it-article-27-paragraph-5"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 754.46
+            "latency_ms": 773.629
         },
         {
             "id": "q025",
@@ -662,20 +616,20 @@
             ],
             "retrieved_articles": [
                 "43",
+                "46",
                 "43",
-                "43",
-                "80",
-                "52"
+                "13",
+                "25"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-43-paragraph-4",
-                "ai-act-en-article-43-paragraph-1",
-                "ai-act-en-article-43-paragraph-3",
-                "ai-act-en-article-80-paragraph-2",
-                "ai-act-en-article-52-paragraph-5"
+                "ai-act-it-article-43-paragraph-4",
+                "ai-act-it-article-46-paragraph-2",
+                "ai-act-it-article-43-paragraph-6",
+                "ai-act-it-article-13-paragraph-3",
+                "ai-act-it-article-25-paragraph-1"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 898.98
+            "latency_ms": 2121.644
         },
         {
             "id": "q026",
@@ -684,21 +638,21 @@
                 "49"
             ],
             "retrieved_articles": [
+                "71",
+                "49",
+                "49",
                 "26",
-                "71",
-                "71",
-                "71",
-                "80"
+                "71"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-26-paragraph-8",
-                "ai-act-en-article-71-paragraph-1",
-                "ai-act-en-article-71-paragraph-5",
-                "ai-act-en-article-71-paragraph-2",
-                "ai-act-en-article-80-paragraph-8"
+                "ai-act-it-article-71-paragraph-1",
+                "ai-act-it-article-49-paragraph-3",
+                "ai-act-it-article-49-paragraph-1",
+                "ai-act-it-article-26-paragraph-8",
+                "ai-act-it-article-71-paragraph-6"
             ],
-            "first_relevant_rank": null,
-            "latency_ms": 376.443
+            "first_relevant_rank": 2,
+            "latency_ms": 489.398
         },
         {
             "id": "q027",
@@ -710,18 +664,18 @@
                 "50",
                 "50",
                 "26",
-                "75",
-                "61"
+                "20",
+                "50"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-50-paragraph-1",
-                "ai-act-en-article-50-paragraph-3",
-                "ai-act-en-article-26-paragraph-7",
-                "ai-act-en-article-75-paragraph-3",
-                "ai-act-en-article-61-paragraph-1"
+                "ai-act-it-article-50-paragraph-1",
+                "ai-act-it-article-50-paragraph-3",
+                "ai-act-it-article-26-paragraph-7",
+                "ai-act-it-article-20-paragraph-1",
+                "ai-act-it-article-50-paragraph-4"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 626.914
+            "latency_ms": 901.751
         },
         {
             "id": "q028",
@@ -733,18 +687,18 @@
                 "51",
                 "52",
                 "52",
-                "55",
-                "55"
+                "52",
+                "51"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-51-paragraph-1",
-                "ai-act-en-article-52-paragraph-2",
-                "ai-act-en-article-52-paragraph-5",
-                "ai-act-en-article-55-paragraph-2",
-                "ai-act-en-article-55-paragraph-1"
+                "ai-act-it-article-51-paragraph-1",
+                "ai-act-it-article-52-paragraph-1",
+                "ai-act-it-article-52-paragraph-2",
+                "ai-act-it-article-52-paragraph-3",
+                "ai-act-it-article-51-paragraph-2"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 533.371
+            "latency_ms": 617.413
         },
         {
             "id": "q029",
@@ -755,19 +709,19 @@
             "retrieved_articles": [
                 "53",
                 "53",
+                "54",
                 "53",
-                "53",
-                "91"
+                "53"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-53-paragraph-1",
-                "ai-act-en-article-53-paragraph-4",
-                "ai-act-en-article-53-paragraph-2",
-                "ai-act-en-article-53-paragraph-5",
-                "ai-act-en-article-91-paragraph-5"
+                "ai-act-it-article-53-paragraph-1",
+                "ai-act-it-article-53-paragraph-2",
+                "ai-act-it-article-54-paragraph-6",
+                "ai-act-it-article-53-paragraph-4",
+                "ai-act-it-article-53-paragraph-3"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 878.286
+            "latency_ms": 939.69
         },
         {
             "id": "q030",
@@ -783,14 +737,14 @@
                 "52"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-55-paragraph-1",
-                "ai-act-en-article-55-paragraph-2",
-                "ai-act-en-article-53-paragraph-2",
-                "ai-act-en-article-55-paragraph-3",
-                "ai-act-en-article-52-paragraph-5"
+                "ai-act-it-article-55-paragraph-1",
+                "ai-act-it-article-55-paragraph-2",
+                "ai-act-it-article-53-paragraph-2",
+                "ai-act-it-article-55-paragraph-3",
+                "ai-act-it-article-52-paragraph-5"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 547.368
+            "latency_ms": 624.338
         },
         {
             "id": "q031",
@@ -802,18 +756,18 @@
                 "72",
                 "72",
                 "72",
-                "23",
-                "80"
+                "72",
+                "17"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-72-paragraph-1",
-                "ai-act-en-article-72-paragraph-2",
-                "ai-act-en-article-72-paragraph-4",
-                "ai-act-en-article-23-paragraph-2",
-                "ai-act-en-article-80-paragraph-2"
+                "ai-act-it-article-72-paragraph-2",
+                "ai-act-it-article-72-paragraph-4",
+                "ai-act-it-article-72-paragraph-1",
+                "ai-act-it-article-72-paragraph-3",
+                "ai-act-it-article-17-paragraph-1"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 477.611
+            "latency_ms": 1239.959
         },
         {
             "id": "q032",
@@ -829,14 +783,14 @@
                 "73"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-73-paragraph-1",
-                "ai-act-en-article-73-paragraph-10",
-                "ai-act-en-article-73-paragraph-9",
-                "ai-act-en-article-73-paragraph-4",
-                "ai-act-en-article-73-paragraph-2"
+                "ai-act-it-article-73-paragraph-10",
+                "ai-act-it-article-73-paragraph-4",
+                "ai-act-it-article-73-paragraph-1",
+                "ai-act-it-article-73-paragraph-9",
+                "ai-act-it-article-73-paragraph-2"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 357.028
+            "latency_ms": 396.697
         },
         {
             "id": "q033",
@@ -847,19 +801,19 @@
             "retrieved_articles": [
                 "74",
                 "75",
-                "46",
-                "80",
-                "80"
+                "77",
+                "77",
+                "82"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-74-paragraph-13",
-                "ai-act-en-article-75-paragraph-3",
-                "ai-act-en-article-46-paragraph-3",
-                "ai-act-en-article-80-paragraph-2",
-                "ai-act-en-article-80-paragraph-1"
+                "ai-act-it-article-74-paragraph-13",
+                "ai-act-it-article-75-paragraph-3",
+                "ai-act-it-article-77-paragraph-1",
+                "ai-act-it-article-77-paragraph-3",
+                "ai-act-it-article-82-paragraph-1"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 486.117
+            "latency_ms": 506.574
         },
         {
             "id": "q034",
@@ -868,21 +822,21 @@
                 "85"
             ],
             "retrieved_articles": [
-                "89",
                 "85",
-                "88",
+                "77",
                 "75",
+                "89",
                 "74"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-89-paragraph-2",
-                "ai-act-en-article-85-paragraph-1",
-                "ai-act-en-article-88-paragraph-2",
-                "ai-act-en-article-75-paragraph-3",
-                "ai-act-en-article-74-paragraph-2"
+                "ai-act-it-article-85-paragraph-1",
+                "ai-act-it-article-77-paragraph-3",
+                "ai-act-it-article-75-paragraph-3",
+                "ai-act-it-article-89-paragraph-2",
+                "ai-act-it-article-74-paragraph-2"
             ],
-            "first_relevant_rank": 2,
-            "latency_ms": 502.563
+            "first_relevant_rank": 1,
+            "latency_ms": 1440.602
         },
         {
             "id": "q035",
@@ -893,19 +847,19 @@
             "retrieved_articles": [
                 "86",
                 "86",
-                "86",
+                "26",
                 "91",
-                "92"
+                "86"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-86-paragraph-1",
-                "ai-act-en-article-86-paragraph-2",
-                "ai-act-en-article-86-paragraph-3",
-                "ai-act-en-article-91-paragraph-5",
-                "ai-act-en-article-92-paragraph-5"
+                "ai-act-it-article-86-paragraph-1",
+                "ai-act-it-article-86-paragraph-2",
+                "ai-act-it-article-26-paragraph-10",
+                "ai-act-it-article-91-paragraph-5",
+                "ai-act-it-article-86-paragraph-3"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 363.497
+            "latency_ms": 1435.061
         },
         {
             "id": "q036",
@@ -916,19 +870,19 @@
             "retrieved_articles": [
                 "99",
                 "100",
-                "101",
+                "99",
                 "100",
-                "99"
+                "101"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-99-paragraph-3",
-                "ai-act-en-article-100-paragraph-2",
-                "ai-act-en-article-101-paragraph-1",
-                "ai-act-en-article-100-paragraph-3",
-                "ai-act-en-article-99-paragraph-4"
+                "ai-act-it-article-99-paragraph-3",
+                "ai-act-it-article-100-paragraph-2",
+                "ai-act-it-article-99-paragraph-7",
+                "ai-act-it-article-100-paragraph-3",
+                "ai-act-it-article-101-paragraph-3"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 601.073
+            "latency_ms": 961.185
         },
         {
             "id": "q037",
@@ -937,21 +891,21 @@
                 "113"
             ],
             "retrieved_articles": [
-                "111",
+                "113",
+                "6",
                 "111",
                 "108",
-                "109",
-                "5"
+                "110"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-111-paragraph-2",
-                "ai-act-en-article-111-paragraph-1",
-                "ai-act-en-article-108-paragraph-1",
-                "ai-act-en-article-109-paragraph-1",
-                "ai-act-en-article-5-paragraph-1"
+                "ai-act-it-article-113-paragraph-1",
+                "ai-act-it-article-6-paragraph-5",
+                "ai-act-it-article-111-paragraph-2",
+                "ai-act-it-article-108-paragraph-1",
+                "ai-act-it-article-110-paragraph-1"
             ],
-            "first_relevant_rank": null,
-            "latency_ms": 3201.959
+            "first_relevant_rank": 1,
+            "latency_ms": 1531.438
         },
         {
             "id": "q038",
@@ -960,21 +914,21 @@
                 "3"
             ],
             "retrieved_articles": [
-                "104",
-                "105",
-                "109",
+                "1",
                 "75",
-                "111"
+                "65",
+                "74",
+                "65"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-104-paragraph-1",
-                "ai-act-en-article-105-paragraph-1",
-                "ai-act-en-article-109-paragraph-1",
-                "ai-act-en-article-75-paragraph-1",
-                "ai-act-en-article-111-paragraph-1"
+                "ai-act-it-article-1-paragraph-1",
+                "ai-act-it-article-75-paragraph-1",
+                "ai-act-it-article-65-paragraph-5",
+                "ai-act-it-article-74-paragraph-1",
+                "ai-act-it-article-65-paragraph-6"
             ],
             "first_relevant_rank": null,
-            "latency_ms": 482.66
+            "latency_ms": 1491.409
         },
         {
             "id": "q039",
@@ -985,19 +939,19 @@
             "retrieved_articles": [
                 "26",
                 "19",
-                "73",
-                "23",
-                "26"
+                "13",
+                "12",
+                "19"
             ],
             "retrieved_chunks": [
-                "ai-act-en-article-26-paragraph-6",
-                "ai-act-en-article-19-paragraph-1",
-                "ai-act-en-article-73-paragraph-4",
-                "ai-act-en-article-23-paragraph-5",
-                "ai-act-en-article-26-paragraph-5"
+                "ai-act-it-article-26-paragraph-6",
+                "ai-act-it-article-19-paragraph-1",
+                "ai-act-it-article-13-paragraph-3",
+                "ai-act-it-article-12-paragraph-1",
+                "ai-act-it-article-19-paragraph-2"
             ],
             "first_relevant_rank": 1,
-            "latency_ms": 660.424
+            "latency_ms": 2148.089
         }
     ]
 }

@@ -1,4 +1,5 @@
 import argparse
+from pathlib import Path
 
 import utils
 
@@ -11,7 +12,10 @@ from src.retrieval.bm25 import create_bm25_index, search as bm25_search
 from src.retrieval.hybrid import reciprocal_rank_fusion
 
 
-DOCUMENTS_FILE = (utils.DATA_PROCESSED_PATH / "ai-act-articles.json")
+DOCUMENTS_FILES = {
+    "en": utils.DATA_PROCESSED_PATH / "ai-act-articles.json",
+    "it": utils.DATA_PROCESSED_PATH / "ai-act-articles-it.json",
+}
 MODEL_NAME = utils.DEFAULT_SEMANTIC_MODEL_NAME
 
 
@@ -27,6 +31,7 @@ def search_hybrid(
     candidate_k: int,
     language: str,
     reranker_model: CrossEncoder | None,
+    corpus_language: str | None = None,
 ):
     bm25_results, _ = bm25_search(
         query=query,
@@ -37,7 +42,11 @@ def search_hybrid(
     bm25_documents = list(bm25_results[0])
 
     query_embedding = create_query_embedding(query, model)
-    semantic_documents = search_similar(query_embedding=query_embedding, top_k=candidate_k)
+    semantic_documents = search_similar(
+        query_embedding=query_embedding,
+        top_k=candidate_k,
+        language=corpus_language or language,
+    )
 
     fused_candidates = reciprocal_rank_fusion(
         bm25_documents=bm25_documents,
@@ -74,10 +83,14 @@ def main():
     parser.add_argument("--query", required=True)
     parser.add_argument("--top_k", type=int, default=5)
     parser.add_argument("--candidate_k", type=int, default=10)
-    parser.add_argument("--language", default="en")
+    parser.add_argument("--language", choices=sorted(DOCUMENTS_FILES), default="en")
+    parser.add_argument("--corpus_language", choices=sorted(DOCUMENTS_FILES), default=None)
+    parser.add_argument("--documents_file", type=Path, default=None)
     args = parser.parse_args()
 
-    documents = utils.load_json_file(DOCUMENTS_FILE)
+    corpus_language = args.corpus_language or args.language
+    documents_file = args.documents_file or DOCUMENTS_FILES[corpus_language]
+    documents = utils.load_json_file(documents_file)
     bm25_retriever = create_bm25_index(documents, args.language)
     model = SentenceTransformer(MODEL_NAME)
 
@@ -91,6 +104,7 @@ def main():
         candidate_k=args.candidate_k,
         language=args.language,
         reranker_model=reranker_model,
+        corpus_language=corpus_language,
     )
     show_results(results)
 

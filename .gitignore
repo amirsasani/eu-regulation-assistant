@@ -272,3 +272,5 @@ $RECYCLE.BIN/
 # Project specific
 data/indexes/semantic/embeddings.npy
 data/indexes/semantic/manifest.json
+data/indexes/semantic-it/embeddings.npy
+data/indexes/semantic-it/manifest.json

@@ -32,7 +32,13 @@ services:
       - >-
         python -m scripts.initialize_database &&
         python -m scripts.build_semantic_index &&
+        python -m scripts.load_semantic_index &&
+        python -m scripts.build_semantic_index
+        --documents data/processed/ai-act-articles-it.json
+        --output-directory data/indexes/semantic-it &&
         python -m scripts.load_semantic_index
+        --documents data/processed/ai-act-articles-it.json
+        --index-directory data/indexes/semantic-it
     environment: *app-environment
     volumes:
       - model_cache:/home/app/.cache/huggingface

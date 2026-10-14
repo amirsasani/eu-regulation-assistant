@@ -11,6 +11,7 @@ class AskRequest(BaseModel):
 
 class SourceResponse(BaseModel):
     chunk_id: str
+    language: Literal["en", "it"]
     article_number: str
     article_title: str | None
     paragraph_number: str | None

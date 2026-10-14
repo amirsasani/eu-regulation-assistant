@@ -39,6 +39,7 @@ class FakeRagService:
             [
                 {
                     "chunk_id": "ai-act-en-article-9-paragraph-1",
+                    "language": language,
                     "article_number": "9",
                     "article_title": "Risk management system",
                     "paragraph_number": "1",
@@ -176,6 +177,7 @@ def test_ask_returns_answer_and_sources(client):
     payload = response.json()
 
     assert payload["model"] == "qwen3.5:4b"
+    assert payload["sources"][0]["language"] == "en"
     assert payload["sources"][0]["article_number"] == "9"
     assert payload["sources"][0]["paragraph_number"] == "1"
 

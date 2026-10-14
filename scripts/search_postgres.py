@@ -16,6 +16,7 @@ def main() -> None:
     parser.add_argument("--query", required=True)
     parser.add_argument("--top-k", type=int, default=5)
     parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
+    parser.add_argument("--language", choices=sorted(utils.SUPPORTED_LANGUAGES), default="en")
 
     args = parser.parse_args()
 
@@ -30,7 +31,11 @@ def main() -> None:
 
     query_embedding = create_query_embedding(query=args.query, model=model)
 
-    results = search_similar(query_embedding=query_embedding, top_k=args.top_k)
+    results = search_similar(
+        query_embedding=query_embedding,
+        top_k=args.top_k,
+        language=args.language,
+    )
 
     for result in results:
         print(f"\nArticle {result['article_number']} — {result['article_title']}")

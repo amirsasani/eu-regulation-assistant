@@ -1,3 +1,4 @@
+import argparse
 import json
 import re
 from bs4 import BeautifulSoup
@@ -6,18 +7,35 @@ import utils
 
 
 DOCUMENT_ID = "32024R1689"
-DOCUMENT_TITLE = "EU Artificial Intelligence Act"
 LANGUAGE = "en"
-
-SOURCE_URL = (
-    "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/"
-    "?uri=OJ:L_202401689"
-)
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 SOURCE_PATH = utils.DATA_RAW_PATH / "ai-act-raw.html"
 OUTPUT_PATH = utils.DATA_PROCESSED_PATH / "ai-act-articles.json"
+
+LANGUAGE_CONFIGS = {
+    "en": {
+        "article_label": "Article",
+        "document_title": "EU Artificial Intelligence Act",
+        "source_url": (
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/"
+            f"?uri=CELEX:{DOCUMENT_ID}"
+        ),
+        "source_path": SOURCE_PATH,
+        "output_path": OUTPUT_PATH,
+    },
+    "it": {
+        "article_label": "Articolo",
+        "document_title": "Regolamento UE sull'intelligenza artificiale",
+        "source_url": (
+            "https://eur-lex.europa.eu/legal-content/IT/TXT/HTML/"
+            f"?uri=CELEX:{DOCUMENT_ID}"
+        ),
+        "source_path": utils.DATA_RAW_PATH / "ai-act-it-raw.html",
+        "output_path": utils.DATA_PROCESSED_PATH / "ai-act-articles-it.json",
+    },
+}
 
 def clean_text(text: str) -> str:
     text = text.replace("\xa0", " ")
@@ -151,13 +169,20 @@ def validate_records(records: list[dict]) -> None:
 
     print(f"Validated {len(records)} unique chunks across {len(article_numbers)} articles.")
 
-def parse_articles(source_path: Path):
+def parse_articles(source_path: Path, language: str = LANGUAGE):
+    if language not in LANGUAGE_CONFIGS:
+        raise ValueError(f"Unsupported language: {language}")
+
+    config = LANGUAGE_CONFIGS[language]
     html = source_path.read_text(encoding="utf-8")
     soup = BeautifulSoup(html, "html.parser")
 
     records = []
 
-    article_pattern = re.compile(r"Article\s+(\d+[A-Za-z]?)", re.IGNORECASE)
+    article_pattern = re.compile(
+        rf"{re.escape(config['article_label'])}\s+(\d+[A-Za-z]?)",
+        re.IGNORECASE,
+    )
 
     article_headers = soup.find_all("p", class_="oj-ti-art")
 
@@ -202,16 +227,16 @@ def parse_articles(source_path: Path):
 
             records.append({
                 "document_id": DOCUMENT_ID,
-                "document_title": DOCUMENT_TITLE,
-                "language": LANGUAGE,
+                "document_title": config["document_title"],
+                "language": language,
                 "section_type": "article",
                 "article_number": article_number,
                 "article_title": article_title,
                 "paragraph_number": paragraph_number,
                 "text": text,
-                "source_url": SOURCE_URL,
+                "source_url": config["source_url"],
                 "chunk_id": (
-                    f"ai-act-{LANGUAGE}"
+                    f"ai-act-{language}"
                     f"-article-{article_number}"
                     f"-paragraph-{paragraph_number}"
                 ),
@@ -222,10 +247,10 @@ def parse_articles(source_path: Path):
     return records
 
 
-def save_articles(records):
-    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+def save_articles(records, output_path: Path = OUTPUT_PATH):
+    output_path.parent.mkdir(parents=True, exist_ok=True)
 
-    OUTPUT_PATH.write_text(
+    output_path.write_text(
         json.dumps(
             records,
             indent=2,
@@ -235,8 +260,27 @@ def save_articles(records):
     )
 
     print(f"Generated {len(records)} chunks")
-    print(f"Saved to {OUTPUT_PATH}")
+    print(f"Saved to {output_path}")
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Parse an official AI Act source.")
+    parser.add_argument(
+        "--language",
+        choices=sorted(LANGUAGE_CONFIGS),
+        default=LANGUAGE,
+    )
+    parser.add_argument("--input", type=Path, default=None)
+    parser.add_argument("--output", type=Path, default=None)
+    args = parser.parse_args()
+
+    config = LANGUAGE_CONFIGS[args.language]
+    source_path = args.input or config["source_path"]
+    output_path = args.output or config["output_path"]
+
+    records = parse_articles(source_path, language=args.language)
+    save_articles(records, output_path=output_path)
+
 
 if __name__ == "__main__":
-    records = parse_articles(SOURCE_PATH)
-    save_articles(records)
+    main()
