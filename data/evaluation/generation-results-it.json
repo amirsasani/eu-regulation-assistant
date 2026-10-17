@@ -1,0 +1,1824 @@
+{
+    "method": "Hybrid RRF + reranker + LLM",
+    "language": "it",
+    "generator_model": "qwen3.5:4b",
+    "judge_model": "gemma3:4b",
+    "questions_evaluated": 20,
+    "citation_precision": 0.916,
+    "valid_citation_rate": 0.938,
+    "expected_source_recall": 0.704,
+    "refusal_accuracy": 0.95,
+    "average_retrieval_ms": 4018.869,
+    "average_generation_ms": 13206.131,
+    "average_total_latency_ms": 17225.001,
+    "query_results": [
+        {
+            "id": "g001",
+            "question": "Quali obblighi di gestione dei rischi si applicano ai sistemi di IA ad alto rischio?",
+            "answerable": true,
+            "answer": "In base alle fonti fornite, gli obblighi di gestione dei rischi per i sistemi di IA ad alto rischio includono:\n\n*   **Processo iterativo continuo**: Il sistema di gestione dei rischi deve essere un processo iterativo e continuo che copre l'intero ciclo di vita del sistema, richiedendo riesami e aggiornamenti costanti. [Articolo 9, paragrafo 2]\n*   **Fasi specifiche del processo**: Il processo deve comprendere:\n    *   L'identificazione e analisi dei rischi noti e ragionevolmente prevedibili per la salute, la sicurezza e i diritti fondamentali in caso di uso conforme o improprio. [Articolo 9, paragrafo 2]\n    *   La stima e valutazione dei rischi che emergono nell'uso conforme e in condizioni di uso improprio prevedibile. [Articolo 9, paragrafo 2]\n    *   La valutazione di altri rischi derivanti dall'analisi dei dati raccolti dal sistema di monitoraggio post-immissione sul mercato. [Articolo 9, paragrafo 2]\n    *   L'adozione di misure di gestione dei rischi opportune e mirate per affrontare i rischi individuati. [Articolo 9, paragrafo 2]\n*   **Misure di riduzione e controllo**: Le misure adottate devono garantire:\n    *   L'eliminazione o la riduzione dei rischi individuati e valutati, dove possibile tramite adeguata progettazione e fabbricazione. [Articolo 9, paragrafo 5]\n    *   L'attuazione di misure di attenuazione e controllo per i rischi che non possono essere eliminati. [Articolo 9, paragrafo 5]\n*   **Accettabilità dei rischi residui**: Le misure adottate devono essere tali da considerare accettabili i rischi residui associati a ciascun pericolo nonché il",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "Deve essere istituito, attuato, documentato e mantenuto un sistema di gestione dei rischi.",
+                    "La gestione dei rischi è un processo continuo durante l'intero ciclo di vita che richiede riesami e aggiornamenti periodici.",
+                    "Il processo deve individuare, valutare e affrontare i rischi noti e ragionovabilmente prevedibili.",
+                    "I sistemi ad alto rischio devono essere sottoposti a prova per individuare misure di gestione dei rischi adeguate."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately summarizes the risk management obligations for high-risk AI systems as outlined in the provided source excerpts. It covers all the expected points and is fully supported by citations from Article 9 and Article 17.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-it-article-9-paragraph-5",
+                    "article_number": "9",
+                    "paragraph_number": "5",
+                    "reranker_score": 0.997022807598114
+                },
+                {
+                    "chunk_id": "ai-act-it-article-9-paragraph-2",
+                    "article_number": "9",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.9949306845664978
+                },
+                {
+                    "chunk_id": "ai-act-it-article-17-paragraph-3",
+                    "article_number": "17",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.9937857389450073
+                },
+                {
+                    "chunk_id": "ai-act-it-article-9-paragraph-10",
+                    "article_number": "9",
+                    "paragraph_number": "10",
+                    "reranker_score": 0.9920238256454468
+                },
+                {
+                    "chunk_id": "ai-act-it-article-9-paragraph-6",
+                    "article_number": "9",
+                    "paragraph_number": "6",
+                    "reranker_score": 0.9906456470489502
+                }
+            ],
+            "retrieval_ms": 2281.577,
+            "generation_ms": 19222.38,
+            "total_latency_ms": 21503.958,
+            "citations": [
+                {
+                    "article": "9",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "9",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "9",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "9",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "9",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "9",
+                    "paragraph": "5"
+                },
+                {
+                    "article": "9",
+                    "paragraph": "5"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "9",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "9",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "9",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "9",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "9",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "9",
+                    "paragraph": "5"
+                },
+                {
+                    "article": "9",
+                    "paragraph": "5"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 0.667,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g002",
+            "question": "I sistemi di IA ad alto rischio devono registrare automaticamente gli eventi durante il funzionamento?",
+            "answerable": true,
+            "answer": "Sì, i sistemi di IA ad alto rischio devono consentire la registrazione automatica degli eventi («log») per la durata del ciclo di vita del sistema.\n\nSecondo l'articolo 12, paragrafo 1: «I sistemi di IA ad alto rischio consentono a livello tecnico la registrazione automatica degli eventi («log») per la durata del ciclo di vita del sistema» [Articolo 12, paragrafo 1].",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "I sistemi ad alto rischio devono consentire tecnicamente la registrazione automatica degli eventi per l'intera durata del loro ciclo di vita.",
+                    "La registrazione deve favorire la tracciabilità, il monitoraggio successivo all'immissione sul mercato e il monitoraggio operativo."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer directly quotes Article 12, paragraph 1, which explicitly states that high-risk AI systems must allow for the automatic recording of events ('log') throughout their lifecycle. The additional points are logically derived from this core statement and supported by the broader context of Article 12, particularly its emphasis on traceability, monitoring, and the purpose of the logs.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-it-article-12-paragraph-1",
+                    "article_number": "12",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9990647435188293
+                },
+                {
+                    "chunk_id": "ai-act-it-article-12-paragraph-2",
+                    "article_number": "12",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.9963358640670776
+                },
+                {
+                    "chunk_id": "ai-act-it-article-19-paragraph-1",
+                    "article_number": "19",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9918111562728882
+                },
+                {
+                    "chunk_id": "ai-act-it-article-26-paragraph-6",
+                    "article_number": "26",
+                    "paragraph_number": "6",
+                    "reranker_score": 0.9881705045700073
+                },
+                {
+                    "chunk_id": "ai-act-it-article-14-paragraph-4",
+                    "article_number": "14",
+                    "paragraph_number": "4",
+                    "reranker_score": 0.9509373307228088
+                }
+            ],
+            "retrieval_ms": 3003.498,
+            "generation_ms": 7864.902,
+            "total_latency_ms": 10868.4,
+            "citations": [
+                {
+                    "article": "12",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "12",
+                    "paragraph": "1"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "12",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "12",
+                    "paragraph": "1"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 1.0,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g003",
+            "question": "Quali obblighi di trasparenza si applicano ai contenuti generati dall'IA e ai deepfake?",
+            "answerable": true,
+            "answer": "In base alle fonti fornite, gli obblighi di trasparenza per i contenuti generati dall'IA e i deepfake sono regolati principalmente dall'**articolo 50**, che distingue tra fornitori e deployer:\n\n1.  **Obbligo di marcatura meccanica (Fornitori):** I fornitori di sistemi di IA che generano contenuti sintetici (audio, immagine, video o testuali) devono garantire che gli output siano marcati in un formato leggibile meccanicamente e rilevabili come generati o manipolati artificialmente [Art. 50, par. 2].\n2.  **Obbligo di rivelazione (Deployer):** I deployer di sistemi di IA che generano o manipolano immagini, contenuti audio/video (\"deep fake\") devono rendere noto che il contenuto è stato generato o manipolato artificialmente [Art. 50, par. 4].\n3.  **Eccezioni per l'arte e la satira:** Per i contenuti che fanno parte di opere artistiche, creative, satiriche o fittizie, l'obbligo si limita a rivelare l'esistenza di tali contenuti senza ostacolare l'esposizione o il godimento dell'opera [Art. 50, par. 4].\n4.  **Eccezioni per la legge e la revisione umana:** Gli obblighi non si applicano se l'uso è autorizzato dalla legge per accertare, prevenire, indagare o perseguire reati; inoltre, per il testo informativo su questioni di interesse pubblico, l'obbligo non si applica se il contenuto è stato sottoposto a revisione umana e una persona fisica o giuridica detiene la responsabilità editoriale [Art. 50, par. 4].\n5.  **Codici di buone pratiche:** L'Ufficio per l'IA incoraggia l'elaborazione di",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "I fornitori devono contrassegnare gli output sintetici in un formato leggibile meccanicamente e rilevabile.",
+                    "I deployer devono dichiarare quando un contenuto di immagini, audio o video costituisce un deepfake."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately summarizes the key transparency obligations outlined in Article 50 of the EU AI Act, supported by direct quotes from the provided source excerpts. It correctly identifies the responsibilities of both providers and deployers regarding the labeling and disclosure of AI-generated content and deepfakes.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-it-article-50-paragraph-4",
+                    "article_number": "50",
+                    "paragraph_number": "4",
+                    "reranker_score": 0.9993802309036255
+                },
+                {
+                    "chunk_id": "ai-act-it-article-50-paragraph-2",
+                    "article_number": "50",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.983241081237793
+                },
+                {
+                    "chunk_id": "ai-act-it-article-50-paragraph-7",
+                    "article_number": "50",
+                    "paragraph_number": "7",
+                    "reranker_score": 0.9103813767433167
+                },
+                {
+                    "chunk_id": "ai-act-it-article-50-paragraph-1",
+                    "article_number": "50",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.7281160354614258
+                },
+                {
+                    "chunk_id": "ai-act-it-article-50-paragraph-3",
+                    "article_number": "50",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.5224719047546387
+                }
+            ],
+            "retrieval_ms": 2697.256,
+            "generation_ms": 16386.847,
+            "total_latency_ms": 19084.103,
+            "citations": [
+                {
+                    "article": "50",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "50",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "50",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "50",
+                    "paragraph": "4"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "50",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "50",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "50",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "50",
+                    "paragraph": "4"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 1.0,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g004",
+            "question": "Quale algoritmo di cifratura deve utilizzare ogni sistema di IA ad alto rischio?",
+            "answerable": false,
+            "answer": "Le forniture legali fornite non contengono informazioni su quale specifico algoritmo di cifratura debba utilizzare ogni sistema di IA ad alto rischio.\n\nIl testo cita l'obbligo generale di garantire la **cibersicurezza** e di adottare soluzioni tecniche adeguate alle circostanze e ai rischi pertinenti, ma non menziona un algoritmo di cifratura specifico o obbligatorio.\n\n*   L'articolo 15, paragrafo 1 stabilisce che i sistemi di IA ad alto rischio devono essere progettati per conseguire un adeguato livello di **cibersicurezza** [Article 15, paragraph 1].\n*   L'articolo 15, paragrafo 5 richiede che le soluzioni tecniche per la cibersicurezza siano adeguate e includa misure per prevenire o rispondere ad attacchi come l'avvelenamento dei dati o degli esempi antagonistici, ma non prescrive un algoritmo di cifratura specifico [Article 15, paragraph 5].\n\nDi conseguenza, basandomi esclusivamente sulle excerpt fornite, non è possibile indicare quale algoritmo di cifratura debba essere utilizzato.",
+            "model": "qwen3.5:4b",
+            "judge": null,
+            "sources": [
+                {
+                    "chunk_id": "ai-act-it-article-15-paragraph-5",
+                    "article_number": "15",
+                    "paragraph_number": "5",
+                    "reranker_score": 0.4769884943962097
+                },
+                {
+                    "chunk_id": "ai-act-it-article-15-paragraph-1",
+                    "article_number": "15",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.3546334505081177
+                },
+                {
+                    "chunk_id": "ai-act-it-article-26-paragraph-8",
+                    "article_number": "26",
+                    "paragraph_number": "8",
+                    "reranker_score": 0.18861661851406097
+                },
+                {
+                    "chunk_id": "ai-act-it-article-9-paragraph-2",
+                    "article_number": "9",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.18048661947250366
+                },
+                {
+                    "chunk_id": "ai-act-it-article-49-paragraph-3",
+                    "article_number": "49",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.1736246943473816
+                }
+            ],
+            "retrieval_ms": 2672.153,
+            "generation_ms": 13123.917,
+            "total_latency_ms": 15796.071,
+            "citations": [
+                {
+                    "article": "15",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "15",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "15",
+                    "paragraph": "5"
+                },
+                {
+                    "article": "15",
+                    "paragraph": "5"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "15",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "15",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "15",
+                    "paragraph": "5"
+                },
+                {
+                    "article": "15",
+                    "paragraph": "5"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 1.0,
+            "refused": true,
+            "refusal_correct": true
+        },
+        {
+            "id": "g005",
+            "question": "Il regolamento sull'intelligenza artificiale si applica alle imprese con sede fuori dall'UE?",
+            "answerable": true,
+            "answer": "Le informazioni fornite non contengono una risposta diretta alla domanda se il regolamento sull'intelligenza artificiale si applichi alle imprese con sede fuori dall'UE. Le fonti citate (Articoli 1, 62, 105, 108 e 110) definiscono lo scopo del regolamento, le misure per le PMI/Start-up nell'Unione, le modifiche ad altri regolamenti e direttive, ma non delineano esplicitamente la portata territoriale o gli obblighi applicabili alle imprese estere.\n\nDi conseguenza, basandomi esclusivamente sugli estratti forniti, non è possibile determinare se il regolamento si applichi alle imprese con sede fuori dall'Unione.",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 1,
+                "point_coverage": 0,
+                "citation_support": 0,
+                "covered_points": [
+                    "Il regolamento si applica ai fornitori che immettono sistemi di IA o modelli di IA per finalità generali sul mercato dell'UE, indipendentemente dal luogo in cui sono stabiliti.",
+                    "Si applica anche ai fornitori e ai deployer di paesi terzi quando l'output del sistema di IA è utilizzato nell'Unione."
+                ],
+                "unsupported_claims": [
+                    "Le fonti fornite non contengono una risposta diretta alla domanda se il regolamento sull'intelligenza artificiale si applichi alle imprese con sede fuori dall'UE."
+                ],
+                "reason": "The provided excerpts primarily focus on the scope of the AI Act's application within the EU, particularly regarding SMEs, deployment, and interaction with other regulations. They do not explicitly state whether the Act applies to companies based outside the EU. The answer correctly identifies this gap in the provided information.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-it-article-62-paragraph-1",
+                    "article_number": "62",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.7555270791053772
+                },
+                {
+                    "chunk_id": "ai-act-it-article-1-paragraph-1",
+                    "article_number": "1",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.596284806728363
+                },
+                {
+                    "chunk_id": "ai-act-it-article-108-paragraph-1",
+                    "article_number": "108",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.5367435216903687
+                },
+                {
+                    "chunk_id": "ai-act-it-article-110-paragraph-1",
+                    "article_number": "110",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.3288654685020447
+                },
+                {
+                    "chunk_id": "ai-act-it-article-105-paragraph-1",
+                    "article_number": "105",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.17900815606117249
+                }
+            ],
+            "retrieval_ms": 4206.432,
+            "generation_ms": 9890.282,
+            "total_latency_ms": 14096.714,
+            "citations": [],
+            "valid_citations": [],
+            "invalid_citations": [],
+            "citation_precision": 0.0,
+            "has_valid_citation": false,
+            "expected_source_recall": 0.0,
+            "refused": true,
+            "refusal_correct": false
+        },
+        {
+            "id": "g006",
+            "question": "Come stabilisce il regolamento sull'intelligenza artificiale se un sistema di IA è ad alto rischio?",
+            "answerable": true,
+            "answer": "Il regolamento sull'intelligenza artificiale non definisce esplicitamente una lista statica di sistemi ad alto rischio nel testo fornito; invece, stabilisce che la Commissione deve fornire orientamenti e un elenco esaustivo di esempi pratici per specificare l'attuazione pratica delle regole di classificazione entro il 2 febbraio 2026 [Articolo 6, paragrafo 5].\n\nIl regolamento prevede inoltre che la Commissione adotti atti delegati per modificare le condizioni esistenti in caso di prove concrete e affidabili che siano necessarie per mantenere il livello di protezione della salute, della sicurezza e dei diritti fondamentali previsto dal regolamento [Articolo 6, paragrafo 7].\n\nInfine, il regolamento modifica altri regolamenti (come il Regolamento UE 2018/1139) per integrare requisiti specifici relativi ai sistemi di intelligenza artificiale che sono componenti di sicurezza, richiedendo che gli atti di esecuzione o delegati tengano conto dei requisiti del capo III, sezione 2 del regolamento sull'intelligenza artificiale [Articolo 108, paragrafo 1].",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 1,
+                "point_coverage": 1,
+                "citation_support": 1,
+                "covered_points": [
+                    "A system connected to a product is considered high risk when it is a safety component or a product subject to Annex I and requires a conformity assessment by a third party.",
+                    "Systems listed in Annex III are generally considered high risk.",
+                    "A system in Annex III can avoid this classification if it does not pose a significant risk and meets certain conditions (e.g., limited tasks), except for profiling systems which remain high risk.",
+                    "The supplier applying the exception must document the assessment before market or service entry."
+                ],
+                "unsupported_claims": [
+                    "The regulation explicitly defines a static list of high-risk systems."
+                ],
+                "reason": "The answer correctly identifies the core mechanism for determining high-risk AI systems: the Commission's guidance and examples. However, it misstates that the regulation doesn't explicitly define a static list, which it does not. The answer also includes some additional points about specific Annexes and conditions, which are derived from the source excerpts but are not the primary mechanism for determining high-risk status. Citation support is moderate as the answer relies on multiple articles, but some claims are not fully supported by a single source.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-it-article-82-paragraph-1",
+                    "article_number": "82",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9971554279327393
+                },
+                {
+                    "chunk_id": "ai-act-it-article-6-paragraph-5",
+                    "article_number": "6",
+                    "paragraph_number": "5",
+                    "reranker_score": 0.9866881966590881
+                },
+                {
+                    "chunk_id": "ai-act-it-article-8-paragraph-1",
+                    "article_number": "8",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9825791120529175
+                },
+                {
+                    "chunk_id": "ai-act-it-article-6-paragraph-7",
+                    "article_number": "6",
+                    "paragraph_number": "7",
+                    "reranker_score": 0.9404213428497314
+                },
+                {
+                    "chunk_id": "ai-act-it-article-108-paragraph-1",
+                    "article_number": "108",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.8595240116119385
+                }
+            ],
+            "retrieval_ms": 6425.012,
+            "generation_ms": 13008.499,
+            "total_latency_ms": 19433.511,
+            "citations": [
+                {
+                    "article": "6",
+                    "paragraph": "5"
+                },
+                {
+                    "article": "6",
+                    "paragraph": "7"
+                },
+                {
+                    "article": "108",
+                    "paragraph": "1"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "6",
+                    "paragraph": "5"
+                },
+                {
+                    "article": "6",
+                    "paragraph": "7"
+                },
+                {
+                    "article": "108",
+                    "paragraph": "1"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 0.0,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g007",
+            "question": "Quali requisiti di qualità e governance dei dati si applicano ai sistemi di IA ad alto rischio?",
+            "answerable": true,
+            "answer": "Ai sistemi di IA ad alto rischio che utilizzano tecniche di addestramento di modelli, si applicano i seguenti requisiti relativi ai set di dati di addestramento, convalida e prova: devono soddisfare i criteri di qualità stabiliti nei paragrafi da 2 a 5 del presente articolo [Articolo 10, paragrafo 1].\n\nI suddetti set di dati devono essere pertinenti, sufficientemente rappresentativi e, nella misura del possibile, esenti da errori e completi nell'ottica della finalità prevista; possiedono inoltre le proprietà statistiche appropriate, anche ove applicabile per quanto riguarda le persone o i gruppi di persone relativamente ai quali il sistema è destinato a essere usato [Articolo 10, paragrafo 3].\n\nI set di dati devono tenere conto, nella misura necessaria per la finalità prevista, delle caratteristiche o degli elementi particolari dello specifico ambito geografico, contestuale, comportamentale o funzionale all'interno del quale il sistema è destinato a essere usato [Articolo 10, paragrafo 4].\n\nPer lo sviluppo di sistemi di IA ad alto rischio che non utilizzano tecniche di addestramento di modelli, i requisiti relativi ai set di dati di addestramento e convalida si applicano solo ai set di dati di prova [Articolo 10, paragrafo 6].\n\nInoltre, i fornitori di tali sistemi devono istituire un sistema di gestione della qualità che garantisce la conformità al regolamento e comprende aspetti specifici relativi alla gestione dei dati, inclusa l'acquisizione, la raccolta, l'analisi, l'etichettatura, l'archiviazione, la filtrazione, l'estrazione, l'aggregazione, la conservazione dei dati e qualsiasi altra operazione riguardante i dati effettuata prima e ai fini dell'immissione sul mercato o della messa in servizio [Articolo 17, paragrafo 1].",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "I dati di addestramento, validazione e prova devono essere gestiti secondo pratiche di governance adeguate.",
+                    "I set di dati devono essere pertinenti, sufficientemente rappresentativi, il più possibile completi e, nella misura del possibile, esenti da errori.",
+                    "I dati devono tenere conto delle pertinenti caratteristiche geografiche, contestuali, comportamentali o funzionali.",
+                    "I fornitori di sistemi di IA ad alto rischio devono istituire un sistema di gestione della qualità che garantisca la conformità al regolamento, inclusa la gestione dei dati."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately reflects the requirements outlined in Article 10 and 17 of the EU AI Act. All claims are directly supported by the provided source excerpts. The covered points are a direct distillation of the key requirements for high-risk AI systems regarding data quality and governance.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-it-article-10-paragraph-1",
+                    "article_number": "10",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.996859073638916
+                },
+                {
+                    "chunk_id": "ai-act-it-article-17-paragraph-1",
+                    "article_number": "17",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9955127835273743
+                },
+                {
+                    "chunk_id": "ai-act-it-article-10-paragraph-3",
+                    "article_number": "10",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.9896650910377502
+                },
+                {
+                    "chunk_id": "ai-act-it-article-10-paragraph-4",
+                    "article_number": "10",
+                    "paragraph_number": "4",
+                    "reranker_score": 0.9770057201385498
+                },
+                {
+                    "chunk_id": "ai-act-it-article-10-paragraph-6",
+                    "article_number": "10",
+                    "paragraph_number": "6",
+                    "reranker_score": 0.9723351001739502
+                }
+            ],
+            "retrieval_ms": 5182.734,
+            "generation_ms": 15950.857,
+            "total_latency_ms": 21133.591,
+            "citations": [
+                {
+                    "article": "10",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "10",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "10",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "10",
+                    "paragraph": "6"
+                },
+                {
+                    "article": "17",
+                    "paragraph": "1"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "10",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "10",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "10",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "10",
+                    "paragraph": "6"
+                },
+                {
+                    "article": "17",
+                    "paragraph": "1"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 0.667,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g008",
+            "question": "Quali requisiti di trasparenza e istruzioni si applicano ai sistemi di IA ad alto rischio?",
+            "answerable": true,
+            "answer": "Ai sistemi di IA ad alto rischio si applicano i seguenti requisiti relativi alla trasparenza e alle istruzioni:\n\n1.  **Trasparenza**: I sistemi devono essere progettati e sviluppati per garantire che il loro funzionamento sia sufficientemente trasparente da consentire ai *deployer* di interpretare l'output del sistema e utilizzarlo adeguatamente. Sono garantiti un tipo e un livello di trasparenza adeguati, necessari per rispettare gli obblighi previsti dalla sezione 3 [Articolo 13, paragrafo 1].\n2.  **Istruzioni**: I sistemi devono essere accompagnati da istruzioni per l'uso in formato digitale o non digitale. Queste istruzioni devono contenere informazioni concise, complete, corrette e chiare che siano pertinenti, accessibili e comprensibili per i *deployer* [Articolo 13, paragrafo 2].",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "Il sistema deve essere sufficientemente trasparente da consentire ai deployer di interpretarne l'output e utilizzarlo in modo appropriato.",
+                    "Deve essere accompagnato da istruzioni per l'uso concise, complete, corrette, chiare, accessibili e comprensibili.",
+                    "Le istruzioni devono descrivere, tra l'altro, il fornitore, la finalità prevista, i limiti delle prestazioni, i rischi, la sorveglianza umana, le risorse, la manutenzione e i meccanismi di registrazione."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately summarizes the transparency and instruction requirements for high-risk AI systems as outlined in the provided source excerpts. All claims are directly supported by citations to Article 13, paragraph 2 and Article 13, paragraph 1.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-it-article-13-paragraph-2",
+                    "article_number": "13",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.9964046478271484
+                },
+                {
+                    "chunk_id": "ai-act-it-article-13-paragraph-1",
+                    "article_number": "13",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9950828552246094
+                },
+                {
+                    "chunk_id": "ai-act-it-article-8-paragraph-1",
+                    "article_number": "8",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9647626280784607
+                },
+                {
+                    "chunk_id": "ai-act-it-article-43-paragraph-3",
+                    "article_number": "43",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.9537087678909302
+                },
+                {
+                    "chunk_id": "ai-act-it-article-2-paragraph-2",
+                    "article_number": "2",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.948320746421814
+                }
+            ],
+            "retrieval_ms": 3692.522,
+            "generation_ms": 10207.274,
+            "total_latency_ms": 13899.796,
+            "citations": [
+                {
+                    "article": "13",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "13",
+                    "paragraph": "2"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "13",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "13",
+                    "paragraph": "2"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 0.667,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g009",
+            "question": "Come deve funzionare la sorveglianza umana di un sistema di IA ad alto rischio?",
+            "answerable": true,
+            "answer": "La sorveglianza umana di un sistema di IA ad alto rischio mira a prevenire o ridurre al minimo i rischi per la salute, la sicurezza o i diritti fondamentali che possono emergere quando il sistema è utilizzato conformemente alla sua finalità prevista o in condizioni di uso improprio ragionevolmente prevedibili [Art. 14, par. 2].\n\nPer l'attuazione di tali obiettivi, il sistema deve essere fornito al deployer in modo tale che le persone fisiche responsabili della sorveglianza umana abbiano la possibilità di:\n*   Comprendere correttamente le capacità e i limiti del sistema e monitorarne il funzionamento per individuare anomalie [Art. 14, par. 4].\n*   Restare consapevoli della tendenza a fare eccessivo affidamento sull'output del sistema («distorsione dell'automazione») [Art. 14, par. 4].\n*   Interpretare correttamente l'output del sistema, tenendo conto degli strumenti di interpretazione disponibili [Art. 14, par. 4].\n*   Decidere, in qualsiasi situazione particolare, di non usare il sistema o di ignorare/annullare il suo output [Art. 14, par. 4].\n*   Intervenire sul funzionamento del sistema o interromperlo mediante un pulsante di «arresto» o una procedura analoga che consenta al sistema di arrestarsi in condizioni di sicurezza [Art. 14, par. 4].\n\nLe misure di sorveglianza devono essere commisurate ai rischi, al livello di autonomia e al contesto di utilizzo del sistema e sono garantite mediante almeno uno dei tipi di misure seguenti:\n*   Misure individuate e integrate nel sistema dal fornitore prima della sua immissione sul mercato o messa in servizio (ove tecnicamente possibile) [Art. 14, par. 3].\n*   Misure individuate dal fornitore prima dell'immissione sul mercato o",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "I sistemi ad alto rischio devono essere progettati in modo che persone fisiche possano sorvegliarli efficacemente durante l'uso.",
+                    "La sorveglianza deve mirare a prevenire o ridurre al minimo i rischi per la salute, la sicurezza e i diritti fondamentali.",
+                    "Il personale addetto alla sorveglianza deve poter comprendere i limiti, evitare la tendenza all'affidamento automatico, interpretare l'output, ignorare le decisioni e arrestare il sistema in sicurezza, ove opportuno."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately reflects the requirements outlined in Article 14 of the EU AI Act regarding human oversight of high-risk AI systems. It draws directly from the provided source excerpts to support each point. The answer covers all expected points and provides sufficient citation support.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-it-article-14-paragraph-2",
+                    "article_number": "14",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.9990979433059692
+                },
+                {
+                    "chunk_id": "ai-act-it-article-14-paragraph-4",
+                    "article_number": "14",
+                    "paragraph_number": "4",
+                    "reranker_score": 0.9990538954734802
+                },
+                {
+                    "chunk_id": "ai-act-it-article-14-paragraph-3",
+                    "article_number": "14",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.9969394207000732
+                },
+                {
+                    "chunk_id": "ai-act-it-article-14-paragraph-1",
+                    "article_number": "14",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9960485100746155
+                },
+                {
+                    "chunk_id": "ai-act-it-article-26-paragraph-2",
+                    "article_number": "26",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.9884231686592102
+                }
+            ],
+            "retrieval_ms": 3922.091,
+            "generation_ms": 15697.65,
+            "total_latency_ms": 19619.741,
+            "citations": [
+                {
+                    "article": "14",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "14",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "14",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "14",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "14",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "14",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "14",
+                    "paragraph": "3"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "14",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "14",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "14",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "14",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "14",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "14",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "14",
+                    "paragraph": "3"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 1.0,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g010",
+            "question": "Quali sono i principali obblighi dei fornitori di sistemi di IA ad alto rischio?",
+            "answerable": true,
+            "answer": "I principali obblighi dei fornitori di sistemi di IA ad alto rischio sono elencati nell'**articolo 16, paragrafo 1** e includono:\n\n*   Garantire che i loro sistemi siano conformi ai requisiti della sezione 2;\n*   Indicare sul sistema (o sul suo imballaggio/documentazione) il proprio nome, denominazione commerciale o marchio registrato, nonché l'indirizzo di contatto;\n*   Disporre di un sistema di gestione della qualità conforme all'**articolo 17**;\n*   Conservare la documentazione richiesta dall'**articolo 18**;\n*   Conservare i log automaticamente generati dal sistema (quando sotto il loro controllo), come previsto dall'**articolo 19**;\n*   Garantire che il sistema sia sottoposto alla procedura di valutazione della conformità di cui all'**articolo 43** prima dell'immissione sul mercato o messa in servizio;\n*   Elaborare una dichiarazione di conformità UE a norma dell'**articolo 47**;\n*   Apporre la marcatura CE (o indicarla sull'imballaggio/documentazione) per indicare la conformità al regolamento, secondo l'**articolo 48**;\n*   Rispettare gli obblighi di registrazione di cui all'**articolo 49**, paragrafo 1;\n*   Adottare le misure correttive e fornire le informazioni necessarie conformemente all'**articolo 20**;\n*   Dimostrare la conformità del sistema ai requisiti della sezione 2 su richiesta motivata di un'autorità nazionale competente (secondo l'**articolo 49**, paragrafo 1);\n*   Garantire che il sistema sia conforme ai requisiti di accessibilità conformemente alle direttive (UE) 2016/2102 e (UE) 2019/882.\n\nInoltre, secondo l'**articolo 25,",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "Garantire conformità ai requisiti di sezione 2",
+                    "Indicare nome/dati di contatto sul sistema/imballaggio/documentazione",
+                    "Disporre di sistema di gestione della qualità conforme all'articolo 17",
+                    "Conservare documentazione richiesta dall'articolo 18",
+                    "Conservare log automaticamente generati dall'articolo 19",
+                    "Sottoporre il sistema alla valutazione di conformità (articolo 43)",
+                    "Elaborare dichiarazione di conformità UE (articolo 47)",
+                    "Apporre marcatura CE (articolo 48)",
+                    "Rispettare obblighi di registrazione (articolo 49)",
+                    "Adottare misure correttive e fornire informazioni (articolo 20)",
+                    "Dimostrare conformità su richiesta (articolo 49)",
+                    "Garantire conformità di accessibilità (direttive UE)"
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately lists the key obligations for high-risk AI system providers as detailed in the provided source excerpts. It references specific articles and paragraphs to support each obligation.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-it-article-16-paragraph-1",
+                    "article_number": "16",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9996397495269775
+                },
+                {
+                    "chunk_id": "ai-act-it-article-23-paragraph-1",
+                    "article_number": "23",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9967725872993469
+                },
+                {
+                    "chunk_id": "ai-act-it-article-25-paragraph-1",
+                    "article_number": "25",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9966877102851868
+                },
+                {
+                    "chunk_id": "ai-act-it-article-20-paragraph-1",
+                    "article_number": "20",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9939996004104614
+                },
+                {
+                    "chunk_id": "ai-act-it-article-17-paragraph-3",
+                    "article_number": "17",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.9910547137260437
+                }
+            ],
+            "retrieval_ms": 4379.36,
+            "generation_ms": 16623.471,
+            "total_latency_ms": 21002.831,
+            "citations": [
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "16",
+                    "paragraph": "1"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 1.0,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g011",
+            "question": "Quali obblighi operativi hanno i deployer dei sistemi di IA ad alto rischio?",
+            "answerable": true,
+            "answer": "I deployer dei sistemi di IA ad alto rischio devono adottare misure tecniche e organizzative per garantire l'utilizzo conforme alle istruzioni per l'uso [Articolo 26, paragrafo 1]. Devono monitorare il funzionamento del sistema sulla base delle istruzioni per l'uso; se c'è motivo di ritenere che l'uso conforme alle istruzioni possa comportare rischi ai sensi dell'articolo 79, paragrafo 1, devono informare senza indebito ritardo il fornitore o il distributore e la pertinente autorità di vigilanza del mercato e sospendere l'uso del sistema [Articolo 26, paragrafo 5]. Se identificano un incidente grave, devono informare immediatamente il fornitore (in primo luogo) e successivamente l'importatore o il distributore e le pertinenti autorità di vigilanza del mercato [Articolo 26, paragrafo 5]. Prima di mettere in servizio o utilizzare il sistema sul luogo di lavoro, se sono datori di lavoro, devono informare i rappresentanti dei lavoratori e i lavoratori interessati sull'uso del sistema [Articolo 26, paragrafo 7]. Se sono autorità pubbliche o istituzioni, organi e organismi dell'Unione, devono rispettare gli obblighi di registrazione di cui all'articolo 49; se accertano che il sistema non è stato registrato nella banca dati dell'UE di cui all'articolo 71, non possono utilizzarlo e devono informare il fornitore o il distributore [Articolo 26, paragrafo 8]. Devono cooperare con le pertinenti autorità competenti in merito a qualsiasi azione intrapresa da dette autorità per l'attuazione del regolamento [Articolo 26, paragrafo 12].\n\n*Nota: Le informazioni sopra riportate sono basate esclusivamente sugli estratti legali forniti. Non costituiscono consulenza legale.*",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 1,
+                "citation_support": 2,
+                "covered_points": [
+                    "I deployer devono utilizzare il sistema conformemente alle istruzioni e adottare misure tecniche e organizzative adeguate.",
+                    "Devono monitorare il funzionamento, segnalare rischi o incidenti gravi e sospendere l'uso quando necessario.",
+                    "Devono informare il fornitore o il distributore e le pertinenti autorità di vigilanza del mercato e sospendere l'uso del sistema in caso di rischio."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately reflects the obligations outlined in Article 26 of the AI Act. It covers the key points regarding monitoring, reporting, suspension of use, and notification to authorities. However, it does not cover the point about human oversight (point 2) or log retention (point 4) as stated in the expected points.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-it-article-26-paragraph-5",
+                    "article_number": "26",
+                    "paragraph_number": "5",
+                    "reranker_score": 0.9996592998504639
+                },
+                {
+                    "chunk_id": "ai-act-it-article-26-paragraph-8",
+                    "article_number": "26",
+                    "paragraph_number": "8",
+                    "reranker_score": 0.9990352392196655
+                },
+                {
+                    "chunk_id": "ai-act-it-article-26-paragraph-1",
+                    "article_number": "26",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9985806941986084
+                },
+                {
+                    "chunk_id": "ai-act-it-article-26-paragraph-7",
+                    "article_number": "26",
+                    "paragraph_number": "7",
+                    "reranker_score": 0.9973046779632568
+                },
+                {
+                    "chunk_id": "ai-act-it-article-26-paragraph-12",
+                    "article_number": "26",
+                    "paragraph_number": "12",
+                    "reranker_score": 0.9969156980514526
+                }
+            ],
+            "retrieval_ms": 3225.645,
+            "generation_ms": 15502.028,
+            "total_latency_ms": 18727.673,
+            "citations": [
+                {
+                    "article": "26",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "79",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "5"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "5"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "7"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "8"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "12"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "26",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "5"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "5"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "7"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "8"
+                },
+                {
+                    "article": "26",
+                    "paragraph": "12"
+                }
+            ],
+            "invalid_citations": [
+                {
+                    "article": "79",
+                    "paragraph": "1"
+                }
+            ],
+            "citation_precision": 0.857,
+            "has_valid_citation": true,
+            "expected_source_recall": 0.5,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g012",
+            "question": "Cosa deve contenere una valutazione d'impatto sui diritti fondamentali relativa a un sistema di IA ad alto rischio?",
+            "answerable": true,
+            "answer": "Secondo l'articolo 27, paragrafo 1 del regolamento, una valutazione d'impatto sui diritti fondamentali per un sistema di IA ad alto rischio deve contenere gli elementi seguenti:\n\n*   Una descrizione dei processi del deployer in cui il sistema di IA ad alto rischio sarà utilizzato in linea con la sua finalità prevista;\n*   Una descrizione del periodo di tempo entro cui ciascun sistema di IA ad alto rischio è destinato a essere utilizzato e con che frequenza;\n*   Le categorie di persone fisiche e gruppi verosimilmente interessati dal suo uso nel contesto specifico;\n*   I rischi specifici di danno che possono incidere sulle categorie di persone fisiche o sui gruppi di persone individuati, tenendo conto delle informazioni trasmesse dal fornitore a norma dell'articolo 13;\n*   Una descrizione dell'attuazione delle misure di sorveglianza umana, secondo le istruzioni per l'uso;\n*   Le misure da adottare qualora tali rischi si concretizzino, comprese le disposizioni relative alla governance interna e ai meccanismi di reclamo.\n\nCita: [Articolo 27, paragrafo 1]",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "Una descrizione dei processi del deployer in cui il sistema di IA ad alto rischio sarà utilizzato in linea con la sua finalità prevista.",
+                    "Una descrizione del periodo di tempo entro cui ciascun sistema di IA ad alto rischio è destinato a essere utilizzato e con che frequenza.",
+                    "Le categorie di persone fisiche e gruppi verosimilmente interessati dal suo uso nel contesto specifico.",
+                    "I rischi specifici di danno che possono incidere sulle categorie di persone fisiche o sui gruppi di persone individuati, tenendo conto delle informazioni trasmesse dal fornitore a norma dell'articolo 13.",
+                    "Una descrizione dell'attuazione delle misure di sorveglianza umana, secondo le istruzioni per l'uso.",
+                    "Le misure da adottare qualora tali rischi si concretizzino, comprese le disposizioni relative alla governance interna e ai meccanismi di reclamo."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately summarizes the requirements for a high-risk AI system impact assessment as outlined in Article 27, paragraph 1 of the AI Act. All claims are directly supported by the provided source excerpts.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-it-article-27-paragraph-1",
+                    "article_number": "27",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9992073178291321
+                },
+                {
+                    "chunk_id": "ai-act-it-article-27-paragraph-2",
+                    "article_number": "27",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.9825290441513062
+                },
+                {
+                    "chunk_id": "ai-act-it-article-27-paragraph-4",
+                    "article_number": "27",
+                    "paragraph_number": "4",
+                    "reranker_score": 0.9706089496612549
+                },
+                {
+                    "chunk_id": "ai-act-it-article-13-paragraph-3",
+                    "article_number": "13",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.9703038930892944
+                },
+                {
+                    "chunk_id": "ai-act-it-article-82-paragraph-1",
+                    "article_number": "82",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9555141925811768
+                }
+            ],
+            "retrieval_ms": 6043.545,
+            "generation_ms": 14701.022,
+            "total_latency_ms": 20744.567,
+            "citations": [
+                {
+                    "article": "27",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "27",
+                    "paragraph": "1"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "27",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "27",
+                    "paragraph": "1"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 0.667,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g013",
+            "question": "Quali obblighi si applicano ai fornitori di modelli di IA per finalità generali?",
+            "answerable": true,
+            "answer": "In base alle fonti fornite, gli obblighi che si applicano ai fornitori di modelli di IA per finalità generali sono i seguenti:\n\n*   **Collaborazione con le autorità:** I fornitori devono collaborare, secondo necessità, con la Commissione e le autorità nazionali competenti nell'esercizio delle loro competenze e dei loro poteri a norma del regolamento. [Articolo 53, paragrafo 3]\n*   **Dimostrazione di conformità:** I fornitori possono basarsi su codici di buone pratiche ai sensi dell'articolo 56 per dimostrare la conformità agli obblighi previsti dall'articolo 53, finché non è pubblicata una norma armonizzata. [Articolo 53, paragrafo 4; Articolo 55, paragrafo 2]\n*   **Mezzi alternativi di conformità:** I fornitori che non aderiscono a un codice di buone pratiche approvato o che non si conformano alle norme armonizzate europee devono dimostrare mezzi alternativi adeguati di conformità ai fini della valutazione da parte della Commissione. [Articolo 53, paragrafo 4; Articolo 55, paragrafo 2]\n*   **Rappresentante autorizzato:** È previsto l'obbligo di designare un rappresentante autorizzato (sebbene questa disposizione non si applichi ai modelli rilasciati con licenza libera e open source che presentano rischi sistemici). [Articolo 54, paragrafo 6]\n\nTali obblighi sono soggetti a eccezioni per i fornitori di modelli di IA per finalità generali rilasciati con licenza libera e open source che consentono l'accesso, l'uso, la modifica e la distribuzione del modello e i cui parametri sono resi pubblici, salvo nel caso in cui tali modelli presentino rischi sistemici. [Articolo 53, paragrafo 2; Articolo 54, paragra",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 1,
+                "citation_support": 2,
+                "covered_points": [
+                    "I fornitori devono collaborare con le autorità.",
+                    "I fornitori possono basarsi su codici di buone pratiche per dimostrare la conformità.",
+                    "I fornitori devono dimostrare mezzi alternativi di conformità se non aderiscono a un codice di buone pratiche."
+                ],
+                "unsupported_claims": [
+                    "I fornitori devono mantenere una documentazione tecnica relativa all'addestramento, alle prove e alla valutazione.",
+                    "Devono fornire ai fornitori di sistemi di IA a valle informazioni sulle capacità e sui limiti del modello.",
+                    "Devono adottare una politica per il rispetto del diritto d'autore e pubblicare una sintesi sufficientemente dettagliata dei contenuti utilizzati per l'addestramento.",
+                    "Alcuni obblighi di documentazione non si applicano ai modelli open source che soddisfano i requisiti, ad eccezione dei modelli con rischio sistemico."
+                ],
+                "reason": "The answer accurately summarizes the obligations outlined in Articles 53, 54, and 55 of the AI Act regarding model providers. However, it misses several key obligations detailed in the source excerpts, specifically regarding documentation, information sharing, and the specific exceptions for open-source models. The answer is well-grounded in the provided text, but the point coverage is limited.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-it-article-53-paragraph-2",
+                    "article_number": "53",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.999569833278656
+                },
+                {
+                    "chunk_id": "ai-act-it-article-53-paragraph-4",
+                    "article_number": "53",
+                    "paragraph_number": "4",
+                    "reranker_score": 0.9995025396347046
+                },
+                {
+                    "chunk_id": "ai-act-it-article-54-paragraph-6",
+                    "article_number": "54",
+                    "paragraph_number": "6",
+                    "reranker_score": 0.9992808699607849
+                },
+                {
+                    "chunk_id": "ai-act-it-article-55-paragraph-2",
+                    "article_number": "55",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.999213695526123
+                },
+                {
+                    "chunk_id": "ai-act-it-article-53-paragraph-3",
+                    "article_number": "53",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.9979268312454224
+                }
+            ],
+            "retrieval_ms": 3462.065,
+            "generation_ms": 15184.948,
+            "total_latency_ms": 18647.013,
+            "citations": [
+                {
+                    "article": "53",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "53",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "55",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "53",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "55",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "54",
+                    "paragraph": "6"
+                },
+                {
+                    "article": "53",
+                    "paragraph": "2"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "53",
+                    "paragraph": "3"
+                },
+                {
+                    "article": "53",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "55",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "53",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "55",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "54",
+                    "paragraph": "6"
+                },
+                {
+                    "article": "53",
+                    "paragraph": "2"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 0.5,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g014",
+            "question": "Quali obblighi aggiuntivi si applicano ai modelli di IA per finalità generali con rischio sistemico?",
+            "answerable": true,
+            "answer": "Ai fornitori di modelli di IA per finalità generali con rischio sistemico, oltre agli obblighi generali degli articoli 53 e 54, si applicano gli obblighi aggiuntivi seguenti:\n\n*   **Valutazione del modello:** Effettuare una valutazione dei modelli in conformità di protocolli e strumenti standardizzati che rispecchino lo stato dell'arte, incluso il test contraddittorio (adversarial testing) per individuare e attenuare i rischi sistemici [Articolo 55, paragrafo 1, lettera a)].\n*   **Valutazione dei rischi:** Valutare e attenuare i possibili rischi sistemici a livello dell'Unione, comprese le loro fonti, derivanti dallo sviluppo, dall'immissione sul mercato o dall'uso di tali modelli [Articolo 55, paragrafo 1, lettera b)].\n*   **Tracciamento e segnalazione:** Tenere traccia, documentare e riferire senza indebito ritardo all'ufficio per l'IA (e, se del caso, alle autorità nazionali competenti) le informazioni pertinenti su incidenti gravi ed eventuali misure correttive [Articolo 55, paragrafo 1, lettera c)].\n*   **Cibersicurezza:** Garantire un livello adeguato di protezione della cibersicurezza per il modello di IA e l'infrastruttura fisica del modello [Articolo 55, paragrafo 1, lettera d)].\n\nInoltre, i fornitori possono basarsi su codici di buone pratiche o norme armonizzate europee per dimostrare la conformità a questi obblighi; in caso contrario, devono dimostrare mezzi alternativi adeguati [Articolo 55, paragrafo 2]. Le informazioni e la documentazione ottenute ai sensi del presente articolo sono trattate conformemente agli obblighi di riservatezza dell'articolo 78 [Articolo 55",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "I fornitori devono valutare il modello e svolgere prove in contraddittorio mediante protocolli e strumenti standardizzati conformi allo stato dell'arte.",
+                    "Devono valutare e attenuare i rischi sistemici a livello dell'Unione.",
+                    "Devono tenere traccia degli incidenti gravi e segnalarli, nonché garantire una cibersicurezza adeguata per il modello e la relativa infrastruttura.",
+                    "Possono dimostrare la conformità mediante codici approvati o norme armonizzate oppure dimostrare mezzi alternativi adeguati."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately summarizes the additional obligations for AI models with systemic risk, directly referencing Article 55 of the EU AI Act. All points are supported by citations from the provided source excerpts.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-it-article-55-paragraph-1",
+                    "article_number": "55",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9994826316833496
+                },
+                {
+                    "chunk_id": "ai-act-it-article-53-paragraph-2",
+                    "article_number": "53",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.9974350333213806
+                },
+                {
+                    "chunk_id": "ai-act-it-article-55-paragraph-2",
+                    "article_number": "55",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.9974090456962585
+                },
+                {
+                    "chunk_id": "ai-act-it-article-51-paragraph-1",
+                    "article_number": "51",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9810326099395752
+                },
+                {
+                    "chunk_id": "ai-act-it-article-55-paragraph-3",
+                    "article_number": "55",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.963808000087738
+                }
+            ],
+            "retrieval_ms": 2658.652,
+            "generation_ms": 16046.23,
+            "total_latency_ms": 18704.882,
+            "citations": [
+                {
+                    "article": "55",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "55",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "55",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "55",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "55",
+                    "paragraph": "2"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "55",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "55",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "55",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "55",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "55",
+                    "paragraph": "2"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 1.0,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g015",
+            "question": "Cosa richiede il monitoraggio successivo all'immissione sul mercato di un sistema di IA ad alto rischio?",
+            "answerable": true,
+            "answer": "Il monitoraggio successivo all'immissione sul mercato per i sistemi di IA ad alto rischio richiede che il fornitore istituisca e documenti un sistema proporzionato alla natura delle tecnologie e ai rischi, che raccolga, documenti e analizzi attivamente e sistematicamente i dati pertinenti forniti dai deployer o raccolti tramite altre fonti sulle prestazioni del sistema per tutta la durata del ciclo di vita. Tale sistema deve consentire al fornitore di valutare la costante conformità del sistema ai requisiti previsti dal capo III, sezione 2, e può includere, se del caso, un'analisi dell'interazione con altri sistemi di IA. Il monitoraggio si basa su un piano di monitoraggio successivo all'immissione sul mercato che fa parte della documentazione tecnica.\n\nLe fonti sono:\n- [Articolo 72, paragrafo 1]\n- [Articolo 72, paragrafo 2]\n- [Articolo 72, paragrafo 3]",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "I fornitori devono istituire e documentare un sistema di monitoraggio successivo all'immissione sul mercato proporzionato.",
+                    "Il sistema deve raccogliere, documentare e analizzare attivamente i dati sulle prestazioni durante l'intero ciclo di vita del sistema di IA per valutarne la conformità continua.",
+                    "Il monitoraggio deve seguire un piano che costituisce parte della documentazione tecnica."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately reflects the requirements outlined in Article 72 of the AI Act, specifically paragraphs 1, 2, and 3. The expected points are directly derived from these sources and comprehensively cover the key aspects of post-market monitoring for high-risk AI systems.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-it-article-72-paragraph-2",
+                    "article_number": "72",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.9998594522476196
+                },
+                {
+                    "chunk_id": "ai-act-it-article-72-paragraph-4",
+                    "article_number": "72",
+                    "paragraph_number": "4",
+                    "reranker_score": 0.9994256496429443
+                },
+                {
+                    "chunk_id": "ai-act-it-article-72-paragraph-3",
+                    "article_number": "72",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.9993532299995422
+                },
+                {
+                    "chunk_id": "ai-act-it-article-72-paragraph-1",
+                    "article_number": "72",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9990628361701965
+                },
+                {
+                    "chunk_id": "ai-act-it-article-9-paragraph-2",
+                    "article_number": "9",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.997969925403595
+                }
+            ],
+            "retrieval_ms": 4370.913,
+            "generation_ms": 11389.849,
+            "total_latency_ms": 15760.762,
+            "citations": [
+                {
+                    "article": "72",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "72",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "72",
+                    "paragraph": "3"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "72",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "72",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "72",
+                    "paragraph": "3"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 1.0,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g016",
+            "question": "Come ed entro quali termini devono essere segnalati gli incidenti gravi relativi ai sistemi di IA ad alto rischio?",
+            "answerable": true,
+            "answer": "In base alle disposizioni fornite, i fornitori di sistemi di IA ad alto rischio devono segnalare gli incidenti gravi alle autorità di vigilanza del mercato degli Stati membri in cui tali incidenti si sono verificati. I termini per la segnalazione variano a seconda della circostanza:\n\n1.  **Segnalazione generale:** La segnalazione deve essere effettuata immediatamente dopo che il fornitore ha stabilito un nesso causale tra il sistema di IA e l'incidente grave o quando stabilisce la ragionevole probabilità di tale nesso, e in ogni caso non oltre **15 giorni** dalla data in cui il fornitore o, se del caso, il deployer è venuto a conoscenza dell'incidente grave [Art. 73, par. 2]. Il periodo tiene conto della gravità dell'incidente grave.\n2.  **Caso di decesso:** In caso di decesso di una persona, la segnalazione deve essere trasmessa immediatamente dopo che il fornitore o il deployer ha stabilito o sospettato un nesso causale e non oltre **10 giorni** dalla data in cui sono venuti a conoscenza dell'incidente grave [Art. 73, par. 4].\n3.  **Sistemi di IA ad alto rischio componenti di sicurezza:** Per i sistemi di IA ad alto rischio che sono componenti di sicurezza di dispositivi o essi stessi dispositivi disciplinati dai regolamenti (UE) 2017/745 e (UE) 2017/746, la notifica è limitata agli incidenti gravi di cui all'articolo 3, punto 49, lettera c), ed è trasmessa all'autorità nazionale competente scelta dagli Stati membri in cui si è verificato l'incidente [Art. 73, par. 10].\n4.  **Sistemi di IA ad alto rischio soggetti a obblighi equivalenti",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "I fornitori devono segnalare gli incidenti gravi all'autorità di vigilanza del mercato del luogo in cui si è verificato l'incidente.",
+                    "Il termine generale è immediatamente dopo aver stabilito o ragionevolmente sospettato un nesso causale e non oltre 15 giorni dalla conoscenza dell'incidente.",
+                    "Gli incidenti che comportano il decesso di una persona devono essere segnalati entro 10 giorni dalla loro conoscenza."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately reflects the reporting requirements outlined in Article 73 of the AI Act, supported by multiple citations. The points covered are directly derived from the provided excerpts.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-it-article-73-paragraph-10",
+                    "article_number": "73",
+                    "paragraph_number": "10",
+                    "reranker_score": 0.9934125542640686
+                },
+                {
+                    "chunk_id": "ai-act-it-article-73-paragraph-4",
+                    "article_number": "73",
+                    "paragraph_number": "4",
+                    "reranker_score": 0.9929733276367188
+                },
+                {
+                    "chunk_id": "ai-act-it-article-73-paragraph-2",
+                    "article_number": "73",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.9915652275085449
+                },
+                {
+                    "chunk_id": "ai-act-it-article-73-paragraph-1",
+                    "article_number": "73",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9904566407203674
+                },
+                {
+                    "chunk_id": "ai-act-it-article-73-paragraph-9",
+                    "article_number": "73",
+                    "paragraph_number": "9",
+                    "reranker_score": 0.9845108985900879
+                }
+            ],
+            "retrieval_ms": 3561.575,
+            "generation_ms": 14976.185,
+            "total_latency_ms": 18537.76,
+            "citations": [
+                {
+                    "article": "73",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "73",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "73",
+                    "paragraph": "10"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "73",
+                    "paragraph": "2"
+                },
+                {
+                    "article": "73",
+                    "paragraph": "4"
+                },
+                {
+                    "article": "73",
+                    "paragraph": "10"
+                }
+            ],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": true,
+            "expected_source_recall": 0.6,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g017",
+            "question": "Qual è la data generale di applicazione del regolamento sull'intelligenza artificiale e quando iniziano ad applicarsi i capi I e II, le norme sull'IA per finalità generali e l'articolo 6, paragrafo 1?",
+            "answerable": true,
+            "answer": "In base alle fonti fornite, la data generale di applicazione del regolamento è il **2 agosto 2026** [Art. 113, par. 1].\n\nTuttavia, esistono date di applicazione diverse per specifici articoli:\n*   I **Capi I e II** si applicano a decorrere dal **2 febbraio 2025** [Art. 113, par. 1].\n*   L'**articolo 6, paragrafo 1**, insieme ai corrispondenti obblighi, si applica a decorrere dal **2 agosto 2027** [Art. 113, par. 1].\n\nPer quanto riguarda le norme sull'IA per finalità generali (Capo III, sezione 4) e l'articolo 78, la data di applicazione è il **2 agosto 2025**, ad eccezione dell'articolo 101 [Art. 113, par. 1].",
+            "model": "qwen3.5:4b",
+            "judge": {
+                "groundedness": 2,
+                "point_coverage": 2,
+                "citation_support": 2,
+                "covered_points": [
+                    "Il regolamento si applica in generale a decorrere dal 2 agosto 2026.",
+                    "I capi I e II si applicano a decorrere dal 2 febbraio 2025.",
+                    "Le disposizioni specifiche in materia di governance, IA per finalità generali e sanzioni si applicano a decorrere dal 2 agosto 2025.",
+                    "L'articolo 6, paragrafo 1, e gli obblighi corrispondenti si applicano a decorrere dal 2 agosto 2027."
+                ],
+                "unsupported_claims": [],
+                "reason": "The answer accurately extracts and synthesizes the key dates for the implementation of the AI Act from the provided source excerpts. It correctly identifies the staggered application dates for different sections of the regulation.",
+                "judge_model": "gemma3:4b"
+            },
+            "sources": [
+                {
+                    "chunk_id": "ai-act-it-article-113-paragraph-1",
+                    "article_number": "113",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.9800833463668823
+                },
+                {
+                    "chunk_id": "ai-act-it-article-6-paragraph-5",
+                    "article_number": "6",
+                    "paragraph_number": "5",
+                    "reranker_score": 0.920492947101593
+                },
+                {
+                    "chunk_id": "ai-act-it-article-111-paragraph-2",
+                    "article_number": "111",
+                    "paragraph_number": "2",
+                    "reranker_score": 0.916120171546936
+                },
+                {
+                    "chunk_id": "ai-act-it-article-108-paragraph-1",
+                    "article_number": "108",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.6975426077842712
+                },
+                {
+                    "chunk_id": "ai-act-it-article-110-paragraph-1",
+                    "article_number": "110",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.3827537000179291
+                }
+            ],
+            "retrieval_ms": 5003.277,
+            "generation_ms": 13626.767,
+            "total_latency_ms": 18630.044,
+            "citations": [
+                {
+                    "article": "113",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "113",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "6",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "113",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "113",
+                    "paragraph": "1"
+                }
+            ],
+            "valid_citations": [
+                {
+                    "article": "113",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "113",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "113",
+                    "paragraph": "1"
+                },
+                {
+                    "article": "113",
+                    "paragraph": "1"
+                }
+            ],
+            "invalid_citations": [
+                {
+                    "article": "6",
+                    "paragraph": "1"
+                }
+            ],
+            "citation_precision": 0.8,
+            "has_valid_citation": true,
+            "expected_source_recall": 1.0,
+            "refused": false,
+            "refusal_correct": true
+        },
+        {
+            "id": "g018",
+            "question": "Quale stipendio minimo deve ricevere un ingegnere di IA in base al regolamento UE sull'intelligenza artificiale?",
+            "answerable": false,
+            "answer": "Le informazioni fornite non contengono dettagli sullo stipendio minimo per un ingegnere di intelligenza artificiale o qualsiasi altra informazione relativa alle retribuzioni dei dipendenti nel contesto del regolamento UE sull'intelligenza artificiale. Le sezioni citate si concentrano su aspetti come lo scopo del regolamento, le modifiche a vari regolamenti esistenti e la struttura del consiglio per l'IA europeo, ma non menzionano requisiti salariali specifici per i professionisti tecnici.",
+            "model": "qwen3.5:4b",
+            "judge": null,
+            "sources": [
+                {
+                    "chunk_id": "ai-act-it-article-108-paragraph-1",
+                    "article_number": "108",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.1272784024477005
+                },
+                {
+                    "chunk_id": "ai-act-it-article-1-paragraph-1",
+                    "article_number": "1",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.08987773954868317
+                },
+                {
+                    "chunk_id": "ai-act-it-article-110-paragraph-1",
+                    "article_number": "110",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.0276937335729599
+                },
+                {
+                    "chunk_id": "ai-act-it-article-104-paragraph-1",
+                    "article_number": "104",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.012744641862809658
+                },
+                {
+                    "chunk_id": "ai-act-it-article-65-paragraph-6",
+                    "article_number": "65",
+                    "paragraph_number": "6",
+                    "reranker_score": 0.012298405170440674
+                }
+            ],
+            "retrieval_ms": 4820.594,
+            "generation_ms": 10591.03,
+            "total_latency_ms": 15411.624,
+            "citations": [],
+            "valid_citations": [],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": false,
+            "expected_source_recall": 1.0,
+            "refused": true,
+            "refusal_correct": true
+        },
+        {
+            "id": "g019",
+            "question": "Quale fornitore di servizi cloud devono utilizzare le imprese per rispettare il regolamento UE sull'intelligenza artificiale?",
+            "answerable": false,
+            "answer": "Le informazioni fornite non contengono indicazioni su quali fornitori di servizi cloud specifici le imprese debbano utilizzare per rispettare il regolamento UE sull'intelligenza artificiale. Le excerpt citate riguardano modifiche a regolamenti esistenti, lo scopo generale del regolamento e obblighi relativi a fornitori e deployer (in particolare PMI), ma non specificano requisiti obbligatori per la scelta di provider cloud.\n\nPertanto, non è possibile rispondere alla domanda basandosi esclusivamente sulle excerpt fornite.",
+            "model": "qwen3.5:4b",
+            "judge": null,
+            "sources": [
+                {
+                    "chunk_id": "ai-act-it-article-108-paragraph-1",
+                    "article_number": "108",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.2817591726779938
+                },
+                {
+                    "chunk_id": "ai-act-it-article-1-paragraph-1",
+                    "article_number": "1",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.18217940628528595
+                },
+                {
+                    "chunk_id": "ai-act-it-article-62-paragraph-3",
+                    "article_number": "62",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.12094417959451675
+                },
+                {
+                    "chunk_id": "ai-act-it-article-110-paragraph-1",
+                    "article_number": "110",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.037423308938741684
+                },
+                {
+                    "chunk_id": "ai-act-it-article-105-paragraph-1",
+                    "article_number": "105",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.0347079336643219
+                }
+            ],
+            "retrieval_ms": 5581.418,
+            "generation_ms": 7868.846,
+            "total_latency_ms": 13450.264,
+            "citations": [],
+            "valid_citations": [],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": false,
+            "expected_source_recall": 1.0,
+            "refused": true,
+            "refusal_correct": true
+        },
+        {
+            "id": "g020",
+            "question": "Qual è l'attuale quota di mercato europea di ciascun prodotto di IA generativa?",
+            "answerable": false,
+            "answer": "Le informazioni fornite non contengono dati sulla quota di mercato attuale di ciascun prodotto di intelligenza artificiale generativa nell'Unione europea. Le excerpt riportate definiscono l'ambito di applicazione del regolamento, gli obiettivi generali e alcuni obblighi specifici per i fornitori di modelli di IA, ma non includono statistiche di mercato o percentuali di fatturato.\n\nPertanto, non è possibile rispondere alla domanda basandosi esclusivamente sulle excerpt fornite.",
+            "model": "qwen3.5:4b",
+            "judge": null,
+            "sources": [
+                {
+                    "chunk_id": "ai-act-it-article-2-paragraph-1",
+                    "article_number": "2",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.02171405591070652
+                },
+                {
+                    "chunk_id": "ai-act-it-article-1-paragraph-1",
+                    "article_number": "1",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.017333265393972397
+                },
+                {
+                    "chunk_id": "ai-act-it-article-111-paragraph-3",
+                    "article_number": "111",
+                    "paragraph_number": "3",
+                    "reranker_score": 0.016077229753136635
+                },
+                {
+                    "chunk_id": "ai-act-it-article-74-paragraph-12",
+                    "article_number": "74",
+                    "paragraph_number": "12",
+                    "reranker_score": 0.011014921590685844
+                },
+                {
+                    "chunk_id": "ai-act-it-article-53-paragraph-1",
+                    "article_number": "53",
+                    "paragraph_number": "1",
+                    "reranker_score": 0.007504704408347607
+                }
+            ],
+            "retrieval_ms": 3187.067,
+            "generation_ms": 6259.64,
+            "total_latency_ms": 9446.707,
+            "citations": [],
+            "valid_citations": [],
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "has_valid_citation": false,
+            "expected_source_recall": 1.0,
+            "refused": true,
+            "refusal_correct": true
+        }
+    ],
+    "average_groundedness": 1.875,
+    "average_point_coverage": 1.688,
+    "average_citation_support": 1.812
+}

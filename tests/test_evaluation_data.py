@@ -10,6 +10,9 @@ ITALIAN_RETRIEVAL_QUESTIONS_FILE = (
     PROJECT_ROOT / "data/evaluation/questions-it.json"
 )
 GENERATION_QUESTIONS_FILE = (PROJECT_ROOT / "data/evaluation/generation_questions.json")
+ITALIAN_GENERATION_QUESTIONS_FILE = (
+    PROJECT_ROOT / "data/evaluation/generation_questions-it.json"
+)
 
 
 def load_json(path: Path):
@@ -85,3 +88,33 @@ def test_generation_labels_reference_existing_chunks():
 
         assert all(point["point"].strip() for point in expected_points)
         assert expected_articles == set(question["expected_articles"])
+
+
+def test_italian_generation_questions_match_english_labels_and_chunks():
+    english_questions = load_json(GENERATION_QUESTIONS_FILE)
+    italian_questions = load_json(ITALIAN_GENERATION_QUESTIONS_FILE)
+    italian_documents = load_json(ITALIAN_DOCUMENTS_FILE)
+    italian_chunks = {document["chunk_id"] for document in italian_documents}
+
+    assert len(italian_questions) == len(english_questions)
+
+    for english, italian in zip(english_questions, italian_questions, strict=True):
+        assert italian["id"] == english["id"]
+        assert italian["question"].strip()
+        assert italian["question"] != english["question"]
+        assert italian["answerable"] == english["answerable"]
+        assert italian["expected_articles"] == english["expected_articles"]
+        assert len(italian["expected_points"]) == len(english["expected_points"])
+
+        for english_point, italian_point in zip(
+            english["expected_points"],
+            italian["expected_points"],
+            strict=True,
+        ):
+            assert italian_point["point"].strip()
+            assert italian_point["point"] != english_point["point"]
+            assert italian_point["chunk_id"] == english_point["chunk_id"].replace(
+                "ai-act-en-",
+                "ai-act-it-",
+            )
+            assert italian_point["chunk_id"] in italian_chunks

@@ -83,6 +83,7 @@ flowchart LR
 - [x] Add Italian API, service and prompt tests
 - [x] Create an Italian-language evaluation set
 - [x] Index the official Italian text of the EU AI Act
+- [x] Evaluate Italian answer generation and citations
 - [ ] Add GDPR and NIS2 documents
 
 ## Why this project?
@@ -138,29 +139,29 @@ These results remain preliminary because the datasets are manually constructed, 
 
 ## Generation evaluation
 
-Answer generation was evaluated on 20 questions: 16 answerable questions and four unsupported questions. The evaluation used local Ollama models:
+Answer generation was evaluated separately in English and Italian. Each dataset contains 20 paired questions: 16 answerable questions and four unsupported questions. Both evaluations used local Ollama models:
 
 - Generator: `qwen3.5:4b`
 - Judge: `gemma3:4b`
 - Retrieval candidates: 10
 - Context chunks: 5
 
-| Metric | Result |
-|---|---:|
-| Groundedness | 1.875 / 2 |
-| Citation support | 1.875 / 2 |
-| Point coverage | 1.875 / 2 |
-| Citation precision | 1.000 |
-| Valid citation rate | 1.000 |
-| Refusal accuracy | 0.950 |
-| Expected-source recall | 0.767 |
-| Average retrieval latency | 3,966.561 ms |
-| Average generation latency | 12,890.616 ms |
-| Average total latency | 16,857.177 ms |
+| Metric | English | Italian |
+|---|---:|---:|
+| Groundedness | 1.875 / 2 | 1.875 / 2 |
+| Citation support | 1.875 / 2 | 1.812 / 2 |
+| Point coverage | 1.875 / 2 | 1.688 / 2 |
+| Citation precision | 1.000 | 0.916 |
+| Valid citation rate | 1.000 | 0.938 |
+| Refusal accuracy | 0.950 | 0.950 |
+| Expected-source recall | 0.767 | 0.704 |
+| Average retrieval latency | 3,966.561 ms | 4,018.869 ms |
+| Average generation latency | 12,890.616 ms | 13,206.131 ms |
+| Average total latency | 16,857.177 ms | 17,225.001 ms |
 
-Groundedness, citation support and point coverage are scored from 0 to 2 by the local `gemma3:4b` judge. Total latency includes retrieval and answer generation but excludes judge evaluation.
+Groundedness, citation support and point coverage are scored from 0 to 2 by the local `gemma3:4b` judge. Citation validation recognizes English and Italian citation forms, including `Article 9, paragraph 1`, `Articolo 9, paragrafo 1` and `Art. 9, par. 1`. Total latency includes retrieval and answer generation but excludes judge evaluation.
 
-These results remain preliminary because the generation evaluation contains 20 questions and uses a local language model as the judge.
+The main Italian failure involved territorial scope: the retriever did not return Article 2, so the generator correctly lacked the evidence needed for an answer. These results remain preliminary because each generation dataset contains 20 questions and uses a local language model as the judge.
 
 ## Data source
 
@@ -621,10 +622,22 @@ python -m scripts.evaluate_hybrid --questions_file data/evaluation/questions-it.
 python -m scripts.evaluate_hybrid --questions_file data/evaluation/questions-it.json --language it --candidate_k 10 --rerank --output_file data/evaluation/hybrid-reranked-results-it.json
 ```
 
-Run the generation evaluation:
+Run the English generation evaluation:
 
 ```bash
 python -m scripts.evaluate_generation \
+  --top_k 5 \
+  --candidate_k 10
+```
+
+Run the Italian generation evaluation:
+
+```bash
+python -m scripts.evaluate_generation \
+  --documents_file data/processed/ai-act-articles-it.json \
+  --questions_file data/evaluation/generation_questions-it.json \
+  --output_file data/evaluation/generation-results-it.json \
+  --language it \
   --top_k 5 \
   --candidate_k 10
 ```
@@ -633,13 +646,14 @@ The detailed generation results are saved to:
 
 ```text
 data/evaluation/generation-results.json
+data/evaluation/generation-results-it.json
 ```
 
 ## Limitations
 
 - English and Italian are indexed, but no other official EU language is currently available.
-- Italian answer-generation quality has not yet been measured on a labelled generation dataset.
-- The generation evaluation contains 20 manually labelled questions and has not been reviewed by a legal expert.
+- Each generation evaluation contains 20 manually labelled questions and has not been reviewed by a legal expert.
+- The Italian questions and expected answer points are translations that have not been reviewed by a legal translator.
 - The answer-quality judge is a local language model rather than a legal expert.
 - Local-model latency depends on the available hardware.
 - Document amendments and consolidated versions are not synchronized automatically.
@@ -648,10 +662,9 @@ data/evaluation/generation-results.json
 
 ## Roadmap
 
-1. Add an Italian generation evaluation set.
-2. Add GDPR and NIS2 as additional data sources.
-3. Detect and process updated consolidated regulations automatically.
-4. Add a simple web interface.
+1. Add GDPR and NIS2 as additional data sources.
+2. Detect and process updated consolidated regulations automatically.
+3. Add a simple web interface.
 
 ## License
 

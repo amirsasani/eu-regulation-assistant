@@ -2,8 +2,8 @@ import re
 
 
 CITATION_PATTERN = re.compile(
-    r"[\[(]?\s*Article\s+(\d+)\s*,\s*"
-    r"paragraph\s+(\d+)\s*[\])]?",
+    r"[\[(]?\s*(?:Article|Articolo|Art\.?)\s+(\d+)\s*,\s*"
+    r"(?:paragraph|paragrafo|par\.?)\s+(\d+)\s*[\])]?",
     re.IGNORECASE,
 )
 
@@ -17,6 +17,16 @@ REFUSAL_PHRASES = (
     "cannot determine",
     "there is no information",
     "there is no requirement",
+    "non ci sono informazioni sufficienti",
+    "informazioni insufficienti",
+    "non contiene",
+    "non contengono",
+    "non specifica",
+    "non specificano",
+    "non è possibile determinare",
+    "non vi sono informazioni",
+    "non esiste alcun obbligo",
+    "non è previsto alcun obbligo",
 )
 
 

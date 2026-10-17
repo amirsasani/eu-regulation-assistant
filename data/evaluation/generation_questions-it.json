@@ -1,0 +1,406 @@
+[
+  {
+    "id": "g001",
+    "question": "Quali obblighi di gestione dei rischi si applicano ai sistemi di IA ad alto rischio?",
+    "answerable": true,
+    "expected_articles": [
+      "9"
+    ],
+    "expected_points": [
+      {
+        "point": "Deve essere istituito, attuato, documentato e mantenuto un sistema di gestione dei rischi.",
+        "chunk_id": "ai-act-it-article-9-paragraph-1"
+      },
+      {
+        "point": "La gestione dei rischi è un processo continuo durante l'intero ciclo di vita che richiede riesami e aggiornamenti periodici.",
+        "chunk_id": "ai-act-it-article-9-paragraph-2"
+      },
+      {
+        "point": "Il processo deve individuare, valutare e affrontare i rischi noti e ragionevolmente prevedibili.",
+        "chunk_id": "ai-act-it-article-9-paragraph-2"
+      },
+      {
+        "point": "I sistemi ad alto rischio devono essere sottoposti a prova per individuare misure di gestione dei rischi adeguate.",
+        "chunk_id": "ai-act-it-article-9-paragraph-6"
+      }
+    ]
+  },
+  {
+    "id": "g002",
+    "question": "I sistemi di IA ad alto rischio devono registrare automaticamente gli eventi durante il funzionamento?",
+    "answerable": true,
+    "expected_articles": [
+      "12"
+    ],
+    "expected_points": [
+      {
+        "point": "I sistemi ad alto rischio devono consentire tecnicamente la registrazione automatica degli eventi per l'intera durata del loro ciclo di vita.",
+        "chunk_id": "ai-act-it-article-12-paragraph-1"
+      },
+      {
+        "point": "La registrazione deve favorire la tracciabilità, il monitoraggio successivo all'immissione sul mercato e il monitoraggio operativo.",
+        "chunk_id": "ai-act-it-article-12-paragraph-2"
+      }
+    ]
+  },
+  {
+    "id": "g003",
+    "question": "Quali obblighi di trasparenza si applicano ai contenuti generati dall'IA e ai deepfake?",
+    "answerable": true,
+    "expected_articles": [
+      "50"
+    ],
+    "expected_points": [
+      {
+        "point": "I fornitori devono contrassegnare gli output sintetici in un formato leggibile meccanicamente e rilevabile.",
+        "chunk_id": "ai-act-it-article-50-paragraph-2"
+      },
+      {
+        "point": "I deployer devono dichiarare quando un contenuto di immagini, audio o video costituisce un deepfake.",
+        "chunk_id": "ai-act-it-article-50-paragraph-4"
+      }
+    ]
+  },
+  {
+    "id": "g004",
+    "question": "Quale algoritmo di cifratura deve utilizzare ogni sistema di IA ad alto rischio?",
+    "answerable": false,
+    "expected_articles": [],
+    "expected_points": []
+  },
+  {
+    "id": "g005",
+    "question": "Il regolamento sull'intelligenza artificiale si applica alle imprese con sede fuori dall'UE?",
+    "answerable": true,
+    "expected_articles": [
+      "2"
+    ],
+    "expected_points": [
+      {
+        "point": "Il regolamento si applica ai fornitori che immettono sistemi di IA o modelli di IA per finalità generali sul mercato dell'UE, indipendentemente dal luogo in cui sono stabiliti.",
+        "chunk_id": "ai-act-it-article-2-paragraph-1"
+      },
+      {
+        "point": "Si applica anche ai fornitori e ai deployer di paesi terzi quando l'output del sistema di IA è utilizzato nell'Unione.",
+        "chunk_id": "ai-act-it-article-2-paragraph-1"
+      }
+    ]
+  },
+  {
+    "id": "g006",
+    "question": "Come stabilisce il regolamento sull'intelligenza artificiale se un sistema di IA è ad alto rischio?",
+    "answerable": true,
+    "expected_articles": [
+      "6"
+    ],
+    "expected_points": [
+      {
+        "point": "Un sistema collegato a un prodotto è ad alto rischio quando è un componente di sicurezza o un prodotto disciplinato dall'allegato I e richiede una valutazione della conformità da parte di terzi.",
+        "chunk_id": "ai-act-it-article-6-paragraph-1"
+      },
+      {
+        "point": "Anche i sistemi elencati nell'allegato III sono generalmente considerati ad alto rischio.",
+        "chunk_id": "ai-act-it-article-6-paragraph-2"
+      },
+      {
+        "point": "Un sistema dell'allegato III può evitare tale classificazione se non presenta un rischio significativo e soddisfa una delle condizioni relative a compiti limitati, ma i sistemi che effettuano profilazione restano ad alto rischio.",
+        "chunk_id": "ai-act-it-article-6-paragraph-3"
+      },
+      {
+        "point": "Il fornitore che applica l'eccezione deve documentare la valutazione prima dell'immissione sul mercato o della messa in servizio.",
+        "chunk_id": "ai-act-it-article-6-paragraph-4"
+      }
+    ]
+  },
+  {
+    "id": "g007",
+    "question": "Quali requisiti di qualità e governance dei dati si applicano ai sistemi di IA ad alto rischio?",
+    "answerable": true,
+    "expected_articles": [
+      "10"
+    ],
+    "expected_points": [
+      {
+        "point": "I dati di addestramento, validazione e prova devono essere gestiti secondo pratiche di governance adeguate alla finalità prevista, comprendenti raccolta, preparazione, ipotesi e controlli delle distorsioni.",
+        "chunk_id": "ai-act-it-article-10-paragraph-2"
+      },
+      {
+        "point": "I set di dati devono essere pertinenti, sufficientemente rappresentativi, il più possibile completi e, nella misura del possibile, esenti da errori.",
+        "chunk_id": "ai-act-it-article-10-paragraph-3"
+      },
+      {
+        "point": "I dati devono tenere conto delle pertinenti caratteristiche geografiche, contestuali, comportamentali o funzionali.",
+        "chunk_id": "ai-act-it-article-10-paragraph-4"
+      }
+    ]
+  },
+  {
+    "id": "g008",
+    "question": "Quali requisiti di trasparenza e istruzioni si applicano ai sistemi di IA ad alto rischio?",
+    "answerable": true,
+    "expected_articles": [
+      "13"
+    ],
+    "expected_points": [
+      {
+        "point": "Il sistema deve essere sufficientemente trasparente da consentire ai deployer di interpretarne l'output e utilizzarlo in modo appropriato.",
+        "chunk_id": "ai-act-it-article-13-paragraph-1"
+      },
+      {
+        "point": "Deve essere accompagnato da istruzioni per l'uso concise, complete, corrette, chiare, accessibili e comprensibili.",
+        "chunk_id": "ai-act-it-article-13-paragraph-2"
+      },
+      {
+        "point": "Le istruzioni devono descrivere, tra l'altro, il fornitore, la finalità prevista, i limiti delle prestazioni, i rischi, la sorveglianza umana, le risorse, la manutenzione e i meccanismi di registrazione.",
+        "chunk_id": "ai-act-it-article-13-paragraph-3"
+      }
+    ]
+  },
+  {
+    "id": "g009",
+    "question": "Come deve funzionare la sorveglianza umana di un sistema di IA ad alto rischio?",
+    "answerable": true,
+    "expected_articles": [
+      "14"
+    ],
+    "expected_points": [
+      {
+        "point": "I sistemi ad alto rischio devono essere progettati in modo che persone fisiche possano sorvegliarli efficacemente durante l'uso.",
+        "chunk_id": "ai-act-it-article-14-paragraph-1"
+      },
+      {
+        "point": "La sorveglianza deve mirare a prevenire o ridurre al minimo i rischi per la salute, la sicurezza e i diritti fondamentali.",
+        "chunk_id": "ai-act-it-article-14-paragraph-2"
+      },
+      {
+        "point": "Il personale addetto alla sorveglianza deve poter comprendere i limiti, evitare la tendenza all'affidamento automatico, interpretare l'output, ignorare le decisioni e arrestare il sistema in sicurezza, ove opportuno.",
+        "chunk_id": "ai-act-it-article-14-paragraph-4"
+      }
+    ]
+  },
+  {
+    "id": "g010",
+    "question": "Quali sono i principali obblighi dei fornitori di sistemi di IA ad alto rischio?",
+    "answerable": true,
+    "expected_articles": [
+      "16"
+    ],
+    "expected_points": [
+      {
+        "point": "I fornitori devono garantire la conformità ai requisiti applicabili ai sistemi ad alto rischio e mantenere un sistema di gestione della qualità conforme.",
+        "chunk_id": "ai-act-it-article-16-paragraph-1"
+      },
+      {
+        "point": "Devono conservare la documentazione richiesta e i log sotto il loro controllo.",
+        "chunk_id": "ai-act-it-article-16-paragraph-1"
+      },
+      {
+        "point": "Devono completare la valutazione della conformità, redigere la dichiarazione UE di conformità, apporre la marcatura CE e registrare il sistema.",
+        "chunk_id": "ai-act-it-article-16-paragraph-1"
+      },
+      {
+        "point": "Devono adottare azioni correttive, cooperare con le autorità e rispettare i requisiti di accessibilità.",
+        "chunk_id": "ai-act-it-article-16-paragraph-1"
+      }
+    ]
+  },
+  {
+    "id": "g011",
+    "question": "Quali obblighi operativi hanno i deployer dei sistemi di IA ad alto rischio?",
+    "answerable": true,
+    "expected_articles": [
+      "26"
+    ],
+    "expected_points": [
+      {
+        "point": "I deployer devono utilizzare il sistema conformemente alle istruzioni e adottare misure tecniche e organizzative adeguate.",
+        "chunk_id": "ai-act-it-article-26-paragraph-1"
+      },
+      {
+        "point": "Devono affidare la sorveglianza umana a persone qualificate, formate e autorizzate.",
+        "chunk_id": "ai-act-it-article-26-paragraph-2"
+      },
+      {
+        "point": "Devono monitorare il funzionamento, segnalare rischi o incidenti gravi e sospendere l'uso quando necessario.",
+        "chunk_id": "ai-act-it-article-26-paragraph-5"
+      },
+      {
+        "point": "Devono normalmente conservare i log sotto il loro controllo per almeno sei mesi.",
+        "chunk_id": "ai-act-it-article-26-paragraph-6"
+      }
+    ]
+  },
+  {
+    "id": "g012",
+    "question": "Cosa deve contenere una valutazione d'impatto sui diritti fondamentali relativa a un sistema di IA ad alto rischio?",
+    "answerable": true,
+    "expected_articles": [
+      "27"
+    ],
+    "expected_points": [
+      {
+        "point": "I deployer interessati devono valutare, prima dell'uso, i processi, la durata e la frequenza d'uso, le persone interessate, i rischi, la sorveglianza umana e le misure previste in caso di concretizzazione dei rischi.",
+        "chunk_id": "ai-act-it-article-27-paragraph-1"
+      },
+      {
+        "point": "La valutazione si applica al primo uso e deve essere aggiornata quando cambiano gli elementi pertinenti.",
+        "chunk_id": "ai-act-it-article-27-paragraph-2"
+      },
+      {
+        "point": "Dopo aver completato la valutazione, il deployer deve di norma notificarne i risultati all'autorità di vigilanza del mercato.",
+        "chunk_id": "ai-act-it-article-27-paragraph-3"
+      }
+    ]
+  },
+  {
+    "id": "g013",
+    "question": "Quali obblighi si applicano ai fornitori di modelli di IA per finalità generali?",
+    "answerable": true,
+    "expected_articles": [
+      "53"
+    ],
+    "expected_points": [
+      {
+        "point": "I fornitori devono mantenere una documentazione tecnica relativa all'addestramento, alle prove e alla valutazione.",
+        "chunk_id": "ai-act-it-article-53-paragraph-1"
+      },
+      {
+        "point": "Devono fornire ai fornitori di sistemi di IA a valle informazioni sulle capacità e sui limiti del modello.",
+        "chunk_id": "ai-act-it-article-53-paragraph-1"
+      },
+      {
+        "point": "Devono adottare una politica per il rispetto del diritto d'autore e pubblicare una sintesi sufficientemente dettagliata dei contenuti utilizzati per l'addestramento.",
+        "chunk_id": "ai-act-it-article-53-paragraph-1"
+      },
+      {
+        "point": "Alcuni obblighi di documentazione non si applicano ai modelli open source che soddisfano i requisiti, ad eccezione dei modelli con rischio sistemico.",
+        "chunk_id": "ai-act-it-article-53-paragraph-2"
+      }
+    ]
+  },
+  {
+    "id": "g014",
+    "question": "Quali obblighi aggiuntivi si applicano ai modelli di IA per finalità generali con rischio sistemico?",
+    "answerable": true,
+    "expected_articles": [
+      "55"
+    ],
+    "expected_points": [
+      {
+        "point": "I fornitori devono valutare il modello e svolgere prove in contraddittorio mediante protocolli e strumenti standardizzati conformi allo stato dell'arte.",
+        "chunk_id": "ai-act-it-article-55-paragraph-1"
+      },
+      {
+        "point": "Devono valutare e attenuare i rischi sistemici a livello dell'Unione.",
+        "chunk_id": "ai-act-it-article-55-paragraph-1"
+      },
+      {
+        "point": "Devono tenere traccia degli incidenti gravi e segnalarli, nonché garantire una cibersicurezza adeguata per il modello e la relativa infrastruttura.",
+        "chunk_id": "ai-act-it-article-55-paragraph-1"
+      },
+      {
+        "point": "Possono dimostrare la conformità mediante codici approvati o norme armonizzate oppure dimostrare mezzi alternativi adeguati.",
+        "chunk_id": "ai-act-it-article-55-paragraph-2"
+      }
+    ]
+  },
+  {
+    "id": "g015",
+    "question": "Cosa richiede il monitoraggio successivo all'immissione sul mercato di un sistema di IA ad alto rischio?",
+    "answerable": true,
+    "expected_articles": [
+      "72"
+    ],
+    "expected_points": [
+      {
+        "point": "I fornitori devono istituire e documentare un sistema di monitoraggio successivo all'immissione sul mercato proporzionato.",
+        "chunk_id": "ai-act-it-article-72-paragraph-1"
+      },
+      {
+        "point": "Il sistema deve raccogliere, documentare e analizzare attivamente i dati sulle prestazioni durante l'intero ciclo di vita del sistema di IA per valutarne la conformità continua.",
+        "chunk_id": "ai-act-it-article-72-paragraph-2"
+      },
+      {
+        "point": "Il monitoraggio deve seguire un piano che costituisce parte della documentazione tecnica.",
+        "chunk_id": "ai-act-it-article-72-paragraph-3"
+      }
+    ]
+  },
+  {
+    "id": "g016",
+    "question": "Come ed entro quali termini devono essere segnalati gli incidenti gravi relativi ai sistemi di IA ad alto rischio?",
+    "answerable": true,
+    "expected_articles": [
+      "73"
+    ],
+    "expected_points": [
+      {
+        "point": "I fornitori devono segnalare gli incidenti gravi all'autorità di vigilanza del mercato del luogo in cui si è verificato l'incidente.",
+        "chunk_id": "ai-act-it-article-73-paragraph-1"
+      },
+      {
+        "point": "Il termine generale è immediatamente dopo aver stabilito o ragionevolmente sospettato un nesso causale e non oltre 15 giorni dalla conoscenza dell'incidente.",
+        "chunk_id": "ai-act-it-article-73-paragraph-2"
+      },
+      {
+        "point": "Le violazioni diffuse e determinati incidenti gravi devono essere segnalati entro due giorni.",
+        "chunk_id": "ai-act-it-article-73-paragraph-3"
+      },
+      {
+        "point": "Gli incidenti che comportano il decesso di una persona devono essere segnalati entro 10 giorni dalla loro conoscenza.",
+        "chunk_id": "ai-act-it-article-73-paragraph-4"
+      },
+      {
+        "point": "Il fornitore deve indagare, valutare il rischio, adottare azioni correttive e cooperare con le autorità.",
+        "chunk_id": "ai-act-it-article-73-paragraph-6"
+      }
+    ]
+  },
+  {
+    "id": "g017",
+    "question": "Qual è la data generale di applicazione del regolamento sull'intelligenza artificiale e quando iniziano ad applicarsi i capi I e II, le norme sull'IA per finalità generali e l'articolo 6, paragrafo 1?",
+    "answerable": true,
+    "expected_articles": [
+      "113"
+    ],
+    "expected_points": [
+      {
+        "point": "Il regolamento si applica in generale a decorrere dal 2 agosto 2026.",
+        "chunk_id": "ai-act-it-article-113-paragraph-1"
+      },
+      {
+        "point": "I capi I e II si applicano a decorrere dal 2 febbraio 2025.",
+        "chunk_id": "ai-act-it-article-113-paragraph-1"
+      },
+      {
+        "point": "Le disposizioni specificate in materia di governance, IA per finalità generali, sanzioni e riservatezza si applicano a decorrere dal 2 agosto 2025, ad eccezione dell'articolo 101 per quanto riguarda tale decorrenza.",
+        "chunk_id": "ai-act-it-article-113-paragraph-1"
+      },
+      {
+        "point": "L'articolo 6, paragrafo 1, e gli obblighi corrispondenti si applicano a decorrere dal 2 agosto 2027.",
+        "chunk_id": "ai-act-it-article-113-paragraph-1"
+      }
+    ]
+  },
+  {
+    "id": "g018",
+    "question": "Quale stipendio minimo deve ricevere un ingegnere di IA in base al regolamento UE sull'intelligenza artificiale?",
+    "answerable": false,
+    "expected_articles": [],
+    "expected_points": []
+  },
+  {
+    "id": "g019",
+    "question": "Quale fornitore di servizi cloud devono utilizzare le imprese per rispettare il regolamento UE sull'intelligenza artificiale?",
+    "answerable": false,
+    "expected_articles": [],
+    "expected_points": []
+  },
+  {
+    "id": "g020",
+    "question": "Qual è l'attuale quota di mercato europea di ciascun prodotto di IA generativa?",
+    "answerable": false,
+    "expected_articles": [],
+    "expected_points": []
+  }
+]

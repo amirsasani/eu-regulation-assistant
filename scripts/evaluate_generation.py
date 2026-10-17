@@ -31,6 +31,16 @@ def average(results: list[dict], key: str) -> float:
     return round(sum(result[key] for result in results)/ len(results), 3)
 
 
+def format_duration(seconds: float) -> str:
+    minutes, remaining_seconds = divmod(max(0, round(seconds)), 60)
+    hours, minutes = divmod(minutes, 60)
+
+    if hours:
+        return f"{hours}h {minutes}m {remaining_seconds}s"
+
+    return f"{minutes}m {remaining_seconds}s"
+
+
 def evaluate(
     questions: list[dict],
     bm25_retriever,
@@ -43,8 +53,10 @@ def evaluate(
     judge_model: str | None,
 ) -> dict:
     query_results = []
+    evaluation_started = time.perf_counter()
+    question_count = len(questions)
 
-    for item in questions:
+    for position, item in enumerate(questions, start=1):
         retrieval_started = time.perf_counter()
 
         sources = search_hybrid(
@@ -106,6 +118,17 @@ def evaluate(
             **metrics,
         })
 
+        elapsed_seconds = time.perf_counter() - evaluation_started
+        average_seconds = elapsed_seconds / position
+        remaining_seconds = average_seconds * (question_count - position)
+
+        print(
+            f"[{position}/{question_count}] {item['id']} completed | "
+            f"elapsed {format_duration(elapsed_seconds)} | "
+            f"ETA {format_duration(remaining_seconds)}",
+            flush=True,
+        )
+
     answerable_results = [
         result
         for result in query_results
@@ -116,6 +139,11 @@ def evaluate(
 
     return {
         "method": "Hybrid RRF + reranker + LLM",
+        "language": language,
+        "generator_model": (
+            query_results[0]["model"] if query_results else llm_model
+        ),
+        "judge_model": judge_model,
         "questions_evaluated": len(query_results),
         "citation_precision": average(answerable_results, "citation_precision"),
         "valid_citation_rate": round(
@@ -148,12 +176,22 @@ def main():
     parser.add_argument("--documents_file", type=Path, default=DOCUMENTS_FILE)
     parser.add_argument("--questions_file", type=Path, default=QUESTIONS_FILE)
     parser.add_argument("--output_file", type=Path, default=OUTPUT_FILE)
-    parser.add_argument("--language", default="en")
+    parser.add_argument(
+        "--language",
+        choices=sorted(utils.SUPPORTED_LANGUAGES),
+        default="en",
+    )
     parser.add_argument("--top_k", type=int, default=5)
     parser.add_argument("--candidate_k", type=int, default=10)
     parser.add_argument("--llm_model", default=None)
     parser.add_argument("--judge_model", default=None)
     args = parser.parse_args()
+
+    if args.top_k < 1:
+        parser.error("--top_k must be at least 1")
+
+    if args.candidate_k < args.top_k:
+        parser.error("--candidate_k must be greater than or equal to --top_k")
 
 
     judge_model = (args.judge_model or os.getenv("OLLAMA_JUDGE_MODEL"))
